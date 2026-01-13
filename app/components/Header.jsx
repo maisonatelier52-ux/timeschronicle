@@ -56,6 +56,15 @@ export default function Header() {
         )
       : [];
 
+  const formattedDate = useMemo(() => {
+    return new Date().toLocaleDateString("en-US", {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  }, []);
+
   return (
     <header
       className={`
@@ -98,6 +107,11 @@ export default function Header() {
               </Link>
             ))}
           </nav>
+        </div>
+
+        {/* DATE (NEW) */}
+        <div className="hidden lg:block text-[11px] hidden lg:block tracking-widest text-gray-500 dark:text-gray-400">
+          {formattedDate}
         </div>
 
         {/* Right Icons */}

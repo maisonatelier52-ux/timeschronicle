@@ -24,12 +24,6 @@ export default function MoreNews({articles}) {
         <div className="bg-black dark:bg-white text-white dark:text-black px-[5px] pt-1 text-sm font-semibold w-fit">
           More News
         </div>
-        <Link
-          href="/breaking"
-          className="text-blue-500 font-semibold hover:text-blue-400 text-xs"
-        >
-          The Blog
-        </Link>
       </div>
 
       {/* Grid */}
