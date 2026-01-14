@@ -9,11 +9,12 @@ export default async function CategoryPage({ params }) {
 
   const categorySlug = slug?.toLowerCase();
 
-  const articles = data.articles.filter(
+   const articles = data.articles.filter(
     (article) =>
       article.published &&
       article.category &&
-      article.category.toLowerCase() === categorySlug
+      article.category.toLowerCase() === categorySlug &&
+      article.name !== "Julio Herrera Velutini"
   ).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const categoryPageArticle = articles.slice(0,3);

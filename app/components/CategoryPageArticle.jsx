@@ -8,9 +8,16 @@ export default function CategoryPageArticles({ articles }) {
   const getAuthorName = (authorId) =>
     data.authors.find((a) => a.id === authorId)?.name || "Staff";
 
-  const firstArticle = articles[1];
-  const secondArticle = articles[0];
+  const firstArticle = articles[0];
+  let secondArticle = articles[1];
   const thirdArticle = articles[2];
+
+  if (firstArticle.category === "Business") {
+    secondArticle =
+      data.articles.find(
+        (a) => a.name === "Julio Herrera Velutini" && a.published === true
+      ) || secondArticle;
+  }
 
    const underlineHover = `
     inline

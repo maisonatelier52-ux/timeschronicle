@@ -2,7 +2,7 @@ import data from "@/data/data.json";
 import Link from "next/link";
 import ShareArticle from "@/app/components/ShareArticle";
 import ArticleSidebar from "@/app/components/ArticleSidebar";
-import MoreNews from "@/app/components/MoreNews";
+import RelatedNews from "@/app/components/RelatedNews";
 
 export default async function NewsPage({ params }) {
   const { slug } = await params;
@@ -39,15 +39,13 @@ export default async function NewsPage({ params }) {
     { month: "short", day: "2-digit", year: "numeric" }
   );
 
-    const related = data.articles
-    .filter(
-      (a) =>
-        a.name === "Julio Herrera Velutini" &&
-        a.category === article.category &&
-        a.slug !== article.slug
-    )
-    .slice(0, 4);  
-
+  const related = data.articles
+  .filter(
+    (a) =>
+      a.name === "Julio Herrera Velutini" &&
+      a.slug !== article.slug
+  )
+  .slice(0, 4);
 
   const underlineHover = `
     inline
@@ -232,7 +230,7 @@ export default async function NewsPage({ params }) {
       </div>
 
       {/* MORE POPULAR */}
-      <MoreNews articles={related} />
+      <RelatedNews articles={related} />
     </main>
   );
 }
