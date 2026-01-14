@@ -112,7 +112,11 @@ export default function CategoryPageArticles({ articles }) {
       {/* Grid 2 */}
       {secondArticle && (
         <Link
-          href={`/news/${secondArticle.slug}`}
+          href={
+            secondArticle.name
+              ? `/julio-herrera-velutini/${secondArticle.slug}`
+              : `/news/${secondArticle.slug}`
+          }
           className="
             flex flex-col
             overflow-hidden

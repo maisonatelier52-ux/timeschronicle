@@ -35,6 +35,12 @@ export default function MoreNews({articles}) {
         {articles.map((article, index) => {
           const author = data.authors.find(a => a.id === article.authorId);
 
+          const isJulio = article.name === "Julio Herrera Velutini";
+
+          const articleLink = isJulio
+            ? `/julio-herrera-velutini/${article.slug}`
+            : `/news/${article.slug}`;
+
           return (
             <div
               key={article.slug}
@@ -46,7 +52,7 @@ export default function MoreNews({articles}) {
             >
               {/* Image (linked) */}
               <Link
-                href={`/news/${article.slug}`}
+                href={articleLink}
                 className="relative mb-3 aspect-[16/7] overflow-hidden block group"
               >
                 {/* Image */}
@@ -82,7 +88,7 @@ export default function MoreNews({articles}) {
 
               {/* Title (linked) */}
               <h3 className="font-semibold text-lg mb-2 text-black dark:text-gray-100 line-clamp-3 uppercase">
-                <Link href={`/news/${article.slug}`}>
+                <Link href={articleLink}>
                   <span className={underlineHover}>
                     {article.title}
                   </span>

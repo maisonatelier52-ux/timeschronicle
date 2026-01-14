@@ -52,7 +52,7 @@ export default function Header() {
   const results =
     query.length > 0
       ? data.articles.filter((a) =>
-          a.title.toLowerCase().includes(query.toLowerCase())
+          a.title.toLowerCase().includes(query.toLowerCase()) && a.published === true
         )
       : [];
 

@@ -4,8 +4,7 @@ import Link from "next/link";
 import data from "@/data/data.json";
 import CategoryTag1 from "./CategoryTag1";
 
-export default function BreakingNews({articles}) {
-
+export default function BreakingNews({ articles }) {
   const underlineHover = `
     inline
     bg-[linear-gradient(to_right,transparent,transparent),linear-gradient(to_right,#000,#000)]
@@ -19,7 +18,6 @@ export default function BreakingNews({articles}) {
 
   return (
     <section className="border-b-4 mx-auto px-7 pt-2 pb-7">
-
       {/* Heading */}
       <div className="flex justify-between items-center mb-3">
         <h2 className="text-sm font-bold">Breaking News</h2>
@@ -35,8 +33,19 @@ export default function BreakingNews({articles}) {
       >
         {articles.map((article, index) => {
           const author = data.authors.find(
-            a => a.id === article.authorId
+            (a) => a.id === article.authorId
           );
+
+          const isJulio =
+            article.name === "Julio Herrera Velutini";
+
+          const articleLink = isJulio
+            ? `/julio-herrera-velutini/${article.slug}`
+            : `/news/${article.slug}`;
+
+          const articleTitle = isJulio
+            ? article.title1
+            : article.title;
 
           return (
             <div
@@ -53,11 +62,12 @@ export default function BreakingNews({articles}) {
               <Link href={`/category/${article.category}`} className="mb-2">
                 <CategoryTag1 text={article.category.toUpperCase()} />
               </Link>
-              <Link href={`/news/${article.slug}`}>
+
+              <Link href={articleLink}>
                 {/* Title */}
                 <h3 className="font-semibold text-lg mb-2 text-black dark:text-gray-100 line-clamp-3 uppercase">
                   <span className={underlineHover}>
-                    {article.title}
+                    {articleTitle}
                   </span>
                 </h3>
 
@@ -70,7 +80,7 @@ export default function BreakingNews({articles}) {
               {/* Author */}
               <p className="text-[9px] text-gray-400 dark:text-gray-500 uppercase mt-auto">
                 By{" "}
-                <Link href={`/author/${author.slug}`}>
+                <Link href={`/author/${author?.slug}`}>
                   <span className="font-bold text-black dark:text-gray-100 px-1">
                     {author?.name || "Staff"}
                   </span>

@@ -147,39 +147,56 @@ export default function MoreRecent({articles}) {
                 )}
 
                 {/* 5th Article (under 4th, same column) */}
-                {articles[4] && (
-                    <div
-                        className="md:col-start-1 md:row-start-3 flex flex-col px-7 "
-                    >
-                        <div className="relative">
-                            <Link href={`/category/${articles[4].category.toLowerCase()}`}>
-                                <CategoryTag text={articles[4].category.toUpperCase()} />
-                            </Link>
-                        </div>
-                        <Link href={`/news/${articles[4].slug}`}>
-                            <h2 className="font-bbh pt-4 text-[26px] leading-[1.15]">
-                                <span className={underlineHover}>
-                                    {articles[4].title}
-                                </span>
-                            </h2>
-                            <div className="overflow-hidden">
-                                <p className="text-gray-600 dark:text-gray-300 pt-3 text-sm line-clamp-3">
-                                    {articles[4].excerpt}
-                                </p>
-                            </div>
-                        </Link>
-                        <p className="pt-2 text-[9px] text-gray-400 uppercase">
-                            By{" "}
-                            <Link href={`author/${data.authors.find(a => a.id === articles[4].authorId)?.slug}`}>
-                                <span className="font-semibold text-black dark:text-white">
-                                    {data.authors.find(a => a.id === articles[4].authorId)?.name}
-                                </span>{" "}
-                            </Link>
-                            | {articles[4].time} Read
-                        </p>
-                    </div>
-                )}
+                {articles[4] && (() => {
+                    const isJulio =
+                        articles[4].name === "Julio Herrera Velutini";
 
+                    const articleLink = isJulio
+                        ? `/julio-herrera-velutini/${articles[4].slug}`
+                        : `/news/${articles[4].slug}`;
+
+                    const articleTitle = isJulio
+                        ? articles[4].title2
+                        : articles[4].title;
+
+                    const author = data.authors.find(
+                        a => a.id === articles[4].authorId
+                    );
+
+                    return (
+                        <div className="md:col-start-1 md:row-start-3 flex flex-col px-7">
+                            <div className="relative">
+                                <Link href={`/category/${articles[4].category.toLowerCase()}`}>
+                                    <CategoryTag text={articles[4].category.toUpperCase()} />
+                                </Link>
+                            </div>
+
+                            <Link href={articleLink}>
+                                <h2 className="font-bbh pt-4 text-[26px] leading-[1.15]">
+                                    <span className={underlineHover}>
+                                        {articleTitle}
+                                    </span>
+                                </h2>
+
+                                <div className="overflow-hidden">
+                                    <p className="text-gray-600 dark:text-gray-300 pt-3 text-sm line-clamp-3">
+                                        {articles[4].excerpt}
+                                    </p>
+                                </div>
+                            </Link>
+
+                            <p className="pt-2 text-[9px] text-gray-400 uppercase">
+                                By{" "}
+                                <Link href={`/author/${author?.slug}`}>
+                                    <span className="font-semibold text-black dark:text-white">
+                                        {author?.name}
+                                    </span>
+                                </Link>
+                                | {articles[4].time} Read
+                            </p>
+                        </div>
+                    );
+                })()}
                 {/* 6th Article (right, spans rows 2–3 & columns 2–3) */}
                 {articles[5] && (
                     <div
