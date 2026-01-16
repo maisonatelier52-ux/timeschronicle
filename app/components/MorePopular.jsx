@@ -39,7 +39,7 @@ export default function MorePopular({ articles }) {
     <section className="max-w-7xl mx-auto px-7 pt-4">
 
       {/* SECTION HEADING */}
-      <h2 className="font-bbh text-2xl uppercase mb-3">
+      <h2 className="font-bold text-2xl uppercase mb-3">
         More Popular
       </h2>
 
@@ -78,7 +78,7 @@ export default function MorePopular({ articles }) {
                   p-4
                 ">
                   <CategoryTag1 text={topLeft.category.toUpperCase()} />
-                  <h3 className="font-bbh text-xl uppercase leading-snug text-white">
+                  <h3 className="font-bold text-xl uppercase leading-snug text-white">
                     <span className={underlineHoverRev}>
                       {topLeft.title}
                     </span>
@@ -113,7 +113,7 @@ export default function MorePopular({ articles }) {
                 <CategoryTag text={topCenter.category.toUpperCase()} />
               </div>
 
-              <h3 className="font-bbh text-3xl uppercase mb-2">
+              <h3 className="font-bold text-3xl uppercase mb-2">
                 <span className={underlineHover}>
                   {topCenter.title}
                 </span>
@@ -163,7 +163,7 @@ export default function MorePopular({ articles }) {
               <CategoryTag1 text={article.category.toUpperCase()} />
             </Link>
             <Link href={`/news/${article.slug}`} title={article.title}>
-              <h4 className="font-bbh text-lg uppercase mt-2 mb-1">
+              <h4 className="font-bold text-lg uppercase mt-2 mb-1 line-clamp-4">
                 <span className={underlineHover}>
                   {article.title}
                 </span>

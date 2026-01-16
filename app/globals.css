@@ -9,7 +9,7 @@
   --foreground: #171717c8;
 
   --font-body: var(--font-body);
-  --font-bbh-bogle: var(--font-bbh-bogle);
+  /* --font-bbh-bogle: var(--font-bbh-bogle); */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,9 +39,9 @@ body {
    Typography Utilities
 ----------------------------- */
 
-.font-bbh {
+/* .font-bbh {
   font-family: var(--font-bbh-bogle);
-}
+} */
 
 .font-body {
   font-family: var(--font-body);

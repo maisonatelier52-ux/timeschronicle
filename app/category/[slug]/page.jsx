@@ -61,7 +61,7 @@ export default async function CategoryPage({ params }) {
   if (!articles.length) {
     return (
       <section className="flex flex-col items-center justify-center px-7 py-20 text-center bg-white dark:bg-[#01131d] text-black dark:text-white">
-        <h1 className="font-bbh text-3xl sm:text-4xl mb-4 uppercase">
+        <h1 className="font-bold text-3xl sm:text-4xl mb-4 uppercase">
           No articles found
         </h1>
         <p className="text-gray-600 dark:text-gray-300 max-w-md text-base sm:text-lg">
@@ -113,7 +113,7 @@ export default async function CategoryPage({ params }) {
           </div>
 
           {/* Heading */}
-          <h1 className="font-bbh text-2xl sm:text-3xl md:text-4xl uppercase mb-3 text-black dark:text-white">
+          <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl uppercase mb-3 text-black dark:text-white">
             {categoryName}
           </h1>
 

@@ -89,7 +89,7 @@ export default function CategoryPageArticles({ articles }) {
           )}
 
           <div className="flex flex-col pt-4 flex-1">
-            <h2 className="font-bbh text-xl md:text-2xl mb-2 ${}">
+            <h2 className="font-bold text-xl md:text-2xl mb-2 ${}">
               <span className={underlineHover}>
                 {firstArticle.title}
               </span>
@@ -156,7 +156,7 @@ export default function CategoryPageArticles({ articles }) {
           )}
 
           <div className="py-3">
-            <h3 className="font-bbh text-lg uppercase mb-1">
+            <h3 className="font-bold text-lg uppercase mb-1 line-clamp-4">
               <span className={underlineHover}>
                 {secondArticle.title}
               </span>
@@ -212,7 +212,7 @@ export default function CategoryPageArticles({ articles }) {
           )}
 
           <div className="py-3">
-            <h3 className="font-bbh text-lg uppercase mb-1">
+            <h3 className="font-bold text-lg uppercase mb-1 line-clamp-4">
               <span className={underlineHover}>
                 {thirdArticle.title}
               </span>

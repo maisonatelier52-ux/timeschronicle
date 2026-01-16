@@ -181,7 +181,7 @@ export default function Header() {
                     }}
                     className="block py-3 transition-all hover:pl-3"
                   >
-                    <h4 className="font-bbh text-lg">
+                    <h4 className="font-bold text-lg">
                       {article.title}
                     </h4>
                     <p className="text-[9px] uppercase text-gray-400">

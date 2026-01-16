@@ -62,7 +62,7 @@ export default function CategoryMoreNews({ articles }) {
                 <CategoryTag text={article.category.toUpperCase()} />
               </div>
 
-              <h2 className="font-bbh pt-4 text-[24px] leading-[1.15]">
+              <h2 className="font-bold pt-4 text-[24px] leading-[1.15]">
                 <span className={underlineHover}>{article.title}</span>
               </h2>
             </Link>

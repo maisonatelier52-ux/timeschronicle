@@ -17,7 +17,7 @@ export default function ArticleSidebar() {
 
         {/* FOLLOW US — NO BORDER */}
         <div className="text-center">
-          <h3 className="font-bbh text-lg uppercase mb-2">
+          <h3 className="font-bold text-lg uppercase mb-2">
             Follow Us
           </h3>
 
@@ -57,7 +57,7 @@ export default function ArticleSidebar() {
             mx-auto
           "
         >
-          <h3 className="font-bbh text-2xl uppercase mb-2">
+          <h3 className="font-bold text-2xl uppercase mb-2">
             Newsletter
           </h3>
 

@@ -14,7 +14,7 @@ export default async function NewsPage({ params }) {
   if (!article) {
     return (
       <main className="bg-white dark:bg-[#01131d] text-black dark:text-white min-h-screen flex flex-col justify-center items-center px-7 py-20">
-        <h1 className="font-bbh text-3xl sm:text-4xl uppercase mb-4 text-center">
+        <h1 className="font-bold text-3xl sm:text-4xl uppercase mb-4 text-center">
           Article Not Found
         </h1>
         <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
@@ -122,7 +122,7 @@ export default async function NewsPage({ params }) {
                 {article.category}
               </Link>
 
-              <h1 className="font-bbh text-2xl sm:text-3xl md:text-5xl uppercase mb-3 leading-tight">
+              <h1 className="font-extrabold text-2xl sm:text-3xl md:text-5xl uppercase mb-3 leading-tight">
                 {article.title}
               </h1>
 

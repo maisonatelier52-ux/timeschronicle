@@ -66,7 +66,7 @@ export default function FeaturedNews({ featured }) {
           <div className="pt-4">
             <h2
               className={`
-                font-bbh text-[42px] lg:text-[52px] leading-[1]
+                text-[42px] font-extrabold lg:text-[52px] leading-[1]
                 ${underlineHover}
               `}
             >
@@ -126,7 +126,7 @@ export default function FeaturedNews({ featured }) {
 
             <CategoryTag text={article.category.toUpperCase()} />
           </div>
-          <h2 className="font-bbh pt-4 text-[24px] leading-[1.15]">
+          <h2 className="font-bold pt-4 text-[24px] leading-[1.15] line-clamp-5">
             <span className={underlineHover}>{article.title}</span>
           </h2>
 
@@ -165,8 +165,8 @@ export default function FeaturedNews({ featured }) {
               "
             >
               <div className="flex-1">
-                <h3 className={`font-bbh text-lg leading-[1.25] ${underlineHover}`}>
-                  {article.title}
+                <h3 className="font-bold text-lg leading-[1.25] line-clamp-6">
+                  <span className={underlineHover}>{article.title}</span>
                 </h3>
                 <p className="text-[9px] text-gray-400 uppercase">
                   {article.time} Read

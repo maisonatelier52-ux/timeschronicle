@@ -30,7 +30,7 @@ export default function NewsletterBox() {
 
             {/* LEFT CONTENT */}
             <div className="text-center md:text-left max-w-md">
-              <h3 className="flex items-center justify-center md:justify-start gap-2 font-bbh font-semibold text-lg sm:text-xl md:text-2xl">
+              <h3 className="flex items-center justify-center md:justify-start gap-2 font-bold font-semibold text-lg sm:text-xl md:text-2xl">
                 <span>📌</span>
                 Sign Up for Daily Newsletter
               </h3>

@@ -71,7 +71,7 @@ export default function MoreRecent({articles}) {
                         <CategoryTag text={article.category.toUpperCase()} />
                     </div>
 
-                    <h2 className="font-bbh pt-4 text-[24px] leading-[1.15]">
+                    <h2 className="font-bold pt-4 text-[24px] leading-[1.15]">
                         <span className={underlineHover}>
                             {article.title}
                         </span>
@@ -130,7 +130,7 @@ export default function MoreRecent({articles}) {
                         <div className="px-6">
                         <CategoryTag1 text={articles[3].category.toUpperCase()} />
 
-                        <h2 className="font-bbh text-white text-[24px] mt-2 leading-[1.15]">
+                        <h2 className="font-bold text-white text-[24px] mt-2 leading-[1.15]">
                             <span className={underlineHoverRev}>
                                 {articles[3].title}
                             </span>
@@ -174,7 +174,7 @@ export default function MoreRecent({articles}) {
                             </div>
 
                             <Link href={articleLink} title={articleTitle}>
-                                <h2 className="font-bbh pt-4 text-[26px] leading-[1.15]">
+                                <h2 className="font-bold pt-4 text-[26px] leading-[1.15]">
                                     <span className={underlineHover}>
                                         {articleTitle}
                                     </span>
@@ -233,7 +233,7 @@ export default function MoreRecent({articles}) {
                             </div>
 
                             <h2 className="
-                                font-bbh pt-4
+                                font-extrabold pt-4
                                 text-2xl sm:text-3xl md:text-4xl lg:text-5xl
                                 leading-tight sm:leading-snug lg:leading-[1.15]
                                 max-w-3xl
@@ -282,7 +282,7 @@ export default function MoreRecent({articles}) {
                                 {/* Category tag */}
                                 <CategoryTag text={article.category.toUpperCase()} />
                             </div>
-                            <h2 className="font-bbh pt-4 text-[24px] leading-[1.15]">
+                            <h2 className="font-bold pt-4 text-[24px] leading-[1.15]">
                                 <span className={underlineHover}>
                                     {article.title}
                                 </span>
@@ -317,7 +317,7 @@ export default function MoreRecent({articles}) {
 
                                 <CategoryTag text={articles[9].category.toUpperCase()} />
                             </div>
-                            <h2 className="font-bbh pt-4 text-5xl leading-[1.15]">
+                            <h2 className="font-bold pt-4 text-5xl leading-[1.15]">
                                 <span className={underlineHover}>
                                     {articles[9].title}
                                 </span>
@@ -391,7 +391,7 @@ export default function MoreRecent({articles}) {
                                 <div className="px-6">
                                 <CategoryTag1 text={articles[10].category.toUpperCase()} />
 
-                                <h2 className="font-bbh text-white text-[24px] mt-2 leading-[1.15]">
+                                <h2 className="font-bold text-white text-[24px] mt-2 leading-[1.15]">
                                     <span className={underlineHoverRev}>
                                     {articles[10].title}
                                     </span>
@@ -417,7 +417,7 @@ export default function MoreRecent({articles}) {
                                 </Link>
                             </div>
                             <Link href={`/news/${articles[11].slug}`} title={articles[11].title}>
-                                <h2 className="font-bbh pt-4 text-[26px] leading-[1.15]">
+                                <h2 className="font-bold pt-4 text-[26px] leading-[1.15]">
                                     <span className={underlineHover}>
                                         {articles[11].title}
                                     </span>

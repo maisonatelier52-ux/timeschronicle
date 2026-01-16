@@ -61,7 +61,7 @@ export default async function AuthorPage({ params }) {
   if (!author) {
     return (
       <section className="flex flex-col items-center justify-center px-5 text-center bg-white dark:bg-[#01131d] text-black dark:text-white py-20 sm:py-32">
-        <h1 className="font-bbh text-3xl sm:text-4xl mb-4">Author Not Found</h1>
+        <h1 className="font-bold text-3xl sm:text-4xl mb-4">Author Not Found</h1>
         <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg max-w-md">
           We couldn’t find the author you’re looking for. Please check the URL or try browsing other authors.
         </p>

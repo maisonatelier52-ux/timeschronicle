@@ -124,7 +124,7 @@ export default function Footer() {
 function HeadingWithTriangle({ text }) {
   return (
     <div className="relative inline-block mb-2">
-      <div className="bg-[#1e1d22] text-white px-4 py-0.5 relative inline-block font-bbh text-sm">
+      <div className="bg-[#1e1d22] text-white px-4 py-0.5 relative inline-block font-bold uppercase text-sm">
         {text}
         <span className="absolute top-0 right-[-10px] w-0 h-0 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent border-l-[10px] border-l-[#1e1d22]" />
       </div>

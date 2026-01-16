@@ -14,7 +14,7 @@ export function MoreRecentBlock({ articles }) {
             <CategoryTag text={article.category.toUpperCase()} />
           </div>
 
-          <h2 className="font-bbh pt-4 text-[24px] leading-[1.15]">
+          <h2 className="font-bold pt-4 text-[24px] leading-[1.15]">
             {article.title}
           </h2>
 
@@ -35,7 +35,7 @@ export function MoreRecentBlock({ articles }) {
           <div className="absolute inset-0 flex flex-col justify-end p-4">
             <div className="px-6">
               <CategoryTag1 text={articles[3].category.toUpperCase()} />
-              <h2 className="font-bbh text-white text-[24px] mt-2">
+              <h2 className="font-bold text-white text-[24px] mt-2">
                 {articles[3].title}
               </h2>
               <p className="text-[9px] text-gray-200 uppercase">
@@ -55,7 +55,7 @@ export function MoreRecentBlock({ articles }) {
         <div className="md:col-start-1 md:row-start-3 flex flex-col px-7 pt-10">
           <CategoryTag text={articles[4].category.toUpperCase()} />
 
-          <h2 className="font-bbh pt-4 text-[26px] leading-[1.15]">
+          <h2 className="font-bold pt-4 text-[26px] leading-[1.15]">
             {articles[4].title}
           </h2>
 
@@ -81,7 +81,7 @@ export function MoreRecentBlock({ articles }) {
             <CategoryTag text={articles[5].category.toUpperCase()} />
           </div>
 
-          <h2 className="font-bbh pt-4 text-5xl leading-[1.15]">
+          <h2 className="font-bold pt-4 text-5xl leading-[1.15]">
             {articles[5].title}
           </h2>
 
