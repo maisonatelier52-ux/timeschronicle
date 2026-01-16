@@ -98,6 +98,7 @@ export default function AboutPage() {
           <img
             src="/about.webp"
             alt="Times Chronicle newsroom"
+            fill
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-6">
