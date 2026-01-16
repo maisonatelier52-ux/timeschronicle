@@ -94,11 +94,10 @@ export default function AboutPage() {
       <div className="min-h-screen bg-white text-gray-900 dark:bg-[#020f15] dark:text-gray-100 transition-colors duration-300">
 
         {/* HERO */}
-        <section className="relative w-full h-[520px] overflow-hidden rounded-b-3xl shadow-md">
+        <section className="relative w-full overflow-hidden rounded-b-3xl shadow-md">
           <img
             src="/about.webp"
             alt="Times Chronicle newsroom"
-            fill
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-6">
