@@ -142,6 +142,12 @@ export default async function AuthorPage({ params }) {
           mx-auto px-5 md:px-10 py-20
           flex flex-col md:flex-row items-start md:items-center gap-8
           bg-white dark:bg-[#01131d]
+
+          /* DOT BACKGROUND */
+          bg-[radial-gradient(#e5e7eb_1px,transparent_1px)]
+          bg-[size:14px_14px]
+          dark:bg-[radial-gradient(#1f2933_1px,transparent_1px)]
+          dark:bg-[size:14px_14px]
         "
       >
         {/* IMAGE */}
@@ -151,6 +157,7 @@ export default async function AuthorPage({ params }) {
             alt={author.name}
             width={112}
             height={112}
+            priority
             sizes="112px"
             className="rounded-full object-cover shadow-lg"
           />
