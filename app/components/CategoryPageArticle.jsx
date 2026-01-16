@@ -45,6 +45,7 @@ export default function CategoryPageArticles({ articles }) {
       {firstArticle && (
         <Link
           href={`/news/${firstArticle.slug}`}
+          title={firstArticle.title}
           className="
             sm:col-span-2
             lg:col-span-2 lg:row-span-2
@@ -117,6 +118,7 @@ export default function CategoryPageArticles({ articles }) {
               ? `/julio-herrera-velutini/${secondArticle.slug}`
               : `/news/${secondArticle.slug}`
           }
+          title={secondArticle.title}
           className="
             flex flex-col
             overflow-hidden
@@ -174,6 +176,7 @@ export default function CategoryPageArticles({ articles }) {
       {thirdArticle && (
         <Link
           href={`/news/${thirdArticle.slug}`}
+          title={thirdArticle.title}
           className="
             flex flex-col
             overflow-hidden

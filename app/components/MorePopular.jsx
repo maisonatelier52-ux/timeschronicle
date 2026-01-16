@@ -57,7 +57,7 @@ export default function MorePopular({ articles }) {
         ">
 
           {topLeft && (
-            <Link href={`/news/${topLeft.slug}`} className="block h-full">
+            <Link href={`/news/${topLeft.slug}`} title={topLeft.title} className="block h-full">
               {/* IMAGE WRAPPER — FULL HEIGHT */}
               <div className="relative h-full min-h-[280px] overflow-hidden group">
 
@@ -100,7 +100,7 @@ export default function MorePopular({ articles }) {
           <div
             className="lg:col-span-3 py-6 lg:px-6 lg:border-r border-gray-200 dark:border-gray-700 group"
           >
-            <Link href={`/news/${topCenter.slug}`}>
+            <Link href={`/news/${topCenter.slug}`} title={topCenter.title}>
               <div className="relative h-80 overflow-hidden mb-4 group">
                 <img
                   src={topCenter.image}
@@ -120,7 +120,7 @@ export default function MorePopular({ articles }) {
               </h3>
             </Link>
 
-            <Link href={`/author/${getAuthorSlug(topCenter.authorId)}`}>
+            <Link href={`/author/${getAuthorSlug(topCenter.authorId)}`} title={getAuthor(topCenter.authorId)}>
             <p className="text-[11px] uppercase text-gray-500">
               By{" "}
               <span className="font-semibold text-black dark:text-white">
@@ -159,10 +159,10 @@ export default function MorePopular({ articles }) {
               border-b lg:border-b-0
             `}
           >
-            <Link href={`/category/${article.category}`}>
+            <Link href={`/category/${article.category}`} title={article.category}>
               <CategoryTag1 text={article.category.toUpperCase()} />
             </Link>
-            <Link href={`/news/${article.slug}`}>
+            <Link href={`/news/${article.slug}`} title={article.title}>
               <h4 className="font-bbh text-lg uppercase mt-2 mb-1">
                 <span className={underlineHover}>
                   {article.title}
@@ -174,7 +174,7 @@ export default function MorePopular({ articles }) {
               </p>
             </Link>
 
-            <Link href={`/author/${getAuthorSlug(article.authorId)}`}>
+            <Link href={`/author/${getAuthorSlug(article.authorId)}`} title={getAuthor(article.authorId)}>
               <p className="text-[10px] uppercase text-gray-500">
                 By{" "}
                 <span className="font-semibold text-black dark:text-white">

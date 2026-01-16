@@ -22,6 +22,7 @@ export default async function NewsPage({ params }) {
         </p>
         <Link
           href="/"
+          title="Home"
           className="px-6 py-3 bg-blue-600 text-white font-semibold uppercase hover:bg-blue-700 transition"
         >
           Go Back Home
@@ -66,10 +67,11 @@ export default async function NewsPage({ params }) {
 
         {/* Breadcrumb */}
         <div className="text-xs uppercase text-gray-500 dark:text-gray-300 mb-4">
-          <Link href="/" className="hover:underline">Home</Link>
+          <Link href="/" title="Home" className="hover:underline">Home</Link>
           <span className="px-2">›</span>
           <Link
             href={`/category/${article.category.toLowerCase()}`}
+            title={article.category}
             className="hover:underline"
           >
             {article.category}
@@ -96,6 +98,7 @@ export default async function NewsPage({ params }) {
             <div className="absolute bottom-0 left-0 w-full p-4 sm:p-6 text-white">
               <Link
                 href={`/category/${article.category.toLowerCase()}`}
+                title={article.category}
                 className="inline-block text-[10px] uppercase tracking-widest mb-2 hover:underline"
               >
                 {article.category}
@@ -107,7 +110,7 @@ export default async function NewsPage({ params }) {
 
               {/* META INFO */}
               <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase">
-                <Link href={`/author/${author.slug}`} className="font-semibold">
+                <Link href={`/author/${author.slug}`} className="font-semibold" title={author.name}>
                   <span className={underlineHover}>
                     {author?.name || "Staff"}
                   </span>

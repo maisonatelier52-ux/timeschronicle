@@ -82,6 +82,7 @@ export default function Header() {
         <div className="flex items-center space-x-6">
           <Link
             href="/"
+            title="Home"
             className="text-2xl font-bold font-bbh text-black dark:text-white"
           >
             Timeschronicle
@@ -92,6 +93,7 @@ export default function Header() {
             {categories.map((cat) => (
               <Link
                 key={cat}
+                title={cat}
                 href={`/category/${cat.toLowerCase()}`}
                 className="
                   relative font-semibold
@@ -156,6 +158,7 @@ export default function Header() {
                 {results.slice(0, 6).map((article) => (
                   <Link
                     key={article.slug}
+                    title={article.title}
                     href={`/news/${article.slug}`}
                     onClick={() => {
                       setOpenSearch(false);
@@ -182,6 +185,7 @@ export default function Header() {
         {categories.map((cat) => (
           <Link
             key={cat}
+            title={cat}
             href={`/category/${cat.toLowerCase()}`}
             className="text-[12px] font-semibold whitespace-nowrap hover:text-gray-400"
           >

@@ -13,6 +13,7 @@ export default function NotFoundPage() {
       </p>
       <Link
         href="/"
+        title="Home"
         className="px-6 py-3 bg-blue-600 text-white font-semibold uppercase hover:bg-blue-700 transition"
       >
         Go Back Home

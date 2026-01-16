@@ -47,7 +47,7 @@ export default function MoreNewsByAuthor({ authorId, authorName }) {
             "
           >
             {/* IMAGE */}
-            <Link href={`/news/${article.slug}`}>
+            <Link href={`/news/${article.slug}`} title={article.title}>
               <div className="relative mb-3 aspect-[16/7] overflow-hidden">
                 <img
                   src={article.image}
@@ -58,11 +58,11 @@ export default function MoreNewsByAuthor({ authorId, authorName }) {
             </Link>
 
             {/* CATEGORY */}
-            <Link href={`/category/${article.category}`} className="mb-2">
+            <Link href={`/category/${article.category}`} title={article.category} className="mb-2">
               <CategoryTag1 text={article.category.toUpperCase()} />
             </Link>
 
-            <Link href={`/news/${article.slug}`}>
+            <Link href={`/news/${article.slug}`} title={article.title}>
               {/* TITLE */}
               <h3 className="font-semibold text-lg uppercase line-clamp-3">
                 <span className={underlineHover}>{article.title}</span>

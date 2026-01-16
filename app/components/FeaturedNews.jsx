@@ -34,7 +34,11 @@ export default function FeaturedNews({ featured }) {
           What’s We Reading
         </div>
 
-        <Link href={`/news/${leftFeatured.slug}`} className="group">
+        <Link 
+          href={`/news/${leftFeatured.slug}`} 
+          title={leftFeatured.title}
+          className="group"
+        >
           <div className="relative mx-auto pt-5 max-w-[661px] aspect-[1200/580] overflow-hidden">
             <img
               src={leftFeatured.image}
@@ -61,7 +65,7 @@ export default function FeaturedNews({ featured }) {
             <CategoryTag text={leftFeatured.category.toUpperCase()} />
           </div>
           <div className="pt-4">
-            <h1
+            <h2
               className={`
                 font-bbh text-[42px] lg:text-[52px] leading-[1]
                 ${underlineHover}
@@ -69,7 +73,7 @@ export default function FeaturedNews({ featured }) {
             >
               <span className="text-blue-500 font-bold">Exclusive:</span>{" "}
               {leftFeatured.title}
-            </h1>
+            </h2>
 
             <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
               {leftFeatured.excerpt}
@@ -90,6 +94,7 @@ export default function FeaturedNews({ featured }) {
       {middleGrids.map((article, index) => (
         <Link
           key={article.slug}
+          title={article.title}
           href={`/news/${article.slug}`}
           className={`
             order-2 flex flex-col px-7 py-7
@@ -152,6 +157,7 @@ export default function FeaturedNews({ featured }) {
           {rightGrids.map(article => (
             <Link
               key={article.slug}
+              title={article.title}
               href={`/news/${article.slug}`}
               className="
                 flex gap-3 px-7 py-4

@@ -47,6 +47,7 @@ export default function RelatedNews({articles}) {
               {/* Image (linked) */}
               <Link
                 href={`/julio-herrera-velutini/${article.slug}`}
+                title={article.title}
                 className="relative mb-3 aspect-[16/7] overflow-hidden block group"
               >
                 {/* Image */}
@@ -75,14 +76,14 @@ export default function RelatedNews({articles}) {
 
               {/* Category (linked) */}
               <div className="mb-2">
-                <Link href={`/category/${article.category.toLowerCase()}`}>
+                <Link href={`/category/${article.category.toLowerCase()}`} title={article.category}>
                   <CategoryTag1 text={article.category.toUpperCase()} />
                 </Link>
               </div>
 
               {/* Title (linked) */}
               <h3 className="font-semibold text-lg mb-2 text-black dark:text-gray-100 line-clamp-3 uppercase">
-                <Link href={`/julio-herrera-velutini/${article.slug}`}>
+                <Link href={`/julio-herrera-velutini/${article.slug}`} title={article.title}>
                   <span className={underlineHover}>
                     {article.title}
                   </span>
@@ -100,6 +101,7 @@ export default function RelatedNews({articles}) {
                 {author && (
                   <Link
                     href={`/author/${author.slug ?? author.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    title={author.name}
                     className="font-bold text-black dark:text-gray-100 px-1 hover:underline"
                   >
                     {author.name}

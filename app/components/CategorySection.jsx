@@ -54,14 +54,14 @@ export default function CategorySection() {
             >
               {/* Category (linked) */}
               <div className="mb-2">
-                <Link href={`/category/${category.toLowerCase()}`}>
+                <Link href={`/category/${category.toLowerCase()}`} title={category}>
                   <CategoryTag1 text={category.toUpperCase()} />
                 </Link>
               </div>
 
               {/* Main Title (linked) */}
               <h3 className="font-semibold text-lg mb-2 text-black dark:text-gray-100 line-clamp-3 uppercase">
-                <Link href={`/news/${main.slug}`}>
+                <Link href={`/news/${main.slug}`} title={main.title}>
                   <span className={underlineHover}>
                     {main.title}
                   </span>
@@ -79,6 +79,7 @@ export default function CategorySection() {
                 {author && (
                   <Link
                     href={`/author/${author.slug ?? author.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    title={author.name}
                     className="font-bold text-black dark:text-gray-100 px-1 hover:underline"
                   >
                     {author.name}
@@ -94,6 +95,7 @@ export default function CategorySection() {
                   {/* Image (linked) */}
                   <Link
                     href={`/news/${secondary.slug}`}
+                    title={secondary.title}
                     className="w-24 h-18 flex-shrink-0 overflow-hidden block relative group"
                   >
                     {/* Image */}
@@ -110,7 +112,7 @@ export default function CategorySection() {
                   {/* Title + Time (linked) */}
                   <div className="flex flex-col">
                     <h4 className="text-sm font-semibold line-clamp-3">
-                      <Link href={`/news/${secondary.slug}`}>
+                      <Link href={`/news/${secondary.slug}`} title={secondary.title}>
                         <span className={underlineHover}>
                           {secondary.title}
                         </span>

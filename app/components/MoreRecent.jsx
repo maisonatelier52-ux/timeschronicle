@@ -40,6 +40,7 @@ export default function MoreRecent({articles}) {
                 {/* First 3 articles (row 1) */}
                 {articles.slice(0, 3).map((article) => (
                 <Link href={`/news/${article.slug}`}
+                title={article.title}
                     key={article.slug}
                     className="group flex flex-col px-7 pb-4 transition-colors"
                 >
@@ -89,6 +90,7 @@ export default function MoreRecent({articles}) {
                 {/* 4th Article (left, row 2) */}
                 {articles[3] && (
                 <Link 
+                    title={articles[3].title}
                     href={`/news/${articles[3].slug}`}
                     className="relative md:col-start-1 md:row-start-2 h-[360px] px-7 overflow-hidden group"
                     >
@@ -166,12 +168,12 @@ export default function MoreRecent({articles}) {
                     return (
                         <div className="md:col-start-1 md:row-start-3 flex flex-col px-7">
                             <div className="relative">
-                                <Link href={`/category/${articles[4].category.toLowerCase()}`}>
+                                <Link href={`/category/${articles[4].category.toLowerCase()}`} title={articles[4].category}>
                                     <CategoryTag text={articles[4].category.toUpperCase()} />
                                 </Link>
                             </div>
 
-                            <Link href={articleLink}>
+                            <Link href={articleLink} title={articleTitle}>
                                 <h2 className="font-bbh pt-4 text-[26px] leading-[1.15]">
                                     <span className={underlineHover}>
                                         {articleTitle}
@@ -187,7 +189,7 @@ export default function MoreRecent({articles}) {
 
                             <p className="pt-2 text-[9px] text-gray-400 uppercase">
                                 By{" "}
-                                <Link href={`/author/${author?.slug}`}>
+                                <Link href={`/author/${author?.slug}`} title={author?.name}>
                                     <span className="font-semibold text-black dark:text-white">
                                         {author?.name}
                                     </span>
@@ -202,7 +204,7 @@ export default function MoreRecent({articles}) {
                     <div
                         className="md:col-start-2 md:col-span-2 md:row-start-2 md:row-span-2 flex flex-col px-7 pb-4"
                     >
-                        <Link href={`/news/${articles[5].slug}`}>
+                        <Link href={`/news/${articles[5].slug}`} title={articles[5].title}>
                             <div className="relative aspect-[16/9] overflow-hidden group">
                                 <img
                                     src={articles[5].image}
@@ -246,7 +248,10 @@ export default function MoreRecent({articles}) {
                         </Link>
                         <p className="pb-1 text-[9px] text-gray-400 uppercase pt-2">
                             By{" "}
-                            <Link href={`/author/${data.authors.find(a => a.id === articles[5].authorId)?.slug}`}>
+                            <Link 
+                                href={`/author/${data.authors.find(a => a.id === articles[5].authorId)?.slug}`}
+                                title={data.authors.find(a => a.id === articles[5].authorId)?.name}
+                            >
                                 <span className="font-semibold text-black dark:text-white">
                                     {data.authors.find(a => a.id === articles[5].authorId)?.name}
                                 </span>{" "}
@@ -262,7 +267,7 @@ export default function MoreRecent({articles}) {
                     key={article.slug}
                     className="flex flex-col px-7 pb-4"
                     >
-                        <Link href={`/news/${article.slug}`}>
+                        <Link href={`/news/${article.slug}`} title={article.title}>
                             <div className="relative aspect-[9/4] overflow-hidden group">
                                 {/* Image */}
                                 <img
@@ -286,7 +291,10 @@ export default function MoreRecent({articles}) {
 
                         <p className="pt-2 text-[9px] text-gray-400 uppercase">
                             By{" "}
-                            <Link href={`/author/${data.authors.find(a => a.id === article.authorId)?.slug}`}>
+                            <Link 
+                                href={`/author/${data.authors.find(a => a.id === article.authorId)?.slug}`}
+                                title={data.authors.find(a => a.id === article.authorId)?.name}
+                            >
                                 <span className="font-semibold text-black dark:text-white">
                                     {data.authors.find(a => a.id === article.authorId)?.name}
                                 </span>{" "}
@@ -297,7 +305,7 @@ export default function MoreRecent({articles}) {
                 ))}
                 {/* {articles[9] && (
                     <div className="md:col-span-2 flex flex-col px-7 pb-4">
-                        <Link href={`/news/${articles[9].slug}`}>
+                        <Link href={`/news/${articles[9].slug}`} title={articles[9].title}>
                             <div className="relative aspect-[16/9] overflow-hidden group">
                                 <img
                                     src={articles[9].image}
@@ -320,7 +328,10 @@ export default function MoreRecent({articles}) {
                             </p>
                         </Link>
 
-                        <Link href={`/author/${data.authors.find(a => a.id === articles[9].authorId)?.slug}`}>
+                        <Link 
+                            href={`/author/${data.authors.find(a => a.id === articles[9].authorId)?.slug}`} 
+                            title={data.authors.find(a => a.id === articles[9].authorId)?.name}
+                        >
                             <p className="pt-2 text-[9px] text-gray-400 uppercase">
                                 By{" "}
                                 <span className="font-semibold text-black dark:text-white">
@@ -401,11 +412,11 @@ export default function MoreRecent({articles}) {
                     {articles[11] && (
                         <div className="flex flex-col px-7 pt-10">
                             <div className="relative">
-                                <Link href={`/category/${articles[11].category.toLowerCase()}`}>
+                                <Link href={`/category/${articles[11].category.toLowerCase()}`} title={articles[11].category}>
                                     <CategoryTag text={articles[11].category.toUpperCase()} />
                                 </Link>
                             </div>
-                            <Link href={`/news/${articles[11].slug}`}>
+                            <Link href={`/news/${articles[11].slug}`} title={articles[11].title}>
                                 <h2 className="font-bbh pt-4 text-[26px] leading-[1.15]">
                                     <span className={underlineHover}>
                                         {articles[11].title}
@@ -421,7 +432,10 @@ export default function MoreRecent({articles}) {
 
                             <p className="text-[9px] text-gray-400 uppercase py-2">
                                 By{" "}
-                                <Link href={`author/${data.authors.find(a => a.id === articles[11].authorId)?.slug}`}>
+                                <Link 
+                                    href={`author/${data.authors.find(a => a.id === articles[11].authorId)?.slug}`}
+                                    title={data.authors.find(a => a.id === articles[11].authorId)?.name}
+                                >
                                     <span className="font-semibold text-black dark:text-white">
                                     {data.authors.find(a => a.id === articles[11].authorId)?.name}
                                     </span>{" "}

@@ -67,6 +67,7 @@ export default function Footer() {
                   <li key={cat}>
                     <Link
                       href={`/category/${cat.toLowerCase()}`}
+                      title={cat}
                       className="text-[10px] text-gray-300 hover:text-gray-200"
                     >
                       {cat}
@@ -84,6 +85,7 @@ export default function Footer() {
                   <li key={href}>
                     <Link
                       href={href}
+                      title={label}
                       className="text-[10px] text-gray-300 hover:text-white transition-colors"
                     >
                       {label}

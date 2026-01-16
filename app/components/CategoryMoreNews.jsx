@@ -33,7 +33,7 @@ export default function CategoryMoreNews({ articles }) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 divide-x divide-gray-300">
         {displayedArticles.map((article, index) => (
           <div key={article.slug} className="flex flex-col px-7 pb-4">
-            <Link href={`/news/${article.slug}`} className="group">
+            <Link href={`/news/${article.slug}`} className="group" title={article.title}>
               <div className="relative aspect-[9/4] overflow-hidden">
                 {/* Image */}
                 <img
@@ -67,7 +67,7 @@ export default function CategoryMoreNews({ articles }) {
               </h2>
             </Link>
 
-            <Link href={`/author/${getAuthorSlug(article.authorId)}`}>
+            <Link href={`/author/${getAuthorSlug(article.authorId)}`} title={data.authors.find((a) => a.id === article.authorId)?.name || "Staff"}>
               <p className="pt-2 text-[9px] uppercase">
                 By{" "}
                 <span className="font-semibold text-black dark:text-white">

@@ -69,6 +69,7 @@ export default async function CategoryPage({ params }) {
         </p>
         <Link
           href="/"
+          title="Home"
           className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 transition"
         >
           Go Back Home
@@ -102,6 +103,7 @@ export default async function CategoryPage({ params }) {
           <div className="text-xs uppercase mb-2 sm:mb-3 text-gray-500 dark:text-gray-400">
             <Link
               href="/"
+              title="Home"
               className="hover:text-black dark:hover:text-white transition-colors"
             >
               Category

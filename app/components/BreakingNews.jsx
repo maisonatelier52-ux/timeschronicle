@@ -59,11 +59,11 @@ export default function BreakingNews({ articles }) {
               `}
             >
               {/* Category */}
-              <Link href={`/category/${article.category}`} className="mb-2">
+              <Link href={`/category/${article.category}`} className="mb-2" title={article.category}>
                 <CategoryTag1 text={article.category.toUpperCase()} />
               </Link>
 
-              <Link href={articleLink}>
+              <Link href={articleLink} title={articleTitle}>
                 {/* Title */}
                 <h3 className="font-semibold text-lg mb-2 text-black dark:text-gray-100 line-clamp-3 uppercase">
                   <span className={underlineHover}>
@@ -80,7 +80,7 @@ export default function BreakingNews({ articles }) {
               {/* Author */}
               <p className="text-[9px] text-gray-400 dark:text-gray-500 uppercase mt-auto">
                 By{" "}
-                <Link href={`/author/${author?.slug}`}>
+                <Link href={`/author/${author?.slug}`} title={author?.name || "Staff"}>
                   <span className="font-bold text-black dark:text-gray-100 px-1">
                     {author?.name || "Staff"}
                   </span>
