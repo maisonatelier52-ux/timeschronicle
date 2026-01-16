@@ -9,7 +9,6 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
 
   const author = data.authors.find(a => a.slug === slug);
-  const imageUrl = `${SITE_URL}${author.photo}`;
 
   if (!author) {
     return {
@@ -17,6 +16,8 @@ export async function generateMetadata({ params }) {
       description: "This author profile does not exist on Times Chronicle.",
     };
   }
+  
+  const imageUrl = `${SITE_URL}${author.photo}`;
 
   return {
     title: `${author.name} — Author at Times Chronicle`,
@@ -141,12 +142,6 @@ export default async function AuthorPage({ params }) {
           mx-auto px-5 md:px-10 py-20
           flex flex-col md:flex-row items-start md:items-center gap-8
           bg-white dark:bg-[#01131d]
-
-          /* DOT BACKGROUND */
-          bg-[radial-gradient(#e5e7eb_1px,transparent_1px)]
-          bg-[size:14px_14px]
-          dark:bg-[radial-gradient(#1f2933_1px,transparent_1px)]
-          dark:bg-[size:14px_14px]
         "
       >
         {/* IMAGE */}
