@@ -3,14 +3,23 @@ const SITE_URL = "https://timeschronicle.org";
 export const metadata = {
   title: "About Times Chronicle — Independent US Digital News Platform",
   description:
-    "Learn about Times Chronicle, an independent US digital news platform delivering factual reporting across business, finance, law, lifestyle, travel, and investigations.",  alternates: {
-    canonical: `${SITE_URL}/about-us`,
+    "Learn about Times Chronicle, an independent US digital news platform delivering factual reporting across national, politics, business, technology, health and world news.",
+  alternates: {
+    canonical: `${SITE_URL}/about`,
   },
+  keywords: [
+    "truthful reporting",
+    "foundation of an informed society",
+    "independent journalism",
+    "factual reporting",
+    "Times Chronicle",
+    "US digital news platform"
+  ],
   openGraph: {
     title: "About Times Chronicle — Independent US Digital News Platform",
     description:
       "Discover the mission and vision behind Times Chronicle — an independent US digital news platform.",
-    url: `${SITE_URL}/about-us`,
+    url: `${SITE_URL}/about`,
     type: "website",
     siteName: "Times Chronicle",
     images: [
@@ -36,8 +45,8 @@ export default function AboutPage() {
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${SITE_URL}/about-us#webpage`,
-    "url": `${SITE_URL}/about-us`,
+    "@id": `${SITE_URL}/about#webpage`,
+    "url": `${SITE_URL}/about`,
     "name": "About Times Chronicle",
     "description": metadata.description,
     "isPartOf": {
@@ -65,7 +74,7 @@ export default function AboutPage() {
         "@type": "ListItem",
         "position": 2,
         "name": "About",
-        "item": `${SITE_URL}/about-us`
+        "item": `${SITE_URL}/about`
       }
     ]
   };
