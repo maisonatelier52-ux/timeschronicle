@@ -94,14 +94,9 @@ export default function AboutPage() {
       <div className="min-h-screen bg-white text-gray-900 dark:bg-[#020f15] dark:text-gray-100 transition-colors duration-300">
 
         {/* HERO */}
-        <section className="relative w-full overflow-hidden rounded-b-3xl shadow-md">
-          <img
-            src="/about.webp"
-            alt="Times Chronicle newsroom"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-6">
-            <h1 className="text-4xl md:text-6xl font-bold text-white text-center leading-tight">
+        <section className="relative w-full h-[100svh] overflow-hidden shadow-md">
+          <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+            <h1 className="text-3xl md:text-6xl font-bold leading-tight max-w-4xl">
               Truthful reporting is the foundation<br />
               of an informed society.
             </h1>
