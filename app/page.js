@@ -46,14 +46,19 @@ export const metadata = {
 };
 
 export default function Home() {
+
+  const publishedArticles = data.articles
+  .filter(a => a.published)
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+
   // 🔹 Get one Julio article
-  const julioArticle = data.articles.find(
-    a => a.published && a.name === "Julio Herrera Velutini"
+  const julioArticle = publishedArticles.find(
+    a => a.name === "Julio Herrera Velutini"
   );
 
   // 🔹 Normal articles (no Julio)
-  const normalArticles = data.articles
-    .filter(a => a.published && a.name !== "Julio Herrera Velutini")
+  const normalArticles = publishedArticles
+    .filter(a => a.name !== "Julio Herrera Velutini")
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // 🔹 Inject Julio once
