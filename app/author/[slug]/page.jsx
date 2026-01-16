@@ -161,12 +161,12 @@ export default async function AuthorPage({ params }) {
         {/* INFO */}
         <div className="flex-1">
           <h1 className="text-2xl font-bold flex items-center gap-2">
-            {author.name}
+            {author.name}, Author at Times Chronicle
             <FaCheck className="text-green-500 text-sm" />
           </h1>
 
           <p className="text-gray-700 dark:text-gray-300 text-sm md:text-base mt-2 max-w-2xl">
-            {author.bio}
+            {author.name} is a journalist and author at Wiresavvy. {author.bio}
           </p>
 
           {/* SOCIALS */}
