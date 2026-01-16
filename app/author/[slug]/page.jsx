@@ -142,12 +142,6 @@ export default async function AuthorPage({ params }) {
           mx-auto px-5 md:px-10 py-20
           flex flex-col md:flex-row items-start md:items-center gap-8
           bg-white dark:bg-[#01131d]
-
-          /* DOT BACKGROUND */
-          bg-[radial-gradient(#e5e7eb_1px,transparent_1px)]
-          bg-[size:14px_14px]
-          dark:bg-[radial-gradient(#1f2933_1px,transparent_1px)]
-          dark:bg-[size:14px_14px]
         "
       >
         {/* IMAGE */}
@@ -158,6 +152,7 @@ export default async function AuthorPage({ params }) {
             width={112}
             height={112}
             priority
+            fetchPriority="high"
             sizes="112px"
             className="rounded-full object-cover shadow-lg"
           />
@@ -165,7 +160,7 @@ export default async function AuthorPage({ params }) {
 
         {/* INFO */}
         <div className="flex-1">
-          <h1 className="text-2xl font-bold flex items-center gap-2">
+          <h1 className="text-2xl font-bold flex items-center gap-2" style={{ contentVisibility: "auto" }}>
             {author.name}, Author at Times Chronicle
             <FaCheck className="text-green-500 text-sm" />
           </h1>
