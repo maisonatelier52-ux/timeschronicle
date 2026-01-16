@@ -20,7 +20,6 @@ export async function generateMetadata({ params }) {
   return {
     title: `${author.name} — Author at Times Chronicle`,
     description:
-      author.bio ||
       `Read articles and investigative reports written by ${author.name} on Times Chronicle.`,
     alternates: {
       canonical: `${SITE_URL}/author/${author.slug}`,

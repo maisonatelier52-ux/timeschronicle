@@ -4,7 +4,8 @@ import Link from "next/link";
 import data from "@/data/data.json";
 import CategoryTag1 from "./CategoryTag1";
 
-export default function MoreNewsByAuthor({ authorId, authorName }) {
+export default function MoreNewsByAuthor({ authorId }) {
+  const author = data.authors.find(a => a.id === authorId);
   const articles = data.articles.filter(
     (a) => a.published && a.authorId === authorId
   ).sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -24,6 +25,9 @@ export default function MoreNewsByAuthor({ authorId, authorName }) {
 
   return (
     <section className="mx-auto px-7 pb-7 bg-white dark:bg-[#01131d]">
+      <h2 className="py-5 text-2xl font-bold text-black dark:text-white uppercase">
+        Articles written by {author.name} at Times Chronicle
+      </h2>
 
       {/* GRID */}
       <div
