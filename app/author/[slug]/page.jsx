@@ -2,6 +2,57 @@ import data from "@/data/data.json";
 import { FaTwitter, FaFacebookF, FaInstagram, FaCheck } from "react-icons/fa";
 import MoreNewsByAuthor from "@/app/components/MoreNewsByAuthor";
 
+const SITE_URL = "https://timeschronicle.org";
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+
+  const author = data.authors.find(a => a.slug === slug);
+  const imageUrl = `${SITE_URL}${author.photo}`;
+
+  if (!author) {
+    return {
+      title: "Author Not Found — Times Chronicle",
+      description: "This author profile does not exist on Times Chronicle.",
+    };
+  }
+
+  return {
+    title: `${author.name} — Author at Times Chronicle`,
+    description:
+      author.bio ||
+      `Read articles and investigative reports written by ${author.name} on Times Chronicle.`,
+    alternates: {
+      canonical: `${SITE_URL}/author/${author.slug}`,
+      languages: {
+        "en": `${SITE_URL}/author/${author.slug}`,
+        "en-US": `${SITE_URL}/author/${author.slug}`,
+      },
+    },
+    openGraph: {
+      title: `${author.name} — Times Chronicle Staff`,
+      description: author.bio,
+      url: `${SITE_URL}/author/${author.slug}`,
+      type: "profile",
+      siteName: "Times Chronicle",
+      images: [
+        {
+          url: imageUrl,
+          width: 600,
+          height: 600,
+          alt: author.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${author.name} — Times Chronicle Staff`,
+      description: author.bio,
+      images: [imageUrl],
+    },
+  };
+}
+
 export default async function AuthorPage({ params }) {
   const { slug } = await params;
 
@@ -23,8 +74,67 @@ export default async function AuthorPage({ params }) {
     );
   }
 
+  /* ---------- JSON-LD ---------- */
+
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": author.name,
+    "url": `${SITE_URL}/author/${author.slug}`,
+    "image": `${SITE_URL}${author.photo}`,
+    "description": author.bio,
+    "jobTitle": "Journalist",
+    "worksFor": {
+      "@type": "NewsMediaOrganization",
+      "name": "Times Chronicle",
+      "url": SITE_URL,
+    },
+    "sameAs": [
+      author.twitter,
+      author.quora,
+      author.reddit
+    ].filter(Boolean),
+  };
+
+  const breadcrumbJsonLd = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+          {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": SITE_URL,
+          },
+          {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Authors",
+          "item": `${SITE_URL}/author`,
+          },
+          {
+          "@type": "ListItem",
+          "position": 3,
+          "name": author.name,
+          "item": `${SITE_URL}/author/${author.slug}`,
+          },
+      ],
+  };
+
   return (
     <>
+      {/* Structured Data */}
+      <script
+        id="author-person-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+
+      <script
+        id="author-breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* AUTHOR HEADER */}
       <section
         className="
