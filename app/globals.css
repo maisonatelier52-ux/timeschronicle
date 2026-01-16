@@ -1,27 +1,11 @@
 @import "tailwindcss";
+@import "./fonts/BBHBogle.css";
 
 :root {
   --background: #25282a;
   --foreground: #171717c8;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-:root {
-  --font-body: "Merriweather", Georgia, "Times New Roman", serif;
-
+  --font-body: var(--font-body);
   --font-bbh-bogle: "BBH Bogle", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
@@ -31,11 +15,6 @@ body {
   color: var(--foreground);
   font-family: var(--font-body);
   font-weight: 400;
-}
-
-:root {
-  --font-bbh-bogle: "BBH Bogle", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 .font-bbh {

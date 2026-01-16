@@ -1,11 +1,19 @@
 import AdBanner from "./components/AdBanner";
 import BreakingNews from "./components/BreakingNews";
-import CategorySection from "./components/CategorySection";
 import FeaturedNews from "./components/FeaturedNews";
-import MoreNews from "./components/MoreNews";
-import MoreRecent from "./components/MoreRecent";
 import NewsletterBox from "./components/NewsLetter";
 import data from "@/data/data.json";
+import dynamic from "next/dynamic";
+
+const MoreRecent = dynamic(() => import("./components/MoreRecent"), {
+  ssr: false,
+});
+const CategorySection = dynamic(() => import("./components/CategorySection"), {
+  ssr: false,
+});
+const MoreNews = dynamic(() => import("./components/MoreNews"), {
+  ssr: false,
+});
 
 const SITE_URL = "https://timeschronicle.org";
 
