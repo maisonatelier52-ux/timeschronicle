@@ -11,6 +11,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import data from "@/data/data.json";
+import Image from "next/image";
 
 export default function Header() {
   const [openSearch, setOpenSearch] = useState(false);
@@ -80,12 +81,26 @@ export default function Header() {
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-7 py-3 uppercase">
         {/* Logo + Categories */}
         <div className="flex items-center space-x-6">
-          <Link
-            href="/"
-            title="Home"
-            className="text-2xl font-bold font-bbh text-black dark:text-white"
-          >
-            Timeschronicle
+          <Link href="/" title="Home" className="block">
+            {/* Light theme logo */}
+            <Image
+              src="/logo/Times-Chronicle-Black-Text.png"
+              alt="Times Chronicle"
+              width={220}
+              height={40}
+              priority
+              className="block dark:hidden"
+            />
+
+            {/* Dark theme logo */}
+            <Image
+              src="/logo/Times-Chronicle-White-Text.png"
+              alt="Times Chronicle"
+              width={220}
+              height={40}
+              priority
+              className="hidden dark:block"
+            />
           </Link>
 
           {/* Desktop Categories */}

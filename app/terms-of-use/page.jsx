@@ -17,7 +17,7 @@ export default function TermsOfUse() {
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">Introduction</h2>
         <p>
-          Welcome to <strong>Timeschronicle</strong> (“we,” “us,” or “our”). By
+          Welcome to <strong>Times Chronicle</strong> (“we,” “us,” or “our”). By
           accessing or using our website, mobile site, newsletter, or any
           related services (collectively, the “Services”), you agree to be bound by these Terms of Use and our Privacy Policy. If you do not agree, please discontinue use of our Services immediately.
         </p>
@@ -34,7 +34,7 @@ export default function TermsOfUse() {
         {/* USE OF SERVICES */}
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">2. Use of the Services</h2>
-        <p>You may use Timeschronicle for personal, non-commercial purposes. You agree not to:</p>
+        <p>You may use Times Chronicle for personal, non-commercial purposes. You agree not to:</p>
 
         <ul className="list-disc pl-6 space-y-1">
           <li>Reproduce, distribute, or republish content without permission</li>
@@ -49,7 +49,7 @@ export default function TermsOfUse() {
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">3. Intellectual Property</h2>
         <p>
-          All articles, videos, graphics, photographs, logos, and materials on Timeschronicle are protected by copyright, trademark, and other intellectual property laws. You may not reproduce or use these materials without express permission.
+          All articles, videos, graphics, photographs, logos, and materials on Times Chronicle are protected by copyright, trademark, and other intellectual property laws. You may not reproduce or use these materials without express permission.
         </p>
 
         {/* ----------------------------------------------------- */}
@@ -57,7 +57,7 @@ export default function TermsOfUse() {
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">4. User Submissions</h2>
         <p>
-          By submitting comments, messages, or content to Timeschronicle, you grant us a worldwide, royalty-free, perpetual license to use, publish, and distribute that content. You are responsible for ensuring your submissions are lawful and do not violate others’ rights.
+          By submitting comments, messages, or content to Times Chronicle, you grant us a worldwide, royalty-free, perpetual license to use, publish, and distribute that content. You are responsible for ensuring your submissions are lawful and do not violate others’ rights.
         </p>
 
         {/* ----------------------------------------------------- */}
@@ -65,7 +65,7 @@ export default function TermsOfUse() {
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">5. Editorial Independence & Accuracy</h2>
         <p>
-          Timeschronicle strives for accuracy, fairness, and transparency; however, we make no guarantees regarding the completeness, reliability, or timeliness of published content.
+          Times Chronicle strives for accuracy, fairness, and transparency; however, we make no guarantees regarding the completeness, reliability, or timeliness of published content.
         </p>
 
         {/* ----------------------------------------------------- */}
@@ -81,7 +81,7 @@ export default function TermsOfUse() {
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">7. No Professional Advice</h2>
         <p>
-          Articles covering finance, law, health, or other sensitive topics are for informational purposes only. Timeschronicle does not provide legal, financial, or medical advice.
+          Articles covering finance, law, health, or other sensitive topics are for informational purposes only. Times Chronicle does not provide legal, financial, or medical advice.
         </p>
 
         {/* ----------------------------------------------------- */}
@@ -89,7 +89,7 @@ export default function TermsOfUse() {
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">8. Third-Party Links</h2>
         <p>
-          Our Services may contain links to external sites. Timeschronicle does not control or endorse these websites and is not responsible for their content or practices.
+          Our Services may contain links to external sites. Times Chronicle does not control or endorse these websites and is not responsible for their content or practices.
         </p>
 
         {/* ----------------------------------------------------- */}
@@ -105,7 +105,7 @@ export default function TermsOfUse() {
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">10. Limitation of Liability</h2>
         <p>
-          Timeschronicle is not responsible for any damages—including direct, indirect, incidental, or consequential—arising from your use of the Services. Total liability, if any, will not exceed $50 USD.
+          Times Chronicle is not responsible for any damages—including direct, indirect, incidental, or consequential—arising from your use of the Services. Total liability, if any, will not exceed $50 USD.
         </p>
 
         {/* ----------------------------------------------------- */}
@@ -113,7 +113,7 @@ export default function TermsOfUse() {
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">11. Indemnification</h2>
         <p>
-          You agree to indemnify and hold harmless Timeschronicle, its staff, and affiliates from claims arising from your misuse of the Services or violation of these Terms.
+          You agree to indemnify and hold harmless Times Chronicle, its staff, and affiliates from claims arising from your misuse of the Services or violation of these Terms.
         </p>
 
         {/* ----------------------------------------------------- */}
@@ -137,7 +137,7 @@ export default function TermsOfUse() {
         {/* ----------------------------------------------------- */}
         <h2 className="text-2xl font-bold mt-10">14. Changes to These Terms</h2>
         <p>
-          Timeschronicle may update or modify these Terms at any time. The updated version will be posted on this page with a revised “Last Updated” date. Continued use of the platform constitutes acceptance of the changes.
+          Times Chronicle may update or modify these Terms at any time. The updated version will be posted on this page with a revised “Last Updated” date. Continued use of the platform constitutes acceptance of the changes.
         </p>
       </article>
     </div>

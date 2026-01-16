@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import data from "@/data/data.json";
+import Image from "next/image";
 
 const quickLinks = [
   { label: "About Us", href: "/about-us" },
@@ -28,14 +29,24 @@ export default function Footer() {
 
         {/* LEFT SECTION */}
         <div className="space-y-4 text-left lg:col-span-2">
-          <h2 className="text-2xl font-bbh font-bold">Timeschronicle</h2>
+          <Link href="/" title="Home" className="block">
 
-          <p className="text-sm dark:text-gray-300 max-w-md">
+            {/* Dark theme logo */}
+            <Image
+              src="/logo/Times-Chronicle-White-Text.png"
+              alt="Times Chronicle"
+              width={220}
+              height={40}
+              priority
+            />
+          </Link>
+
+          <p className="text-sm dark:text-gray-300 max-w-md lg:pl-7">
             Bringing you the latest news from around the world. Stay updated with real-time headlines and exclusive insights.
           </p>
 
           {/* Social Media Icons */}
-          <div className="flex gap-5">
+          <div className="flex gap-5 lg:pl-7">
             {[
               { Icon: FaFacebookF, color: "hover:text-blue-600", link: "https://facebook.com" },
               { Icon: FaTwitter, color: "hover:text-blue-400", link: "https://twitter.com" },
@@ -103,7 +114,7 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="py-4 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} Timeschronicle. All rights reserved.
+        © {new Date().getFullYear()} Times Chronicle. All rights reserved.
       </div>
     </footer>
   );

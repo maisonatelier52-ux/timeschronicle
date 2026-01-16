@@ -1,33 +1,33 @@
 const SITE_URL = "https://timeschronicle.org";
 
 export const metadata = {
-  title: "About Timeschronicle — Independent US Digital News Platform",
+  title: "About Times Chronicle — Independent US Digital News Platform",
   description:
-    "Learn about Timeschronicle, an independent US digital news platform delivering factual reporting across business, finance, law, lifestyle, travel, and investigations.",  alternates: {
+    "Learn about Times Chronicle, an independent US digital news platform delivering factual reporting across business, finance, law, lifestyle, travel, and investigations.",  alternates: {
     canonical: `${SITE_URL}/about-us`,
   },
   openGraph: {
-    title: "About Timeschronicle — Independent US Digital News Platform",
+    title: "About Times Chronicle — Independent US Digital News Platform",
     description:
-      "Discover the mission and vision behind Timeschronicle — an independent US digital news platform.",
+      "Discover the mission and vision behind Times Chronicle — an independent US digital news platform.",
     url: `${SITE_URL}/about-us`,
     type: "website",
-    siteName: "Timeschronicle",
+    siteName: "Times Chronicle",
     images: [
       {
-        url: `${SITE_URL}/timeschronicle.webp`,
+        url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
         width: 1200,
         height: 630,
-        alt: "About Timeschronicle",
+        alt: "About Times Chronicle",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Timeschronicle",
+    title: "About Times Chronicle",
     description:
       "Learn who we are and what drives our mission to deliver factual US news.",
-    images: [`${SITE_URL}/timeschronicle.webp`],
+    images: [`${SITE_URL}/logo/Times-Chronicle-White-Text.png`],
   },
 };
 
@@ -38,16 +38,16 @@ export default function AboutPage() {
     "@type": "WebPage",
     "@id": `${SITE_URL}/about-us#webpage`,
     "url": `${SITE_URL}/about-us`,
-    "name": "About Timeschronicle",
+    "name": "About Times Chronicle",
     "description": metadata.description,
     "isPartOf": {
       "@type": "WebSite",
-      "name": "Timeschronicle",
+      "name": "Times Chronicle",
       "url": SITE_URL
     },
     "about": {
       "@type": "NewsMediaOrganization",
-      "name": "Timeschronicle"
+      "name": "Times Chronicle"
     }
   };
 
@@ -88,7 +88,7 @@ export default function AboutPage() {
         <section className="relative w-full h-[520px] overflow-hidden rounded-b-3xl shadow-md">
           <img
             src="/about.webp"
-            alt="Timeschronicle newsroom"
+            alt="Times Chronicle newsroom"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center px-6">
@@ -102,10 +102,10 @@ export default function AboutPage() {
         {/* INTRO */}
         <section className="max-w-4xl mx-auto px-7 py-20 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            About Timeschronicle
+            About Times Chronicle
           </h2>
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            <strong>Timeschronicle</strong> is an independent digital news publication
+            <strong>Times Chronicle</strong> is an independent digital news publication
             dedicated to accurate, fair, and responsible journalism. We focus on
             the stories shaping the United States—providing clarity, context, and
             accountability in a fast-moving news environment.
@@ -127,7 +127,7 @@ export default function AboutPage() {
           </div>
           <img
             src="/write.webp"
-            alt="Timeschronicle editorial mission"
+            alt="Times Chronicle editorial mission"
             className="rounded-2xl shadow-lg object-cover w-full h-80"
           />
         </section>
@@ -176,7 +176,7 @@ export default function AboutPage() {
             What We Cover
           </h3>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
-            Timeschronicle delivers in-depth reporting across national affairs,
+            Times Chronicle delivers in-depth reporting across national affairs,
             politics, business, technology, health, and world news—focusing on
             stories that matter most to readers in the United States.
           </p>
@@ -188,7 +188,7 @@ export default function AboutPage() {
             Stay Ahead of the News
           </h2>
           <p className="text-lg max-w-2xl mx-auto text-gray-300">
-            Follow Timeschronicle for timely, accurate, and insightful reporting
+            Follow Times Chronicle for timely, accurate, and insightful reporting
             that helps you understand what’s happening—and why it matters.
           </p>
         </section>

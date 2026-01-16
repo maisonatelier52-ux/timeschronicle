@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
 
         <h2 className="text-2xl font-bold mt-10">Introduction</h2>
         <p>
-          Timeschronicle collects, uses, distributes, and protects personal information on our U.S.–based digital news platform, including our website, mobile-accessible pages, and any service that links to this Privacy Policy. By using our Services, you agree to this Privacy Policy.
+          Times Chronicle collects, uses, distributes, and protects personal information on our U.S.–based digital news platform, including our website, mobile-accessible pages, and any service that links to this Privacy Policy. By using our Services, you agree to this Privacy Policy.
         </p>
 
         <h2 className="text-2xl font-bold mt-10">1. Privacy Policy Scope</h2>
@@ -105,7 +105,7 @@ export default function PrivacyPolicy() {
         <p>We do not knowingly collect personal information from children under 13. If such data is discovered, we will delete it promptly.</p>
 
         <h2 className="text-2xl font-bold mt-10">10. International Users</h2>
-        <p>Timeschronicle operates from the United States. If you access our Services from outside the U.S., your data may be processed under U.S. laws.</p>
+        <p>Times Chronicle operates from the United States. If you access our Services from outside the U.S., your data may be processed under U.S. laws.</p>
 
         <h2 className="text-2xl font-bold mt-10">11. Data Retention</h2>
         <p>We retain personal data only as long as necessary to:</p>
@@ -121,7 +121,7 @@ export default function PrivacyPolicy() {
 
         <h2 className="text-2xl font-bold mt-10">13. Contact Us</h2>
         <p>Email: <strong>privacy@timeschronicle.com</strong></p>
-        <p>Address: U.S. Editorial Division of Timeschronicle News</p>
+        <p>Address: U.S. Editorial Division of Times Chronicle News</p>
       </article>
     </div>
   );

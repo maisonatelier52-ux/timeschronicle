@@ -10,9 +10,9 @@ import data from "@/data/data.json";
 const SITE_URL = "https://timeschronicle.org";
 
 export const metadata = {
-  title: "Timeschronicle — Independent U.S. News, Business & Politics",
+  title: "Times Chronicle — Independent U.S. News, Business & Politics",
   description:
-    "Timeschronicle delivers fast, factual U.S. news across national, politics, business, technology, health, and world. Breaking headlines and trusted analysis.",
+    "Times Chronicle delivers fast, factual U.S. news across national, politics, business, technology, health, and world. Breaking headlines and trusted analysis.",
   alternates: {
     canonical: SITE_URL,
     languages: {
@@ -21,27 +21,27 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Timeschronicle — Latest U.S. News & Investigations",
+    title: "Times Chronicle — Latest U.S. News & Investigations",
     description:
       "Breaking U.S. news, in-depth investigations, and expert reporting across business, politics, technology, and more.",
     url: SITE_URL,
     type: "website",
-    siteName: "Timeschronicle",
+    siteName: "Times Chronicle",
     images: [
       {
-        url: `${SITE_URL}/timeschronicle.webp`,
+        url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
         width: 1200,
         height: 630,
-        alt: "Timeschronicle U.S. News",
+        alt: "Times Chronicle U.S. News",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Timeschronicle — Latest U.S. News",
+    title: "Times Chronicle — Latest U.S. News",
     description:
       "Fast, factual U.S. news with in-depth reporting and investigations.",
-    images: [`${SITE_URL}/timeschronicle.webp`],
+    images: [`${SITE_URL}/logo/Times-Chronicle-White-Text.png`],
   },
 };
 
@@ -86,11 +86,11 @@ export default function Home() {
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Timeschronicle",
+    "name": "Times Chronicle",
     "url": SITE_URL,
     "publisher": {
       "@type": "NewsMediaOrganization",
-      "name": "Timeschronicle",
+      "name": "Times Chronicle",
       "logo": {
         "@type": "ImageObject",
         "url": `${SITE_URL}/logo.png`,
@@ -108,20 +108,20 @@ export default function Home() {
     "@type": "WebPage",
     "@id": `${SITE_URL}/#homepage`,
     "url": SITE_URL,
-    "name": "Timeschronicle — Independent U.S. News, Business & Politics",
+    "name": "Times Chronicle — Independent U.S. News, Business & Politics",
     "description":
       "Independent U.S. news covering politics, business, technology, health, and world affairs.",
     "isPartOf": {
       "@type": "WebSite",
       "url": SITE_URL,
-      "name": "Timeschronicle",
+      "name": "Times Chronicle",
     },
     "publisher": {
       "@type": "NewsMediaOrganization",
-      "name": "Timeschronicle",
+      "name": "Times Chronicle",
       "logo": {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/logo.png`,
+        "url": `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
       },
     },
   };
@@ -141,11 +141,11 @@ export default function Home() {
       {/* ===== SEO INTRO ===== */}
       <section className="sr-only px-4 py-6">
         <h1 className="text-2xl font-bold mb-3">
-          Timeschronicle — Independent U.S. News, Business & Investigations
+          Times Chronicle — Independent U.S. News, Business & Investigations
         </h1>
 
         <p className="text-gray-700 leading-relaxed">
-          Timeschronicle is an independent digital news platform delivering the latest
+          Times Chronicle is an independent digital news platform delivering the latest
           U.S. news with a strong focus on depth, accuracy, and responsible
           reporting. Our newsroom covers national, politics, business, technology, health
           and world, offering readers clear context behind every headline.
@@ -155,11 +155,11 @@ export default function Home() {
         </h2>
 
         <p className="text-gray-700 leading-relaxed mt-3">
-          At Timeschronicle, in-depth reporting goes beyond breaking news. We prioritize
+          At Times Chronicle, in-depth reporting goes beyond breaking news. We prioritize
           verified facts, expert insights, and investigative journalism to help
           readers understand not just what happened, but why it matters. From
           market-moving developments to national issues shaping everyday life,
-          Timeschronicle provides news you can trust.
+          Times Chronicle provides news you can trust.
         </p>
       </section>
       <FeaturedNews featured={featured} />
