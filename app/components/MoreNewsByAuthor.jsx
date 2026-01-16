@@ -26,7 +26,7 @@ export default function MoreNewsByAuthor({ authorId }) {
   return (
     <section className="mx-auto px-7 pb-7 bg-white dark:bg-[#01131d]">
       <h2 className="py-5 text-2xl font-bold text-black dark:text-white uppercase">
-        Articles written by {author.name} at Times Chronicle
+        News written by {author.name} at Times Chronicle
       </h2>
 
       {/* GRID */}

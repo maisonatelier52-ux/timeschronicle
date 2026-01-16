@@ -1,6 +1,7 @@
 import data from "@/data/data.json";
 import { FaTwitter, FaFacebookF, FaInstagram, FaCheck } from "react-icons/fa";
 import MoreNewsByAuthor from "@/app/components/MoreNewsByAuthor";
+import Image from "next/image";
 
 const SITE_URL = "https://timeschronicle.org";
 
@@ -150,10 +151,13 @@ export default async function AuthorPage({ params }) {
       >
         {/* IMAGE */}
         <div className="shrink-0">
-          <img
+          <Image
             src={author.photo || "/blank-profile-picture.webp"}
             alt={author.name}
-            className="w-28 h-28 rounded-full object-cover shadow-lg"
+            width={112}
+            height={112}
+            sizes="112px"
+            className="rounded-full object-cover shadow-lg"
           />
         </div>
 
