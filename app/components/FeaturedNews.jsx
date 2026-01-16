@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CategoryTag from "@/app/components/CategoryTag";
 import data from "@/data/data.json";
+import Image from "next/image";
 
 export default function FeaturedNews({ featured }) {
   const leftFeatured = featured[0];
@@ -40,16 +41,14 @@ export default function FeaturedNews({ featured }) {
           className="group"
         >
           <div className="relative mx-auto pt-5 max-w-[661px] aspect-[1200/580] overflow-hidden">
-            <img
+            <Image
               src={leftFeatured.image}
               alt={leftFeatured.title}
-              className="
-                w-full h-full object-cover
-                transition-transform duration-300
-                group-hover:scale-[1.03]
-              "
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 661px"
+              className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
             />
-
             {/* White hover overlay */}
             <span
               className="
