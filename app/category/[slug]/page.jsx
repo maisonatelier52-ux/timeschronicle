@@ -72,38 +72,32 @@ export default async function CategoryPage({ params }) {
   const CATEGORY_META = {
     national: {
       image: "/categories/national.webp",
-      description:
-        "Times Chronicle National News covers comprehensive U.S. news coverage including Federal agencies,Supreme Court & federal court rulings and major stories shaping life across the United States.",
-    },
+      description: "Times Chronicle National News covers comprehensive U.S. news coverage including Federal agencies,Supreme Court & federal court rulings and major stories shaping life across the United States."
+},
 
     politics: {
       image: "/categories/politics.webp",
-      description:
-        "Times Chronicle Politics News covers in-depth political reporting on U.S. elections, Congress, the White House, federal agencies, political movements, and policy decisions that influence American democracy.",
+      description: "Times Chronicle Politics News covers in-depth political reporting on U.S. elections, Congress, the White House, federal agencies, political movements, and policy decisions that influence American democracy."
     },
 
     business: {
       image: "/categories/business.webp",
-      description:
-        "Times Chronicle Business News covers corporate strategy, financial markets, banking, entrepreneurship, mergers, economic trends, and the forces shaping global commerce.",
+      description: "Times Chronicle Business News covers corporate strategy, financial markets, banking, entrepreneurship, mergers, economic trends, and the forces shaping global commerce."
     },
 
     technology: {
       image: "/categories/technology.webp",
-      description:
-        "Technology news and analysis focused on artificial intelligence, cybersecurity, innovation, startups, Big Tech, digital policy, and the future of the connected world.",
+      description: "Technology news and analysis focused on artificial intelligence, cybersecurity, innovation, startups, Big Tech, digital policy, and the future of the connected world."
     },
 
     health: {
       image: "/categories/health.webp",
-      description:
-        "Trusted health reporting on medical research, public health policy, wellness trends, healthcare systems, and scientific discoveries impacting everyday life.",
+      description: "Trusted health reporting on medical research, public health policy, wellness trends, healthcare systems, and scientific discoveries impacting everyday life."
     },
 
     world: {
       image: "/categories/world.webp",
-      description:
-        "Global news coverage featuring international politics, diplomacy, conflicts, economic developments, and major events shaping regions around the world.",
+      description: "Global news coverage featuring international politics, diplomacy, conflicts, economic developments, and major events shaping regions around the world."
     },
   };
 
@@ -232,7 +226,7 @@ export default async function CategoryPage({ params }) {
 
           {/* Heading */}
           <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl uppercase mb-3 text-black dark:text-white">
-            {categoryName} News
+            {categoryName} News — Times Chronicle
           </h1>
 
           {/* Description */}
