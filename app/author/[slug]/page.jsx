@@ -124,18 +124,6 @@ export default async function AuthorPage({ params }) {
 
   return (
     <>
-      {/* Structured Data */}
-      <script
-        id="author-person-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-      />
-
-      <script
-        id="author-breadcrumb-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
       {/* AUTHOR HEADER */}
       <section
         className="
@@ -151,6 +139,7 @@ export default async function AuthorPage({ params }) {
             alt={author.name}
             width={112}
             height={112}
+            priority
             sizes="112px"
             className="rounded-full object-cover shadow-lg"
           />
@@ -190,6 +179,19 @@ export default async function AuthorPage({ params }) {
 
       {/* MORE NEWS BY AUTHOR */}
       <MoreNewsByAuthor authorId={author.id} authorName={author.name} />
+
+      {/* Structured Data */}
+      <script
+        id="author-person-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+
+      <script
+        id="author-breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
     </>
   );
 }
