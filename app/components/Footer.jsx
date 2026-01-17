@@ -31,22 +31,17 @@ export default function Footer() {
         <div className="space-y-4 text-left lg:col-span-2">
           <Link href="/" title="Home" className="block">
 
-            {/* Dark theme logo */}
-            <Image
-              src="/logo/Times-Chronicle-White-Text.png"
-              alt="Times Chronicle"
-              width={220}
-              height={40}
-              priority
-            />
+            <span className="text-2xl font-extrabold tracking-wide text-black dark:text-white">
+              Times Chronicle
+            </span>
           </Link>
 
-          <p className="text-sm dark:text-gray-300 max-w-md lg:pl-7">
+          <p className="text-sm dark:text-gray-300 max-w-md">
             Times Chronicle brings you the latest news from around the world. Stay updated with real-time headlines and exclusive insights.
           </p>
 
           {/* Social Media Icons */}
-          <div className="flex gap-5 lg:pl-7">
+          <div className="flex gap-5">
             {[
               { Icon: FaFacebookF, color: "hover:text-blue-600", link: "https://facebook.com", title: "Facebook" },
               { Icon: FaTwitter, color: "hover:text-blue-400", link: "https://twitter.com", title: "Twitter" },
