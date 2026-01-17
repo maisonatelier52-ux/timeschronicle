@@ -5,6 +5,57 @@ import CategoryMoreNews from "@/app/components/CategoryMoreNews";
 import AdBanner from "@/app/components/AdBanner";
 import Image from "next/image";
 
+const SITE_URL = "https://timeschronicle.org";
+
+export async function generateMetadata({ params }) {
+  const { category } = await params;
+  const categorySlug = category?.toLowerCase() || "";
+  const formattedCategory = categorySlug
+  ? categorySlug.charAt(0).toUpperCase() + categorySlug.slice(1)
+  : "Category";
+
+
+  const categoryImages = {
+    national: "/categories/national.webp",
+    politics: "/categories/politics.webp",
+    business: "/categories/business.webp",
+    technology: "/categories/technology.webp",
+    health: "/categories/health.webp",
+    world: "/categories/world.webp",
+  };
+
+  const heroImage = categoryImages[categorySlug] || "/logo/Times-Chronicle-Black-Text.png";
+
+  return {
+    title: `${formattedCategory} News — Times Chronicle`,
+    description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis, and investigative stories from across the United States. Updated daily by Times Chronicle reporters.`,
+    alternates: {
+      canonical: `${SITE_URL}/category/${categorySlug}`,
+    },
+    openGraph: {
+      title: `${formattedCategory} News — Times Chronicle`,
+      description: `Latest U.S. ${formattedCategory.toLowerCase()} news, reports and analysis.`,
+      url: `${SITE_URL}/category/${categorySlug}`,
+      type: "website",
+      siteName: "Times Chronicle",
+      images: [
+        {
+          url: `${SITE_URL}${heroImage}`,
+          width: 1200,
+          height: 630,
+          alt: `${formattedCategory} News`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${formattedCategory} News — Times Chronicle`,
+      description: `Latest U.S. ${formattedCategory.toLowerCase()} news and analysis.`,
+      images: [`${SITE_URL}${heroImage}`],
+    },
+  };
+}
+
 export default async function CategoryPage({ params }) {
   const { slug } = await params;
 
@@ -87,8 +138,77 @@ export default async function CategoryPage({ params }) {
   const heroImage = categoryMeta.image;
   const categoryDescription = categoryMeta.description;
 
+  /* ---------- JSON-LD ---------- */
+
+  const categoryJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": `${categoryName} News`,
+  "description": categoryDescription,
+  "url": `${SITE_URL}/category/${categorySlug}`,
+  "itemListOrder": "https://schema.org/ItemListOrderDescending",
+  "numberOfItems": articles.length,
+  "itemListElement": articles.slice(0, 10).map((article, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "url": `${SITE_URL}/news/${article.slug}`,
+    "item": {
+      "@type": "NewsArticle",
+      "headline": article.title,
+      "datePublished": new Date(article.date).toISOString(),
+      "dateModified": new Date(article.date).toISOString(),
+      "author": {
+        "@type": "Person",
+        "name": "Times Chronicle Staff",
+      },
+      "publisher": {
+        "@type": "NewsMediaOrganization",
+        "name": "Times Chronicle",
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${SITE_URL}/logo/Times-Chronicle-Black-Text.png`,
+        },
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/news/${article.slug}`,
+      },
+    },
+  })),
+};
+
+  const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": categoryName,
+      "item": `${SITE_URL}/category/${categorySlug}`,
+    },
+  ],
+};
+
   return (
     <section className="max-w-7xl mx-auto text-black dark:text-gray-200 bg-white dark:bg-[#01131d]">
+      <script
+        id="category-collection-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryJsonLd) }}
+      />
+
+      <script
+        id="category-breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
 
       {/* Top Section */}
       <div
