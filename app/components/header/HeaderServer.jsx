@@ -78,7 +78,7 @@ export default function HeaderServer() {
         </div>
 
         {/* SEARCH ICON PLACEHOLDER (hydrated later) */}
-        <div id="header-client-slot" />
+        {/* <div id="header-client-slot" /> */}
       </div>
 
       {/* MOBILE CATEGORIES */}

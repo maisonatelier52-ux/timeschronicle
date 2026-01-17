@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="space-y-4 text-left lg:col-span-2">
           <Link href="/" title="Home" className="block">
 
-            <span className="text-2xl font-extrabold tracking-wide text-black dark:text-white">
+            <span className="text-2xl font-extrabold tracking-wide text-white">
               Times Chronicle
             </span>
           </Link>
