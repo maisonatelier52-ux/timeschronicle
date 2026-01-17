@@ -26,7 +26,7 @@ export default function sitemap() {
       priority: 0.3,
     },
     {
-      url: `${SITE_URL}/terms-of-service`,
+      url: `${SITE_URL}/terms-of-use`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
