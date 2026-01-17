@@ -14,7 +14,7 @@ export default function sitemap() {
       priority: 1.0,
     },
     {
-      url: `${SITE_URL}/about-us`,
+      url: `${SITE_URL}/about`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,

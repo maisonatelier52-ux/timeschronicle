@@ -170,17 +170,17 @@ export default async function AuthorPage({ params }) {
           {/* SOCIALS */}
           <div className="flex items-center gap-4 mt-4">
             {author.twitter && (
-              <a href={author.twitter} target="_blank" rel="noopener noreferrer">
+              <a href={author.twitter} title="Twitter" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="text-gray-500 hover:text-blue-500 transition" />
               </a>
             )}
             {author.facebook && (
-              <a href={author.facebook} target="_blank" rel="noopener noreferrer">
+              <a href={author.facebook} title="Facebook" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF className="text-gray-500 hover:text-blue-600 transition" />
               </a>
             )}
             {author.instagram && (
-              <a href={author.instagram} target="_blank" rel="noopener noreferrer">
+              <a href={author.instagram} title="Instagram" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-gray-500 hover:text-pink-500 transition" />
               </a>
             )}

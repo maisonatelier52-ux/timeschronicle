@@ -14,14 +14,6 @@ const categories = [
 
 export default function HeaderServer() {
 
-  const formattedDate = new Date().toLocaleDateString("en-US", {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-
-  // ✅ Mobile date: 15 Jan, 2026
   const mobileDate = new Date().toLocaleDateString("en-GB", {
     day: "2-digit",
     month: "short",

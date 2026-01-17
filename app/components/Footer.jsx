@@ -6,7 +6,7 @@ import data from "@/data/data.json";
 import Image from "next/image";
 
 const quickLinks = [
-  { label: "About Us", href: "/about-us" },
+  { label: "About Us", href: "/about" },
   { label: "Terms of Use", href: "/terms-of-use" },
   { label: "Privacy Policy", href: "/privacy-policy" },
 ];
@@ -48,14 +48,15 @@ export default function Footer() {
           {/* Social Media Icons */}
           <div className="flex gap-5 lg:pl-7">
             {[
-              { Icon: FaFacebookF, color: "hover:text-blue-600", link: "https://facebook.com" },
-              { Icon: FaTwitter, color: "hover:text-blue-400", link: "https://twitter.com" },
-              { Icon: FaInstagram, color: "hover:text-pink-500", link: "https://instagram.com" },
-              { Icon: FaYoutube, color: "hover:text-red-600", link: "https://youtube.com" },
-            ].map(({ Icon, color, link }) => (
+              { Icon: FaFacebookF, color: "hover:text-blue-600", link: "https://facebook.com", title: "Facebook" },
+              { Icon: FaTwitter, color: "hover:text-blue-400", link: "https://twitter.com", title: "Twitter" },
+              { Icon: FaInstagram, color: "hover:text-pink-500", link: "https://instagram.com", title: "Instagram" },
+              { Icon: FaYoutube, color: "hover:text-red-600", link: "https://youtube.com", title: "YouTube" },
+            ].map(({ Icon, color, link, title }) => (
               <a
                 key={link}
                 href={link}
+                title={title}
                 target="_blank"
                 rel="noreferrer"
                 className={`text-xl md:text-2xl transition-transform duration-100 hover:scale-110 ${color}`}
