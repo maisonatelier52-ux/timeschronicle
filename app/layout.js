@@ -1,9 +1,35 @@
 import "./globals.css";
-import Header from "./components/header/Header";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import localFont from "next/font/local";
-import HeaderServer from "./components/header/HeaderServer";
-import HeaderClient from "./components/header/HeaderClient";
+
+/* BBH Bogle (UI / Headings) */
+// const bbhBogle = localFont({
+//   src: [
+//     {
+//       path: "../public/fonts/bbh-bogle/BBHSansBogle-Regular.woff2",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/bbh-bogle/BBHSansBogle-Regular.woff2",
+//       weight: "500",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/bbh-bogle/BBHSansBogle-Regular.woff2",
+//       weight: "600",
+//       style: "normal",
+//     },
+//     {
+//       path: "../public/fonts/bbh-bogle/BBHSansBogle-Regular.woff2",
+//       weight: "700",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--font-bbh-bogle",
+//   display: "swap",
+// });
 
 /* Merriweather (Body / Articles) */
 const merriweather = localFont({
@@ -42,8 +68,7 @@ export default function RootLayout({ children }) {
           antialiased
         `}
       >
-        <HeaderServer />
-        <HeaderClient />
+        <Header />
 
         {/* Offset for fixed header */}
         <main
