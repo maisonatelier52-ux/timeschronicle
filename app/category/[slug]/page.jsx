@@ -30,7 +30,7 @@ export async function generateMetadata({ params }) {
       canonical: `${SITE_URL}/category/${slug}`,
     },
     openGraph: {
-      title: `${formattedCategory} News — Times Chronicle`,
+      title: `${formattedCategory} News | Times Chronicle`,
       description: `Latest U.S. ${formattedCategory.toLowerCase()} news, reports and analysis.`,
       url: `${SITE_URL}/category/${slug}`,
       type: "website",

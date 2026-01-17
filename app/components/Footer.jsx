@@ -42,7 +42,7 @@ export default function Footer() {
           </Link>
 
           <p className="text-sm dark:text-gray-300 max-w-md lg:pl-7">
-            Bringing you the latest news from around the world. Stay updated with real-time headlines and exclusive insights.
+            Times Chronicle brings you the latest news from around the world. Stay updated with real-time headlines and exclusive insights.
           </p>
 
           {/* Social Media Icons */}
