@@ -236,7 +236,7 @@ export default async function CategoryPage({ params }) {
         </div>
 
         {/* RIGHT — Category Image */}
-        <div className="relative w-full max-w-md mx-auto mt-6 md:mt-0">
+        <div className="hidden md:block relative w-full max-w-md mx-auto mt-6 md:mt-0">
           {/* Blurred shadow */}
           <div className="absolute inset-0 rounded-lg bg-black/20 blur-xl -z-10"></div>
 

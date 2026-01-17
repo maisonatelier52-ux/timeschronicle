@@ -65,24 +65,19 @@ export default function CategoryPageArticles({ articles }) {
                 alt={firstArticle.title}
                 className="
                   w-full h-full object-cover
-                  grayscale
-                  hover:grayscale-0
-                  transition-all duration-100
+                  transition-all duration-100 ease-out
+                  md:group-hover/image:scale-[1.04]
                 "
               />
-
-              {/* Overlay */}
-              <span
-                className="
-                  absolute inset-0
-                  bg-black/30
-                  opacity-100
-                  pointer-events-none
-                  transition-opacity duration-200
-                  group-hover/image:opacity-0
-                "
-              />
-
+              {/* WHITE HOVER SHADE */}
+              <div className="
+                hidden md:block
+                absolute inset-0
+                bg-white/0
+                group-hover:bg-white/15
+                transition-colors duration-300
+                pointer-events-none
+              " />
               {/* Category Tag */}
               <CategoryTag text={firstArticle.category.toUpperCase()} />
             </div>

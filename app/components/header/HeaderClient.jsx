@@ -50,7 +50,7 @@ export default function HeaderClient() {
       `}
     >
       {/* RIGHT ICONS */}
-      <div className="absolute top-6 right-7 flex items-center gap-5">
+      {/* <div className="absolute top-6 right-7 flex items-center gap-5"> */}
         {/* SEARCH */}
         {/* <button
           aria-label="Search"
@@ -75,7 +75,7 @@ export default function HeaderClient() {
             <FaYoutube />
           </a>
         </div> */}
-      </div>
+      {/* </div> */}
 
       {/* SEARCH PANEL */}
       {/* {openSearch && (
