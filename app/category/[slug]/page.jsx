@@ -8,11 +8,8 @@ import Image from "next/image";
 const SITE_URL = "https://timeschronicle.org";
 
 export async function generateMetadata({ params }) {
-  const { category } = await params;
-  const categorySlug = category?.toLowerCase() || "";
-  const formattedCategory = categorySlug
-  ? categorySlug.charAt(0).toUpperCase() + categorySlug.slice(1)
-  : "Category";
+  const { slug } = await params;
+  const formattedCategory = slug.charAt(0).toUpperCase() + slug.slice(1)
 
 
   const categoryImages = {
@@ -24,18 +21,18 @@ export async function generateMetadata({ params }) {
     world: "/categories/world.webp",
   };
 
-  const heroImage = categoryImages[categorySlug] || "/logo/Times-Chronicle-Black-Text.png";
+  const heroImage = categoryImages[slug] || "/logo/Times-Chronicle-Black-Text.png";
 
   return {
     title: `${formattedCategory} News — Times Chronicle`,
     description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis, and investigative stories from across the United States. Updated daily by Times Chronicle reporters.`,
     alternates: {
-      canonical: `${SITE_URL}/category/${categorySlug}`,
+      canonical: `${SITE_URL}/category/${slug}`,
     },
     openGraph: {
       title: `${formattedCategory} News — Times Chronicle`,
       description: `Latest U.S. ${formattedCategory.toLowerCase()} news, reports and analysis.`,
-      url: `${SITE_URL}/category/${categorySlug}`,
+      url: `${SITE_URL}/category/${slug}`,
       type: "website",
       siteName: "Times Chronicle",
       images: [
@@ -76,19 +73,19 @@ export default async function CategoryPage({ params }) {
     national: {
       image: "/categories/national.webp",
       description:
-        "Comprehensive U.S. news coverage including Federal agencies,Supreme Court & federal court rulings and major stories shaping life across the United States.",
+        "Times Chronicle National News covers comprehensive U.S. news coverage including Federal agencies,Supreme Court & federal court rulings and major stories shaping life across the United States.",
     },
 
     politics: {
       image: "/categories/politics.webp",
       description:
-        "In-depth political reporting on U.S. elections, Congress, the White House, federal agencies, political movements, and policy decisions that influence American democracy.",
+        "Times Chronicle Politics News covers in-depth political reporting on U.S. elections, Congress, the White House, federal agencies, political movements, and policy decisions that influence American democracy.",
     },
 
     business: {
       image: "/categories/business.webp",
       description:
-        "Authoritative business news covering corporate strategy, financial markets, banking, entrepreneurship, mergers, economic trends, and the forces shaping global commerce.",
+        "Times Chronicle Business News covers corporate strategy, financial markets, banking, entrepreneurship, mergers, economic trends, and the forces shaping global commerce.",
     },
 
     technology: {
