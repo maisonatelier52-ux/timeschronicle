@@ -194,7 +194,7 @@ export default async function CategoryPage({ params }) {
 };
 
   return (
-    <section className="max-w-7xl mx-auto text-black dark:text-gray-200 bg-white dark:bg-[#01131d]">
+    <section className="mx-auto text-black dark:text-gray-200 bg-white dark:bg-[#01131d]">
       <script
         id="category-collection-jsonld"
         type="application/ld+json"
