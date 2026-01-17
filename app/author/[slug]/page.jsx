@@ -153,7 +153,7 @@ export default async function AuthorPage({ params }) {
           </h1>
 
           <p className="text-gray-700 dark:text-gray-300 text-sm md:text-base mt-2 max-w-2xl">
-            {author.name} is a journalist and author at Wiresavvy. {author.bio}
+            {author.name} is a journalist and author at Times Chronicle. {author.bio}
           </p>
 
           {/* SOCIALS */}
