@@ -1,5 +1,6 @@
 import CategoryTag from "@/app/components/CategoryTag";
 import data from "@/data/data.json";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function CategoryMoreNews({ articles }) {
@@ -34,13 +35,15 @@ export default function CategoryMoreNews({ articles }) {
         {displayedArticles.map((article, index) => (
           <div key={article.slug} className="flex flex-col px-7 pb-4">
             <Link href={`/news/${article.slug}`} className="group" title={article.title}>
-              <div className="relative aspect-[9/4] overflow-hidden">
+              <div className="relative aspect-[9/4] overflow-hidden group">
                 {/* Image */}
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="
-                    w-full h-full object-cover
+                    object-cover
                     transition-transform duration-300 ease-out
                     group-hover:scale-[1.03]
                   "

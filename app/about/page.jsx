@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const SITE_URL = "https://timeschronicle.org";
 
 export const metadata = {
@@ -129,11 +131,16 @@ export default function AboutPage() {
               pressure.
             </p>
           </div>
-          <img
-            src="/write.webp"
-            alt="Times Chronicle editorial mission"
-            className="rounded-2xl shadow-lg object-cover w-full h-80"
-          />
+          {/* Image wrapper controls height */}
+          <div className="relative w-full h-80">
+            <Image
+              src="/write.webp"
+              alt="Times Chronicle editorial mission"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="rounded-2xl shadow-lg object-cover"
+            />
+          </div>
         </section>
 
         {/* VALUES */}

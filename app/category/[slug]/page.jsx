@@ -3,6 +3,7 @@ import Link from "next/link";
 import CategoryPageArticles from "@/app/components/CategoryPageArticle";
 import CategoryMoreNews from "@/app/components/CategoryMoreNews";
 import AdBanner from "@/app/components/AdBanner";
+import Image from "next/image";
 
 export default async function CategoryPage({ params }) {
   const { slug } = await params;
@@ -129,11 +130,13 @@ export default async function CategoryPage({ params }) {
           <div className="absolute inset-0 rounded-lg bg-black/20 blur-xl -z-10"></div>
 
           {/* Image */}
-          <div className="relative z-20 overflow-hidden shadow-2xl rounded-lg">
-            <img
+          <div className="relative z-20 overflow-hidden shadow-2xl rounded-lg w-full h-[30vh] md:h-[40vh]">
+            <Image
               src={heroImage}
               alt={categoryName}
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
             />
           </div>
         </div>
