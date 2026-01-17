@@ -55,42 +55,52 @@ export default function MorePopular({ articles }) {
           border-gray-200 dark:border-gray-700
           h-full
         ">
-
           {topLeft && (
-            <Link href={`/news/${topLeft.slug}`} title={topLeft.title} className="block h-full">
-              {/* IMAGE WRAPPER — FULL HEIGHT */}
-              <div className="relative h-full min-h-[280px] overflow-hidden group">
-
-                {/* BACKGROUND IMAGE */}
+            <Link
+              href={`/news/${topLeft.slug}`}
+              title={topLeft.title}
+              className="block group"
+            >
+              {/* IMAGE ON TOP */}
+              <div className="relative w-full h-56 md:h-64 overflow-hidden mb-4">
                 <img
                   src={topLeft.image}
                   alt={topLeft.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  className="
+                    w-full h-full object-cover
+                    transition-transform duration-300
+                    group-hover:scale-[1.03]
+                  "
                 />
+              </div>
 
-                {/* WHITE HOVER SHADE */}
-                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/15 transition-colors duration-300"></div>
+              {/* TEXT CONTENT */}
+              <div className="space-y-2">
+                {/* Category */}
+                <CategoryTag1 text={topLeft.category.toUpperCase()} />
 
-                {/* HEADING STRIP OVERLAY (BOTTOM ONLY) */}
-                <div className="
-                  absolute bottom-0 w-full
-                  bg-gradient-to-t from-black/80 to-transparent
-                  p-4
-                ">
-                  <CategoryTag1 text={topLeft.category.toUpperCase()} />
-                  <h3 className="font-bold text-xl uppercase leading-snug text-white">
-                    <span className={underlineHoverRev}>
-                      {topLeft.title}
-                    </span>
-                  </h3>
-                  <p className="text-[10px] uppercase text-gray-300 pt-2">
-                    By{" "}
-                    <span className="font-semibold text-white dark:text-white">
-                      {getAuthor(topLeft.authorId)}
-                    </span>{" "}
-                    | {topCenter.time} Read
+                {/* Title */}
+                <h3 className="font-bold text-xl uppercase leading-snug text-black dark:text-white">
+                  <span className={underlineHover}>
+                    {topLeft.title}
+                  </span>
+                </h3>
+
+                {/* Description */}
+                {topLeft.excerpt && (
+                  <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+                    {topLeft.excerpt}
                   </p>
-                </div>
+                )}
+
+                {/* Author + Read Time */}
+                <p className="text-[11px] uppercase text-gray-500 dark:text-gray-400 pt-1">
+                  Written by{" "}
+                  <span className="font-semibold text-black dark:text-white">
+                    {getAuthor(topLeft.authorId)}
+                  </span>{" "}
+                  · {topLeft.time} read
+                </p>
               </div>
             </Link>
           )}
@@ -118,10 +128,16 @@ export default function MorePopular({ articles }) {
                   {topCenter.title}
                 </span>
               </h3>
+              {/* Description */}
+              {topCenter.excerpt && (
+                <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+                  {topCenter.excerpt}
+                </p>
+              )}
             </Link>
 
             <Link href={`/author/${getAuthorSlug(topCenter.authorId)}`} title={getAuthor(topCenter.authorId)}>
-            <p className="text-[11px] uppercase text-gray-500">
+            <p className="text-[11px] uppercase text-gray-500 pt-2">
               By{" "}
               <span className="font-semibold text-black dark:text-white">
                 {getAuthor(topCenter.authorId)}
