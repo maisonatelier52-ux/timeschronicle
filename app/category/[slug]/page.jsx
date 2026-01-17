@@ -232,7 +232,7 @@ export default async function CategoryPage({ params }) {
 
           {/* Heading */}
           <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl uppercase mb-3 text-black dark:text-white">
-            {categoryName}
+            {categoryName} News
           </h1>
 
           {/* Description */}
