@@ -38,56 +38,55 @@ export default function MoreRecent({articles}) {
             <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-auto divide-x divide-gray-300">
 
                 {/* First 3 articles (row 1) */}
-                {articles.slice(0, 3).map((article) => {
-                    const author = authorsMap[article.authorId];
-                    <Link href={`/news/${article.slug}`}
-                    title={article.title}
-                        key={article.slug}
-                        className="group flex flex-col px-7 pb-4 transition-colors"
-                    >
-                        <div className="relative aspect-[9/4] overflow-hidden group">
-                            <img
-                                src={article.image}
-                                alt={article.title}
-                                loading="lazy"
-                                className="
-                                w-full h-full object-cover
-                                transition-transform duration-300
-                                group-hover:scale-[1.03]
-                                "
-                            />
+                {articles.slice(0, 3).map((article) => (
+                <Link href={`/news/${article.slug}`}
+                title={article.title}
+                    key={article.slug}
+                    className="group flex flex-col px-7 pb-4 transition-colors"
+                >
+                    <div className="relative aspect-[9/4] overflow-hidden group">
+                        <img
+                            src={article.image}
+                            alt={article.title}
+                            loading="lazy"
+                            className="
+                            w-full h-full object-cover
+                            transition-transform duration-300
+                            group-hover:scale-[1.03]
+                            "
+                        />
 
-                            {/* White hover overlay */}
-                            <span
-                                className="
-                                absolute inset-0
-                                bg-white/20
-                                opacity-0
-                                transition-opacity duration-300
-                                group-hover:opacity-100
-                                pointer-events-none
-                                "
-                            />
+                        {/* White hover overlay */}
+                        <span
+                            className="
+                            absolute inset-0
+                            bg-white/20
+                            opacity-0
+                            transition-opacity duration-300
+                            group-hover:opacity-100
+                            pointer-events-none
+                            "
+                        />
 
-                            {/* Category tag stays on top */}
-                            <CategoryTag text={article.category.toUpperCase()} />
-                        </div>
+                        {/* Category tag stays on top */}
+                        <CategoryTag text={article.category.toUpperCase()} />
+                    </div>
 
-                        <h2 className="font-bold pt-4 text-[24px] leading-[1.15]">
-                            <span className={underlineHover}>
-                                {article.title}
-                            </span>
-                        </h2>
+                    <h2 className="font-bold pt-4 text-[24px] leading-[1.15]">
+                        <span className={underlineHover}>
+                            {article.title}
+                        </span>
+                    </h2>
 
-                        <p className="pt-2 text-[9px] text-gray-400 uppercase">
-                        By{" "}
-                        <span className="font-semibold text-black dark:text-white">
-                            {author?.name}
-                        </span>{" "}
-                        | {article.time} Read
-                        </p>
-                    </Link>
-                })}
+                    <p className="pt-2 text-[9px] text-gray-400 uppercase">
+                    By{" "}
+                    <span className="font-semibold text-black dark:text-white">
+                        {data.authors.find(a => a.id === article.authorId)?.name}
+                    </span>{" "}
+                    | {article.time} Read
+                    </p>
+                </Link>
+                ))}
 
                 {/* 4th Article (left, row 2) */}
                 {articles[3] && (
