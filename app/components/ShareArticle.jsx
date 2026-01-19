@@ -73,26 +73,12 @@ export default function ShareArticle() {
       </section>
 
       {/* 🔔 TOAST */}
-      <div
-        className={`
-          fixed bottom-6 right-6 z-50
-          flex items-center gap-2
-          px-4 py-2
-          text-sm uppercase tracking-wide
-          rounded-md
-          shadow-lg
-
-          bg-white text-green-600 border border-green-500
-
-          transition-all duration-300 ease-out
-          ${copied
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-4 pointer-events-none"}
-        `}
-      >
-        <FaLink className="text-base" />
-        <span>Link copied</span>
-      </div>
+      {copied && (
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2 text-sm uppercase tracking-wide rounded-md shadow-lg bg-white text-green-600 border border-green-500 transition-all duration-300 ease-out">
+          <FaLink className="text-base" />
+          <span>Link copied</span>
+        </div>
+      )}
     </>
   );
 }

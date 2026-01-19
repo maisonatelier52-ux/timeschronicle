@@ -268,7 +268,6 @@ export default async function NewsPage({ params }) {
           <ArticleSidebar />
         </div>
 
-      {/* SHARE ARTICLE */}
       </section>
             {/* FAQ SECTION */}
       <section className="max-w-4xl mx-auto px-5 sm:px-7 pb-10">
@@ -342,6 +341,7 @@ export default async function NewsPage({ params }) {
         </div>
       </section>
 
+      {/* SHARE ARTICLE */}
       <div className="px-7">
         <ShareArticle />
       </div>
