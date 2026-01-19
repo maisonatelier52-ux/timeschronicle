@@ -60,6 +60,7 @@ export default function MoreNews({articles}) {
                 <img
                   src={article.image}
                   alt={article.title}
+                  loading="lazy"
                   className="
                     w-full h-full object-cover
                     transition-transform duration-300 ease-out

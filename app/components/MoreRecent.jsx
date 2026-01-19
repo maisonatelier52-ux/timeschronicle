@@ -212,6 +212,7 @@ export default function MoreRecent({articles}) {
                                 <img
                                     src={articles[5].image}
                                     alt={articles[5].title}
+                                    loading="lazy"
                                     className="
                                     w-full h-full object-cover
                                     transition-transform duration-300
