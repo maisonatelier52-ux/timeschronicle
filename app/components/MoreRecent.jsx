@@ -3,10 +3,6 @@ import data from "@/data/data.json";
 import CategoryTag1 from "./CategoryTag1";
 import Link from "next/link";
 
-const authorsMap = Object.fromEntries(
-    data.authors.map(author => [author.id, author])
-);
-
 export default function MoreRecent({articles}) {
 
     const underlineHover = `
@@ -35,7 +31,7 @@ export default function MoreRecent({articles}) {
 
             {/* Heading */}
             <div className="px-7 pt-3 pb-4 flex justify-between items-center">
-            <h2 className="text-lg font-semibold relative">More Recent</h2>
+                <h2 className="text-lg font-semibold relative">More Recent</h2>
             </div>
 
             {/* GRID */}
@@ -94,41 +90,67 @@ export default function MoreRecent({articles}) {
                 })}
 
                 {/* 4th Article (left, row 2) */}
-                {articles[3] && (() => {
-                const article = articles[3];
-                const author = authorsMap[article.authorId];
-
-                return (
-                    <Link
-                    href={`/news/${article.slug}`}
-                    title={article.title}
+                {articles[3] && (
+                <Link 
+                    title={articles[3].title}
+                    href={`/news/${articles[3].slug}`}
                     className="relative md:col-start-1 md:row-start-2 h-[360px] px-7 overflow-hidden group"
                     >
+                    {/* Image */}
                     <img
-                        src={article.image}
-                        alt={article.title}
+                        src={articles[3].image}
+                        alt={articles[3].title}
                         loading="lazy"
-                        className="w-full h-full object-cover"
+                        fetchPriority="low"
+                        className="
+                        w-full h-full object-cover
+                        transition-transform duration-300
+                        "
                     />
 
-                    <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="absolute inset-x-0 bottom-0 h-2/3 left-7 right-7 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    {/* White hover overlay (image effect) */}
+                    <span
+                        className="
+                        absolute inset-0
+                        bg-white/20
+                        opacity-0
+                        transition-opacity duration-300
+                        group-hover:opacity-100
+                        pointer-events-none
+                        "
+                    />
 
+                    {/* Black gradient for text readability */}
+                    <span
+                        className="
+                        absolute inset-x-0 bottom-0 h-2/3 left-7 right-7
+                        bg-gradient-to-t from-black/80 via-black/40 to-transparent
+                        pointer-events-none
+                        "
+                    />
+
+                    {/* Content */}
                     <div className="absolute inset-0 flex flex-col justify-end p-4 z-10">
                         <div className="px-6">
-                        <CategoryTag1 text={article.category.toUpperCase()} />
+                        <CategoryTag1 text={articles[3].category.toUpperCase()} />
+
                         <h2 className="font-bold text-white text-[24px] mt-2 leading-[1.15]">
-                            <span className={underlineHoverRev}>{article.title}</span>
+                            <span className={underlineHoverRev}>
+                                {articles[3].title}
+                            </span>
                         </h2>
+
                         <p className="text-[9px] text-gray-200 uppercase py-2">
-                            By <span className="font-semibold">{author?.name}</span> |{" "}
-                            {article.time} Read
+                            By{" "}
+                            <span className="font-semibold text-white">
+                                {data.authors.find(a => a.id === articles[3].authorId)?.name}
+                            </span>{" "}
+                            | {articles[3].time} Read
                         </p>
                         </div>
                     </div>
-                    </Link>
-                );
-                })()}
+                </Link>
+                )}
 
                 {/* 5th Article (under 4th, same column) */}
                 {articles[4] && (() => {
@@ -143,7 +165,9 @@ export default function MoreRecent({articles}) {
                         ? articles[4].title2
                         : articles[4].title;
 
-                    const author = authorsMap[articles[4].authorId];
+                    const author = data.authors.find(
+                        a => a.id === articles[4].authorId
+                    );
 
                     return (
                         <div className="md:col-start-1 md:row-start-3 flex flex-col px-7">
@@ -180,9 +204,7 @@ export default function MoreRecent({articles}) {
                     );
                 })()}
                 {/* 6th Article (right, spans rows 2–3 & columns 2–3) */}
-                {articles[5] && (() => {
-                    const author = authorsMap[articles[5].authorId];
-                    return (
+                {articles[5] && (
                     <div
                         className="md:col-start-2 md:col-span-2 md:row-start-2 md:row-span-2 flex flex-col px-7 pb-4"
                     >
@@ -231,17 +253,17 @@ export default function MoreRecent({articles}) {
                         <p className="pb-1 text-[9px] text-gray-400 uppercase pt-2">
                             By{" "}
                             <Link 
-                                href={`/author/${author?.slug}`}
-                                title={author?.name}
+                                href={`/author/${data.authors.find(a => a.id === articles[5].authorId)?.slug}`}
+                                title={data.authors.find(a => a.id === articles[5].authorId)?.name}
                             >
                                 <span className="font-semibold text-black dark:text-white">
-                                    {author?.name}
+                                    {data.authors.find(a => a.id === articles[5].authorId)?.name}
                                 </span>{" "}
                             </Link>
                             | {articles[5].time} Read
                         </p>
                     </div>
-                )})()}
+                )}
 
                 {/* Second row of 3 articles (same as first 3) */}
                 {articles.slice(6, 9).map((article) => (
