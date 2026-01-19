@@ -3,6 +3,7 @@ import Link from "next/link";
 import ShareArticle from "@/app/components/ShareArticle";
 import ArticleSidebar from "@/app/components/ArticleSidebar";
 import RelatedNews from "@/app/components/RelatedNews";
+import Image from "next/image";
 
 const SITE_URL = "https://timeschronicle.org";
 
@@ -197,12 +198,14 @@ export default async function NewsPage({ params }) {
         {article.image && (
           <div className="relative w-full mb-8 sm:mb-10 overflow-hidden">
             <div className="relative aspect-[16/9]">
-              <img
+              <Image
                 src={article.image}
                 alt={article.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                className="object-cover"
+                priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
             </div>
 
             {/* Overlay Content */}
