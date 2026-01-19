@@ -7,6 +7,8 @@ import Image from "next/image";
 
 const SITE_URL = "https://timeschronicle.org";
 
+/* ---------------- METADATA ---------------- */
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const formattedCategory = slug.charAt(0).toUpperCase() + slug.slice(1)
@@ -55,7 +57,6 @@ export async function generateMetadata({ params }) {
 
 export default async function CategoryPage({ params }) {
   const { slug } = await params;
-
   const categorySlug = slug?.toLowerCase();
 
    const articles = data.articles.filter(
@@ -79,22 +80,18 @@ export default async function CategoryPage({ params }) {
       image: "/categories/politics.webp",
       description: "Times Chronicle Politics News covers in-depth political reporting on U.S. elections, Congress, the White House, federal agencies, political movements, and policy decisions that influence American democracy."
     },
-
     business: {
       image: "/categories/business.webp",
       description: "Times Chronicle Business News covers corporate strategy, financial markets, banking, entrepreneurship, mergers, economic trends, and the forces shaping global commerce."
     },
-
     technology: {
       image: "/categories/technology.webp",
       description: "Technology news and analysis focused on artificial intelligence, cybersecurity, innovation, startups, Big Tech, digital policy, and the future of the connected world."
     },
-
     health: {
       image: "/categories/health.webp",
       description: "Trusted health reporting on medical research, public health policy, wellness trends, healthcare systems, and scientific discoveries impacting everyday life."
     },
-
     world: {
       image: "/categories/world.webp",
       description: "Global news coverage featuring international politics, diplomacy, conflicts, economic developments, and major events shaping regions around the world."
@@ -129,7 +126,7 @@ export default async function CategoryPage({ params }) {
   const heroImage = categoryMeta.image;
   const categoryDescription = categoryMeta.description;
 
-  /* ---------- JSON-LD ---------- */
+  /* ---------------- JSON-LD ---------------- */
 
   const categoryJsonLd = {
   "@context": "https://schema.org",
@@ -188,79 +185,65 @@ export default async function CategoryPage({ params }) {
 };
 
   return (
-    <section className="mx-auto text-black dark:text-gray-200 bg-white dark:bg-[#01131d]">
+    <section className="bg-white dark:bg-[#01131d] text-black dark:text-gray-200">
+
+      {/* JSON-LD */}
       <script
-        id="category-collection-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryJsonLd) }}
       />
-
       <script
-        id="category-breadcrumb-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      {/* Top Section */}
+      {/* MOBILE-FIRST LCP CONTENT */}
+      <div className="px-5 pt-6 md:hidden">
+        <h1 className="text-2xl font-extrabold uppercase">
+          {categoryName} News | Times Chronicle
+        </h1>
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+          {categoryMeta.description}
+        </p>
+      </div>
+
+      {/* DESKTOP HERO */}
       <div
         className="
-          grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 px-5 sm:px-7 md:px-10 py-10 mb-10
-          bg-[repeating-linear-gradient(90deg,transparent,transparent_11px,#fcfcfc_11px,#e0e0e0_12px)]
-          dark:bg-[repeating-linear-gradient(90deg,transparent,transparent_11px,#222222_11px,#222222_12px)]
+          hidden md:grid md:grid-cols-2 gap-10
+          px-10 py-10 mb-10
+          md:bg-[repeating-linear-gradient(90deg,transparent,transparent_11px,#fcfcfc_11px,#e0e0e0_12px)]
+          dark:md:bg-[repeating-linear-gradient(90deg,transparent,transparent_11px,#222222_11px,#222222_12px)]
         "
       >
-        {/* LEFT — vertically centered text */}
-        <div className="flex flex-col justify-center z-10 md:text-left">
-          {/* Breadcrumb */}
-          <div className="text-xs uppercase mb-2 sm:mb-3 text-gray-500 dark:text-gray-400">
-            <Link
-              href="/"
-              title="Home"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              Category
-            </Link>
-            <span className="px-2">›</span>
-            <span className="font-semibold">{categoryName}</span>
-          </div>
-
-          {/* Heading */}
-          <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl uppercase mb-3 text-black dark:text-white">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-4xl font-extrabold uppercase">
             {categoryName} News — Times Chronicle
           </h1>
-
-          {/* Description */}
-          <p className="max-w-xl mx-auto md:mx-0 text-gray-600 dark:text-gray-300 text-sm sm:text-base">
-            {categoryDescription}
+          <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-xl">
+            {categoryMeta.description}
           </p>
         </div>
 
-        {/* RIGHT — Category Image */}
-        <div className="hidden md:block relative w-full max-w-md mx-auto mt-6 md:mt-0">
-          {/* Blurred shadow */}
-          <div className="absolute inset-0 rounded-lg bg-black/20 blur-xl -z-10"></div>
-
-          {/* Image */}
-          <div className="relative z-20 overflow-hidden shadow-2xl rounded-lg w-full h-[30vh] md:h-[40vh]">
-            <Image
-              src={heroImage}
-              alt={categoryName}
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-          </div>
+        <div className="relative h-[40vh] rounded-lg overflow-hidden shadow-xl">
+          <Image
+            src={categoryMeta.image}
+            alt={categoryName}
+            fill
+            priority={false}
+            sizes="50vw"
+            className="object-cover"
+          />
         </div>
       </div>
 
-      {/* Articles List */}
-      <CategoryPageArticles articles={categoryPageArticle} />
+      {/* ARTICLES */}
+      <CategoryPageArticles articles={articles.slice(0, 3)} />
 
-      {/* Ad Banner */}
       <AdBanner />
 
-      {/* More News */}
-      <CategoryMoreNews articles={moreNews} />
+      <CategoryMoreNews articles={articles.slice(3)} />
+
     </section>
   );
 }
