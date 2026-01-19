@@ -3,6 +3,7 @@
 import Link from "next/link";
 import data from "@/data/data.json";
 import CategoryTag1 from "./CategoryTag1";
+import Image from "next/image";
 
 export default function RelatedNews({articles}) {
   const underlineHover = `
