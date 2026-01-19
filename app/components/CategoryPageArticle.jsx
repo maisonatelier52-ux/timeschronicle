@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import CategoryTag from "./CategoryTag";
 import data from "@/data/data.json";
 
@@ -19,7 +20,7 @@ export default function CategoryPageArticles({ articles }) {
       ) || secondArticle;
   }
 
-   const underlineHover = `
+  const underlineHover = `
     inline
     bg-[linear-gradient(to_right,transparent,transparent),linear-gradient(to_right,#000,#000)]
     dark:bg-[linear-gradient(to_right,transparent,transparent),linear-gradient(to_right,#fff,#fff)]
@@ -31,63 +32,29 @@ export default function CategoryPageArticles({ articles }) {
   `;
 
   return (
-    <div
-      className="
-        grid
-        grid-cols-1
-        sm:grid-cols-2
-        lg:grid-cols-4 lg:grid-rows-2
-        gap-6
-        px-7 pb-2
-      "
-    >
-      {/* Grid 1: Featured Article */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-6 px-7 pb-2">
+
+      {/* ================= FEATURED ARTICLE (LCP ELEMENT) ================= */}
       {firstArticle && (
         <Link
           href={`/news/${firstArticle.slug}`}
-          title={firstArticle.title}
-          className="
-            sm:col-span-2
-            lg:col-span-2 lg:row-span-2
-            flex flex-col pr-6
-            overflow-hidden
-            group
-            bg-white dark:bg-[#01131d]
-            lg:border-r border-gray-200 dark:border-gray-700
-          "
+          className="sm:col-span-2 lg:row-span-2 lg:col-span-2 flex flex-col pr-6 group lg:border-r border-gray-200 dark:border-gray-700"
         >
-          {firstArticle.image && (
-            <div className="relative w-full h-64 md:h-80 overflow-hidden group/image">
-              
-              {/* Image */}
-              <img
-                src={firstArticle.image}
-                alt={firstArticle.title}
-                className="
-                  w-full h-full object-cover
-                  transition-all duration-100 ease-out
-                  md:group-hover/image:scale-[1.04]
-                "
-              />
-              {/* WHITE HOVER SHADE */}
-              <div className="
-                hidden md:block
-                absolute inset-0
-                bg-white/0
-                group-hover:bg-white/15
-                transition-colors duration-300
-                pointer-events-none
-              " />
-              {/* Category Tag */}
-              <CategoryTag text={firstArticle.category.toUpperCase()} />
-            </div>
-          )}
+          <div className="relative w-full h-64 md:h-80 overflow-hidden">
+            <Image
+              src={firstArticle.image}
+              alt={firstArticle.title}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transition-transform md:group-hover:scale-[1.04]"
+            />
+            <CategoryTag text={firstArticle.category.toUpperCase()} />
+          </div>
 
-          <div className="flex flex-col pt-4 flex-1">
-            <h2 className="font-bold text-xl md:text-2xl mb-2 ${}">
-              <span className={underlineHover}>
-                {firstArticle.title}
-              </span>
+          <div className="pt-4">
+            <h2 className="font-bold text-xl md:text-2xl mb-2">
+              <span className={underlineHover}>{firstArticle.title}</span>
             </h2>
 
             <p className="text-gray-600 dark:text-gray-300 line-clamp-3 mb-2">
@@ -105,7 +72,7 @@ export default function CategoryPageArticles({ articles }) {
         </Link>
       )}
 
-      {/* Grid 2 */}
+      {/* ================= SECOND ARTICLE ================= */}
       {secondArticle && (
         <Link
           href={
@@ -113,111 +80,61 @@ export default function CategoryPageArticles({ articles }) {
               ? `/julio-herrera-velutini/${secondArticle.slug}`
               : `/news/${secondArticle.slug}`
           }
-          title={secondArticle.title}
           className="
-            flex flex-col
-            overflow-hidden
-            group
-            bg-white dark:bg-[#01131d]
-            sm:col-span-1
+            flex flex-col group
             lg:col-start-3 lg:row-start-1
             lg:border-b
             border-gray-200 dark:border-gray-700
           "
         >
-          {secondArticle.image && (
-            <div className="relative w-full h-28 md:h-32 overflow-hidden group">
-              <img
-                src={secondArticle.image}
-                alt={secondArticle.title}
-                className="
-                  w-full h-full object-cover
-                  transition-transform duration-500
-                  group-hover:scale-[1.03]
-                "
-              />
-
-              {/* WHITE HOVER SHADE */}
-              <div className="
-                absolute inset-0
-                bg-white/0
-                group-hover:bg-white/15
-                transition-colors duration-300
-                pointer-events-none
-              " />
-
-              <CategoryTag text={secondArticle.category.toUpperCase()} />
-            </div>
-          )}
+          <div className="relative h-28 md:h-32">
+            <Image
+              src={secondArticle.image}
+              alt={secondArticle.title}
+              fill
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className="object-cover"
+            />
+            <CategoryTag text={secondArticle.category.toUpperCase()} />
+          </div>
 
           <div className="py-3">
-            <h3 className="font-bold text-lg uppercase mb-1 line-clamp-4">
-              <span className={underlineHover}>
-                {secondArticle.title}
-              </span>
+            <h3 className="font-bold text-lg uppercase line-clamp-4">
+              <span className={underlineHover}>{secondArticle.title}</span>
             </h3>
-            <p className="text-[10px] text-gray-500 uppercase">
-              By{" "}
-              <span className="font-semibold text-black dark:text-white">
-                {getAuthorName(secondArticle.authorId)}
-              </span>{" "}
-              | {secondArticle.time} Read
+            <p className="text-[10px] uppercase text-gray-500">
+              By {getAuthorName(secondArticle.authorId)} | {secondArticle.time} Read
             </p>
           </div>
         </Link>
       )}
 
-      {/* Grid 3 */}
+      {/* ================= THIRD ARTICLE ================= */}
       {thirdArticle && (
         <Link
           href={`/news/${thirdArticle.slug}`}
-          title={thirdArticle.title}
           className="
-            flex flex-col
-            overflow-hidden
-            group
-            bg-white dark:bg-[#01131d]
-            sm:col-span-1
+            flex flex-col group
             lg:col-start-3 lg:row-start-2
           "
         >
-          {thirdArticle.image && (
-            <div className="relative w-full h-28 md:h-32 overflow-hidden group">
-              <img
-                src={thirdArticle.image}
-                alt={thirdArticle.title}
-                className="
-                  w-full h-full object-cover
-                  transition-transform duration-500
-                  group-hover:scale-[1.03]
-                "
-              />
-
-              {/* WHITE HOVER SHADE */}
-              <div className="
-                absolute inset-0
-                bg-white/0
-                group-hover:bg-white/15
-                transition-colors duration-300
-                pointer-events-none
-              " />
-
-              <CategoryTag text={thirdArticle.category.toUpperCase()} />
-            </div>
-          )}
+          <div className="relative h-28 md:h-32">
+            <Image
+              src={thirdArticle.image}
+              alt={thirdArticle.title}
+              fill
+              sizes="(max-width: 768px) 50vw, 25vw"
+              className="object-cover"
+            />
+            <CategoryTag text={thirdArticle.category.toUpperCase()} />
+          </div>
 
           <div className="py-3">
-            <h3 className="font-bold text-lg uppercase mb-1 line-clamp-4">
-              <span className={underlineHover}>
-                {thirdArticle.title}
-              </span>
+            <h3 className="font-bold text-lg uppercase line-clamp-4">
+              <span className={underlineHover}>{thirdArticle.title}</span>
             </h3>
-            <p className="text-[10px] text-gray-500 uppercase">
-              By{" "}
-              <span className="font-semibold text-black dark:text-white">
-                {getAuthorName(thirdArticle.authorId)}
-              </span>{" "}
-              | {thirdArticle.time} Read
+            <p className="text-[10px] uppercase text-gray-500">
+              By {getAuthorName(thirdArticle.authorId)} | {thirdArticle.time} Read
             </p>
           </div>
         </Link>

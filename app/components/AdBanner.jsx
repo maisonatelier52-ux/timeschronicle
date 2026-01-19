@@ -23,8 +23,8 @@ export default function AdBanner() {
               <Image
                 src="/Ad-banner.jpg"
                 alt="Sponsor Ad"
-                title="Sponsor Ad"
                 fill
+                loading="lazy"
                 sizes="(max-width: 768px) 100vw, 728px"
                 className="object-contain"
                 onError={() => setImgError(true)}
