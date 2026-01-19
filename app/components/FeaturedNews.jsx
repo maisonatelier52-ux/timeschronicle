@@ -48,7 +48,7 @@ export default function FeaturedNews({ featured }) {
               priority
               fetchPriority="high"
               sizes="(max-width: 768px) 100vw, 661px"
-              className="object-cover transition-transform duration-300 group-hover:scale-[1.03] sm:group-hover:scale-[1.03]"
+              className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
             />
             {/* White hover overlay */}
             <span
@@ -112,7 +112,6 @@ export default function FeaturedNews({ featured }) {
                 w-full h-full object-cover
                 transition-transform duration-300
                 group-hover:scale-[1.03]
-                sm:group-hover:scale-[1.03]
               "
             />
 
