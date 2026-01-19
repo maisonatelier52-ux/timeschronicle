@@ -3,6 +3,10 @@ import data from "@/data/data.json";
 import CategoryTag1 from "./CategoryTag1";
 import Link from "next/link";
 
+const authorsMap = Object.fromEntries(
+    data.authors.map(author => [author.id, author])
+);
+
 export default function MoreRecent({articles}) {
 
     const underlineHover = `
@@ -38,118 +42,93 @@ export default function MoreRecent({articles}) {
             <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-auto divide-x divide-gray-300">
 
                 {/* First 3 articles (row 1) */}
-                {articles.slice(0, 3).map((article) => (
-                <Link href={`/news/${article.slug}`}
-                title={article.title}
-                    key={article.slug}
-                    className="group flex flex-col px-7 pb-4 transition-colors"
-                >
-                    <div className="relative aspect-[9/4] overflow-hidden group">
-                        <img
-                            src={article.image}
-                            alt={article.title}
-                            loading="lazy"
-                            className="
-                            w-full h-full object-cover
-                            transition-transform duration-300
-                            group-hover:scale-[1.03]
-                            "
-                        />
-
-                        {/* White hover overlay */}
-                        <span
-                            className="
-                            absolute inset-0
-                            bg-white/20
-                            opacity-0
-                            transition-opacity duration-300
-                            group-hover:opacity-100
-                            pointer-events-none
-                            "
-                        />
-
-                        {/* Category tag stays on top */}
-                        <CategoryTag text={article.category.toUpperCase()} />
-                    </div>
-
-                    <h2 className="font-bold pt-4 text-[24px] leading-[1.15]">
-                        <span className={underlineHover}>
-                            {article.title}
-                        </span>
-                    </h2>
-
-                    <p className="pt-2 text-[9px] text-gray-400 uppercase">
-                    By{" "}
-                    <span className="font-semibold text-black dark:text-white">
-                        {data.authors.find(a => a.id === article.authorId)?.name}
-                    </span>{" "}
-                    | {article.time} Read
-                    </p>
-                </Link>
-                ))}
-
-                {/* 4th Article (left, row 2) */}
-                {articles[3] && (
-                <Link 
-                    title={articles[3].title}
-                    href={`/news/${articles[3].slug}`}
-                    className="relative md:col-start-1 md:row-start-2 h-[360px] px-7 overflow-hidden group"
+                {articles.slice(0, 3).map((article) => {
+                    const author = authorsMap[article.authorId];
+                    <Link href={`/news/${article.slug}`}
+                    title={article.title}
+                        key={article.slug}
+                        className="group flex flex-col px-7 pb-4 transition-colors"
                     >
-                    {/* Image */}
-                    <img
-                        src={articles[3].image}
-                        alt={articles[3].title}
-                        loading="lazy"
-                        fetchPriority="low"
-                        className="
-                        w-full h-full object-cover
-                        transition-transform duration-300
-                        "
-                    />
+                        <div className="relative aspect-[9/4] overflow-hidden group">
+                            <img
+                                src={article.image}
+                                alt={article.title}
+                                loading="lazy"
+                                className="
+                                w-full h-full object-cover
+                                transition-transform duration-300
+                                group-hover:scale-[1.03]
+                                "
+                            />
 
-                    {/* White hover overlay (image effect) */}
-                    <span
-                        className="
-                        absolute inset-0
-                        bg-white/20
-                        opacity-0
-                        transition-opacity duration-300
-                        group-hover:opacity-100
-                        pointer-events-none
-                        "
-                    />
+                            {/* White hover overlay */}
+                            <span
+                                className="
+                                absolute inset-0
+                                bg-white/20
+                                opacity-0
+                                transition-opacity duration-300
+                                group-hover:opacity-100
+                                pointer-events-none
+                                "
+                            />
 
-                    {/* Black gradient for text readability */}
-                    <span
-                        className="
-                        absolute inset-x-0 bottom-0 h-2/3 left-7 right-7
-                        bg-gradient-to-t from-black/80 via-black/40 to-transparent
-                        pointer-events-none
-                        "
-                    />
+                            {/* Category tag stays on top */}
+                            <CategoryTag text={article.category.toUpperCase()} />
+                        </div>
 
-                    {/* Content */}
-                    <div className="absolute inset-0 flex flex-col justify-end p-4 z-10">
-                        <div className="px-6">
-                        <CategoryTag1 text={articles[3].category.toUpperCase()} />
-
-                        <h2 className="font-bold text-white text-[24px] mt-2 leading-[1.15]">
-                            <span className={underlineHoverRev}>
-                                {articles[3].title}
+                        <h2 className="font-bold pt-4 text-[24px] leading-[1.15]">
+                            <span className={underlineHover}>
+                                {article.title}
                             </span>
                         </h2>
 
+                        <p className="pt-2 text-[9px] text-gray-400 uppercase">
+                        By{" "}
+                        <span className="font-semibold text-black dark:text-white">
+                            {author?.name}
+                        </span>{" "}
+                        | {article.time} Read
+                        </p>
+                    </Link>
+                })}
+
+                {/* 4th Article (left, row 2) */}
+                {articles[3] && (() => {
+                const article = articles[3];
+                const author = authorsMap[article.authorId];
+
+                return (
+                    <Link
+                    href={`/news/${article.slug}`}
+                    title={article.title}
+                    className="relative md:col-start-1 md:row-start-2 h-[360px] px-7 overflow-hidden group"
+                    >
+                    <img
+                        src={article.image}
+                        alt={article.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                    />
+
+                    <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="absolute inset-x-0 bottom-0 h-2/3 left-7 right-7 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+                    <div className="absolute inset-0 flex flex-col justify-end p-4 z-10">
+                        <div className="px-6">
+                        <CategoryTag1 text={article.category.toUpperCase()} />
+                        <h2 className="font-bold text-white text-[24px] mt-2 leading-[1.15]">
+                            <span className={underlineHoverRev}>{article.title}</span>
+                        </h2>
                         <p className="text-[9px] text-gray-200 uppercase py-2">
-                            By{" "}
-                            <span className="font-semibold text-white">
-                                {data.authors.find(a => a.id === articles[3].authorId)?.name}
-                            </span>{" "}
-                            | {articles[3].time} Read
+                            By <span className="font-semibold">{author?.name}</span> |{" "}
+                            {article.time} Read
                         </p>
                         </div>
                     </div>
-                </Link>
-                )}
+                    </Link>
+                );
+                })()}
 
                 {/* 5th Article (under 4th, same column) */}
                 {articles[4] && (() => {
@@ -164,9 +143,7 @@ export default function MoreRecent({articles}) {
                         ? articles[4].title2
                         : articles[4].title;
 
-                    const author = data.authors.find(
-                        a => a.id === articles[4].authorId
-                    );
+                    const author = authorsMap[articles[4].authorId];
 
                     return (
                         <div className="md:col-start-1 md:row-start-3 flex flex-col px-7">
@@ -203,7 +180,9 @@ export default function MoreRecent({articles}) {
                     );
                 })()}
                 {/* 6th Article (right, spans rows 2–3 & columns 2–3) */}
-                {articles[5] && (
+                {articles[5] && (() => {
+                    const author = authorsMap[articles[5].authorId];
+                    return (
                     <div
                         className="md:col-start-2 md:col-span-2 md:row-start-2 md:row-span-2 flex flex-col px-7 pb-4"
                     >
@@ -252,17 +231,17 @@ export default function MoreRecent({articles}) {
                         <p className="pb-1 text-[9px] text-gray-400 uppercase pt-2">
                             By{" "}
                             <Link 
-                                href={`/author/${data.authors.find(a => a.id === articles[5].authorId)?.slug}`}
-                                title={data.authors.find(a => a.id === articles[5].authorId)?.name}
+                                href={`/author/${author?.slug}`}
+                                title={author?.name}
                             >
                                 <span className="font-semibold text-black dark:text-white">
-                                    {data.authors.find(a => a.id === articles[5].authorId)?.name}
+                                    {author?.name}
                                 </span>{" "}
                             </Link>
                             | {articles[5].time} Read
                         </p>
                     </div>
-                )}
+                )})()}
 
                 {/* Second row of 3 articles (same as first 3) */}
                 {articles.slice(6, 9).map((article) => (
