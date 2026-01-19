@@ -51,17 +51,16 @@ export default function RelatedNews({articles}) {
                 className="relative mb-3 aspect-[16/7] overflow-hidden block group"
               >
                 {/* Image */}
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
-                  className="
-                    w-full h-full object-cover
-                    transition-transform duration-300 ease-out
-                    group-hover:scale-[1.03]
-                  "
+                  fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                  priority={false}
                 />
 
-                {/* White hover overlay */}
                 <span
                   className="
                     absolute inset-0
@@ -70,6 +69,7 @@ export default function RelatedNews({articles}) {
                     transition-opacity duration-300
                     group-hover:opacity-100
                     pointer-events-none
+                    sm:block
                   "
                 />
               </Link>

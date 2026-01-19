@@ -204,6 +204,7 @@ export default async function NewsPage({ params }) {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
             </div>
