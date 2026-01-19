@@ -153,6 +153,7 @@ export default async function NewsPage({ params }) {
       },
     ],
   };
+  const sanitizedContent = article.content.replace(/<u>(.*?)<\/u>/g, '<span class="underline">$1</span>');
 
   return (
     <main className="bg-white text-black dark:text-white dark:bg-[#01131d]">
@@ -259,7 +260,7 @@ export default async function NewsPage({ params }) {
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:my-4
               [&_li]:my-2 [&_li]:leading-relaxed
             "
-            dangerouslySetInnerHTML={{ __html: article.content }}
+            dangerouslySetInnerHTML={{ __html: sanitizedContent }}
           />
           {/* RIGHT SIDEBAR */}
           <ArticleSidebar />
