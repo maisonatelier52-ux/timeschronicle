@@ -3,6 +3,7 @@
 import Link from "next/link";
 import data from "@/data/data.json";
 import CategoryTag1 from "./CategoryTag1";
+import Image from "next/image";
 
 export default function MoreNewsByAuthor({ authorId }) {
   const author = data.authors.find(a => a.id === authorId);
@@ -53,10 +54,15 @@ export default function MoreNewsByAuthor({ authorId }) {
             {/* IMAGE */}
             <Link href={`/news/${article.slug}`} title={article.title}>
               <div className="relative mb-3 aspect-[16/7] overflow-hidden">
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover hover:opacity-80 transition"
+                  fill
+                  sizes="(max-width: 640px) 100vw,
+                         (max-width: 1024px) 50vw,
+                         25vw"
+                  loading="lazy"
+                  className="object-cover transition-opacity hover:opacity-80"
                 />
               </div>
             </Link>
