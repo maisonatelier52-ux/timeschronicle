@@ -25,7 +25,7 @@ export default function MoreNewsByAuthor({ authorId }) {
 
   return (
     <section className="mx-auto px-7 pb-7 bg-white dark:bg-[#01131d]">
-      <h2 className="py-5 text-2xl font-bold text-black dark:text-white uppercase">
+      <h2 className="pb-5 text-2xl font-bold text-black dark:text-white uppercase">
         News written by {author.name} at Times Chronicle
       </h2>
 
