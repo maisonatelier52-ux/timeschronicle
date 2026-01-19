@@ -1,17 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FaShareAlt,
-  FaFacebookF,
+  FaRedditAlien,
   FaTwitter,
   FaLink,
   FaInstagram,
   FaCheck,
 } from "react-icons/fa";
 
-export default function ShareArticle() {
+export default function ShareArticle({ title, description }) {
   const [copied, setCopied] = useState(false);
+  const [shareUrl, setShareUrl] = useState("");
+
+  useEffect(() => {
+    setShareUrl(encodeURIComponent(window.location.href));
+  }, []);
+
+  const encodedTitle = encodeURIComponent(title || "");
+  const encodedDesc = encodeURIComponent(description || "");
+
+  // Get current URL safely
+  useEffect(() => {
+    setShareUrl(encodeURIComponent(window.location.href));
+  }, []);
 
   const copyLink = async () => {
     await navigator.clipboard.writeText(window.location.href);
@@ -35,19 +48,33 @@ export default function ShareArticle() {
         {/* RIGHT */}
         <div className="flex items-center gap-3 group">
 
-          {/* FACEBOOK */}
-          <IconWrap label="Facebook">
-            <IconBox className="bg-blue-600 hover:shadow-[0_0_12px_rgba(37,99,235,0.7)]">
-              <FaFacebookF />
-            </IconBox>
-          </IconWrap>
+          {/* REDDIT */}
+          <a
+            href={`https://www.reddit.com/submit?url=${shareUrl}&title=${encodedTitle}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on Reddit"
+          >
+            <IconWrap label="Reddit">
+              <IconBox className="bg-orange-600 hover:shadow-[0_0_12px_rgba(234,88,12,0.7)]">
+                <FaRedditAlien />
+              </IconBox>
+            </IconWrap>
+          </a>
 
-          {/* X */}
-          <IconWrap label="X">
-            <IconBox className="bg-sky-500 hover:shadow-[0_0_12px_rgba(14,165,233,0.7)]">
-              <FaTwitter />
-            </IconBox>
-          </IconWrap>
+          {/* X / TWITTER */}
+          <a
+            href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${encodedTitle}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Share on X"
+          >
+            <IconWrap label="X">
+              <IconBox className="bg-sky-500 hover:shadow-[0_0_12px_rgba(14,165,233,0.7)]">
+                <FaTwitter />
+              </IconBox>
+            </IconWrap>
+          </a>
 
           {/* COPY LINK */}
           <button
@@ -63,11 +90,19 @@ export default function ShareArticle() {
           </button>
 
           {/* INSTAGRAM */}
-          <IconWrap label="Instagram">
-            <IconBox className="bg-gradient-to-tr from-pink-500 via-purple-500 to-yellow-400 hover:shadow-[0_0_12px_rgba(236,72,153,0.7)]">
-              <FaInstagram />
-            </IconBox>
-          </IconWrap>
+          <button
+            aria-label="Share on Instagram"
+            onClick={() => {
+              copyLink();
+              window.open("https://www.instagram.com/", "_blank");
+            }}
+          >
+            <IconWrap label="Instagram">
+              <IconBox className="bg-gradient-to-tr from-pink-500 via-purple-500 to-yellow-400 hover:shadow-[0_0_12px_rgba(236,72,153,0.7)]">
+                <FaInstagram />
+              </IconBox>
+            </IconWrap>
+          </button>
 
         </div>
       </section>
