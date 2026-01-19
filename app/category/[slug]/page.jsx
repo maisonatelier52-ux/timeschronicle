@@ -198,7 +198,7 @@ export default async function CategoryPage({ params }) {
       />
 
       {/* MOBILE-FIRST LCP CONTENT */}
-      <div className="px-5 pt-6 md:hidden">
+      <div className="px-7 pt-7 pb-4 md:hidden">
         <h1 className="text-2xl font-extrabold uppercase">
           {categoryName} News | Times Chronicle
         </h1>
@@ -217,9 +217,9 @@ export default async function CategoryPage({ params }) {
         "
       >
         <div className="flex flex-col justify-center">
-          <h1 className="text-4xl font-extrabold uppercase">
+          <h2 className="text-4xl font-extrabold uppercase">
             {categoryName} News — Times Chronicle
-          </h1>
+          </h2>
           <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-xl">
             {categoryMeta.description}
           </p>
