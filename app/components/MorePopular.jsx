@@ -66,6 +66,7 @@ export default function MorePopular({ articles }) {
                 <img
                   src={topLeft.image}
                   alt={topLeft.title}
+                  fetchPriority="lazy"
                   className="
                     w-full h-full object-cover
                     transition-transform duration-300
