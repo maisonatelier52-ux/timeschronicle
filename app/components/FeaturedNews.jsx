@@ -47,7 +47,9 @@ export default function FeaturedNews({ featured }) {
               fill
               priority
               fetchPriority="high"
-              sizes="(max-width: 768px) 100vw, 661px"
+              sizes="(max-width: 640px) 90vw,
+                (max-width: 1024px) 80vw,
+                661px"
               className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
             />
             {/* White hover overlay */}
@@ -105,14 +107,13 @@ export default function FeaturedNews({ featured }) {
           `}
         >
           <div className="relative aspect-[1200/661] overflow-hidden">
-            <img
+            <Image
               src={article.image}
               alt={article.title}
-              className="
-                w-full h-full object-cover
-                transition-transform duration-300
-                group-hover:scale-[1.03]
-              "
+              fill
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 400px"
+              className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
             />
 
             <span
@@ -176,14 +177,13 @@ export default function FeaturedNews({ featured }) {
               </div>
 
               <div className="w-[110px] aspect-[3/2] shrink-0 overflow-hidden relative">
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
-                  className="
-                    w-full h-full object-cover
-                    transition-transform duration-300
-                    group-hover:scale-[1.05]
-                  "
+                  fill
+                  loading="lazy"
+                  sizes="110px"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.05]"
                 />
                 <span
                   className="
