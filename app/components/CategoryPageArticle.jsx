@@ -154,11 +154,13 @@ export default function CategoryPageArticles({ articles }) {
           — Advertisement —
         </p>
 
-        <img
-          src="/banner-1.jpg"
-          alt="Advertisement"
-          className="block mx-auto w-auto h-auto max-w-full"
-        />
+        <Link href="http://wiresavvy.com/" title="WireSavvy" target="_blank">
+          <img
+            src="/ads/banner-1.png"
+            alt="Advertisement"
+            className="block mx-auto w-auto h-auto max-w-full"
+          />
+        </Link>
       </div>
     </div>
   );

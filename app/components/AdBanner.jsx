@@ -15,13 +15,13 @@ export default function AdBanner() {
         - Advertisement -
       </span>
 
-      <Link href="http://wiresavvy.com/" title="WireSavvy Home">
+      <Link href="http://wiresavvy.com/" title="WireSavvy" target="_blank">
         {/* Wrapper gives grey BG if no image */}
         <div className="w-full md:w-[728px] md:h-[120px] flex justify-center items-center">
           {!imgError ? (
             <div className="relative w-full max-w-[728px] h-[90px] md:h-[120px]">
               <Image
-                src="/Ad-banner.jpg"
+                src="/ads/Ad-banner.png"
                 alt="Sponsor Ad"
                 fill
                 loading="lazy"

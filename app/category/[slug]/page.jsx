@@ -67,9 +67,6 @@ export default async function CategoryPage({ params }) {
       article.name !== "Julio Herrera Velutini"
   ).sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  const categoryPageArticle = articles.slice(0,3);
-  const moreNews = articles.slice(3);
-
   const CATEGORY_META = {
     national: {
       image: "/categories/national.webp",
@@ -123,7 +120,6 @@ export default async function CategoryPage({ params }) {
 
   const categoryMeta = CATEGORY_META[categoryKey];
 
-  const heroImage = categoryMeta.image;
   const categoryDescription = categoryMeta.description;
 
   /* ---------------- JSON-LD ---------------- */
