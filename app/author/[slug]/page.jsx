@@ -1,5 +1,5 @@
 import data from "@/data/data.json";
-import { FaTwitter, FaFacebookF, FaInstagram, FaCheck } from "react-icons/fa";
+import { FaCheck, FaQuora, FaMedium, FaPinterest } from "react-icons/fa";
 import MoreNewsByAuthor from "@/app/components/MoreNewsByAuthor";
 import Image from "next/image";
 
@@ -161,19 +161,19 @@ export default async function AuthorPage({ params }) {
 
           {/* SOCIALS */}
           <div className="flex items-center gap-4 mt-4">
-            {author.twitter && (
-              <a href={author.twitter} title="Twitter" target="_blank" rel="noopener noreferrer">
-                <FaTwitter className="text-gray-500 hover:text-blue-500 transition" />
+            {author.quora && (
+              <a href={author.quora} title="Quora" target="_blank" rel="noopener noreferrer">
+                <FaQuora className="text-gray-500 hover:text-blue-500 transition" />
               </a>
             )}
-            {author.facebook && (
-              <a href={author.facebook} title="Facebook" target="_blank" rel="noopener noreferrer">
-                <FaFacebookF className="text-gray-500 hover:text-blue-600 transition" />
+            {author.medium && (
+              <a href={author.medium} title="Medium" target="_blank" rel="noopener noreferrer">
+                <FaMedium className="text-gray-500 hover:text-blue-600 transition" />
               </a>
             )}
-            {author.instagram && (
-              <a href={author.instagram} title="Instagram" target="_blank" rel="noopener noreferrer">
-                <FaInstagram className="text-gray-500 hover:text-pink-500 transition" />
+            {author.pinterest && (
+              <a href={author.pinterest} title="Pinterest" target="_blank" rel="noopener noreferrer">
+                <FaPinterest className="text-gray-500 hover:text-pink-500 transition" />
               </a>
             )}
           </div>

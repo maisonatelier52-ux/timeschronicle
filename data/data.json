@@ -6,9 +6,9 @@
       "slug": "charles-williams",
       "photo": "/author/Charles-Williams.webp",
       "bio": "Covers U.S. national affairs with a focus on federal agencies, Supreme Court decisions, and major rulings from federal courts. His reporting emphasizes legal accountability, institutional power, and how government actions shape everyday life across the United States.",
-      "twitter": "twitter.com",
-      "facebook": "facebook.com",
-      "instagram": "instagram.com"
+      "quora": "https://www.quora.com/profile/Charles-Williams-3018",
+      "medium": "https://medium.com/@charles_williams_wiresavvy01",
+      "pinterest": "https://in.pinterest.com/charles_williams01/"
     },
     {
       "id": 2,
@@ -16,9 +16,9 @@
       "slug": "chris-louis",
       "photo": "/author/Chris-Louis.webp",
       "bio": "Reports on American politics, covering the White House, Congress, elections, and public policy. He specializes in breaking down complex political developments and analyzing how legislative and executive decisions impact voters and democratic institutions.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "https://www.quora.com/profile/Chris-Louis-118",
+      "medium": "https://medium.com/@chris_louis_timeschronicle",
+      "pinterest": "https://in.pinterest.com/chris_louis01/"
     },
     {
       "id": 3,
@@ -26,9 +26,9 @@
       "slug": "david-jonathan",
       "photo": "/author/David-Jonathan.webp",
       "bio": "Focused on the economy, financial markets, major corporations, and employment trends. His work examines how economic forces, corporate strategies, and policy decisions affect businesses and workers alike.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "",
+      "medium": "https://medium.com/@david_jonathan",
+      "pinterest": "https://in.pinterest.com/david_jonathan0892/_profile/"
     },
     {
       "id": 4,
@@ -36,9 +36,9 @@
       "slug": "dr-marina-cordelia",
       "photo": "/author/Dr-Marina-Cordelia.webp",
       "bio": "Covers technology with an emphasis on artificial intelligence, Big Tech, cybersecurity, and innovation. With a research-driven approach, she explores how emerging technologies are reshaping industries, society, and global power dynamics.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "",
+      "medium": "",
+      "pinterest": ""
     },
     {
       "id": 5,
@@ -46,9 +46,9 @@
       "slug": "mark-nathaniel",
       "photo": "/author/Mark-Nathaniel.webp",
       "bio": "Reports on health and science, covering public health policy, medical research, and healthcare systems. His reporting focuses on evidence-based insights and how scientific developments translate into real-world health outcomes.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "",
+      "medium": "",
+      "pinterest": ""
     },
     {
       "id": 6,
@@ -56,9 +56,9 @@
       "slug": "naida-storm",
       "photo": "/author/Naida-Storm.webp",
       "bio": "Covers world news, reporting on international politics, global conflicts, diplomacy, and events with direct impact on the United States. Her work connects global developments to their broader geopolitical and economic consequences.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "",
+      "medium": "",
+      "pinterest": ""
     }
   ],
   "articles": [
