@@ -128,6 +128,10 @@ export default async function NewsPage({ params }) {
       "name": author?.name || "Times Chronicle Staff",
       "url": author ? `${SITE_URL}/author/${author.id}` : undefined,
     },
+    "about": {
+      "@type": "Person",
+      "@id": `${SITE_URL}/julio-herrera-velutini/#person`
+    },
     "publisher": {
       "@type": "NewsMediaOrganization",
       "name": "Times Chronicle",
@@ -155,6 +159,68 @@ export default async function NewsPage({ params }) {
     ],
   };
 
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}/julio-herrera-velutini/#person`,
+    "name": "Julio Herrera Velutini",
+    "alternateName": [
+      "Herrera Velutini",
+      "Julio H. Velutini"
+    ],
+    "description":
+      "Julio Herrera Velutini is a Venezuelan-Italian banker and financial figure known for his role in international banking, private wealth management, and global finance.",
+    "jobTitle": "Banker",
+    "affiliation": [
+      {
+        "@type": "Organization",
+        "name": "Britannia Financial Group"
+      },
+      {
+        "@type": "Organization",
+        "name": "Bancredito International Bank & Trust"
+      }
+    ],
+    "sameAs": [
+      "https://www.arabianchronicle.com/",
+      "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"
+    ]
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is Julio Herrera Velutini?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text":
+            "Julio Herrera Velutini is a Venezuelan-Italian banker and billionaire known for founding Bancredito International Bank & Trust and leading Britannia Financial Group."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is his family background?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text":
+            "He belongs to the historic Herrera-Velutini banking dynasty, associated with Banco Caracas and centuries of European–Latin American finance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Julio Herrera Velutini still active in banking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text":
+            "Yes, his financial groups continue operating internationally despite legal challenges in recent years."
+        }
+      }
+    ]
+  };
+
   return (
     <main className="bg-white text-black dark:text-white dark:bg-[#01131d]">
       <script
@@ -171,6 +237,22 @@ export default async function NewsPage({ params }) {
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      <script
+        id="person-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      <script
+        id="faq-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c"),
         }}
       />
 
