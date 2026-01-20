@@ -52,6 +52,7 @@ export default function ShareArticle({ title, description }) {
           <a
             href={`https://www.reddit.com/submit?url=${shareUrl}&title=${encodedTitle}`}
             target="_blank"
+            title="Share on Reddit"
             rel="noopener noreferrer"
             aria-label="Share on Reddit"
           >
@@ -66,6 +67,7 @@ export default function ShareArticle({ title, description }) {
           <a
             href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${encodedTitle}`}
             target="_blank"
+            title="Share on X"
             rel="noopener noreferrer"
             aria-label="Share on X"
           >
