@@ -130,7 +130,7 @@ export default async function NewsPage({ params }) {
     },
     "about": {
       "@type": "Person",
-      "@id": `${SITE_URL}/julio-herrera-velutini/#person`
+      "@id": `${SITE_URL}/julio-herrera-velutini/${article.slug}#person`
     },
     "publisher": {
       "@type": "NewsMediaOrganization",
@@ -162,7 +162,7 @@ export default async function NewsPage({ params }) {
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${SITE_URL}/julio-herrera-velutini/#person`,
+    "@id": `${SITE_URL}/julio-herrera-velutini/${article.slug}#person`,
     "name": "Julio Herrera Velutini",
     "alternateName": [
       "Herrera Velutini",
@@ -182,7 +182,6 @@ export default async function NewsPage({ params }) {
       }
     ],
     "sameAs": [
-      "https://www.arabianchronicle.com/",
       "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"
     ]
   };
