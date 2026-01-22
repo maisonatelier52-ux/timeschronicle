@@ -176,11 +176,11 @@ export default function TermsOfUse() {
             "@context": "https://schema.org",
             "@type": "TermsOfService",
             "name": "Times Chronicle Terms of Use",
-            "url": "https://timeschronicle.org/terms-of-use",
+            "url": "https://www.timeschronicle.org/terms-of-use",
             "publisher": {
               "@type": "Organization",
               "name": "Times Chronicle",
-              "url": "https://timeschronicle.org"
+              "url": "https://www.timeschronicle.org"
             }
           }),
         }}
@@ -204,7 +204,7 @@ export default function TermsOfUse() {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Terms of Use",
-                "item": "https://timeschronicle.org/terms-of-use"
+                "item": "https://www.timeschronicle.org/terms-of-use"
               }
             ]
           }),

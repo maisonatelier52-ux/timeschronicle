@@ -6,7 +6,7 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://timeschronicle.org/sitemap.xml",
+    sitemap: "https://www.timeschronicle.org/sitemap.xml",
     host: "https://timeschronicle.org",
   };
 }
