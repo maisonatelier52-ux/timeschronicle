@@ -5,7 +5,7 @@ import CategoryMoreNews from "@/app/components/CategoryMoreNews";
 import AdBanner from "@/app/components/AdBanner";
 import Image from "next/image";
 
-const SITE_URL = "https://timeschronicle.org";
+const SITE_URL = "https://www.timeschronicle.org";
 
 /* ---------------- METADATA ---------------- */
 

@@ -7,7 +7,7 @@ import MoreRecent from "./components/MoreRecent";
 import NewsletterBox from "./components/NewsLetter";
 import data from "@/data/data.json";
 
-const SITE_URL = "https://timeschronicle.org";
+const SITE_URL = "https://www.timeschronicle.org";
 
 export const metadata = {
   title: "Times Chronicle — Independent U.S. News, Business & Politics",

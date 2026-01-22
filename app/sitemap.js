@@ -1,6 +1,6 @@
 import details from "../data/data.json";
 
-const SITE_URL = "https://timeschronicle.org";
+const SITE_URL = "https://www.timeschronicle.org";
 
 export default function sitemap() {
   const now = new Date();

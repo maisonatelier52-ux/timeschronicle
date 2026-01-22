@@ -198,7 +198,7 @@ export default function TermsOfUse() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://timeschronicle.org"
+                "item": "https://www.timeschronicle.org"
               },
               {
                 "@type": "ListItem",

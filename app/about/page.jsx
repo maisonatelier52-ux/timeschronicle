@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const SITE_URL = "https://timeschronicle.org";
+const SITE_URL = "https://www.timeschronicle.org";
 
 export const metadata = {
   title: "About Times Chronicle — Independent US Digital News Platform",

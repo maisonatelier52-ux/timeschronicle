@@ -5,7 +5,7 @@ import ArticleSidebar from "@/app/components/ArticleSidebar";
 import RelatedNews from "@/app/components/RelatedNews";
 import Image from "next/image";
 
-const SITE_URL = "https://timeschronicle.org";
+const SITE_URL = "https://www.timeschronicle.org";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
