@@ -2,19 +2,19 @@
 
 import { useEffect, useState } from "react";
 // import Link from "next/link";
-// import data from "@/data/data.json";
-// import {
-//   FaSearch,
-//   FaTimes,
-//   FaFacebookF,
-//   FaTwitter,
-//   FaInstagram,
-//   FaYoutube,
-// } from "react-icons/fa";
+import data from "@/data/data.json";
+import {
+  FaSearch,
+  FaTimes,
+  // FaFacebookF,
+  // FaTwitter,
+  // FaInstagram,
+  // FaYoutube,
+} from "react-icons/fa";
 
 export default function HeaderClient() {
-  // const [openSearch, setOpenSearch] = useState(false);
-  // const [query, setQuery] = useState("");
+  const [openSearch, setOpenSearch] = useState(false);
+  const [query, setQuery] = useState("");
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -32,14 +32,14 @@ export default function HeaderClient() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // const results =
-  //   query.length > 0
-  //     ? data.articles.filter(
-  //         (a) =>
-  //           a.published &&
-  //           a.title.toLowerCase().includes(query.toLowerCase())
-  //       )
-  //     : [];
+  const results =
+    query.length > 0
+      ? data.articles.filter(
+          (a) =>
+            a.published &&
+            a.title.toLowerCase().includes(query.toLowerCase())
+        )
+      : [];
 
   return (
     <div
@@ -50,15 +50,15 @@ export default function HeaderClient() {
       `}
     >
       {/* RIGHT ICONS */}
-      {/* <div className="absolute top-6 right-7 flex items-center gap-5"> */}
+      <div className="absolute top-6 right-7 flex items-center gap-5">
         {/* SEARCH */}
-        {/* <button
+        <button
           aria-label="Search"
           onClick={() => setOpenSearch((v) => !v)}
           className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition"
         >
           {openSearch ? <FaTimes /> : <FaSearch />}
-        </button> */}
+        </button>
 
         {/* SOCIAL ICONS (DESKTOP ONLY) */}
         {/* <div className="hidden sm:flex items-center gap-4 text-gray-500 dark:text-gray-400">
@@ -75,10 +75,10 @@ export default function HeaderClient() {
             <FaYoutube />
           </a>
         </div> */}
-      {/* </div> */}
+      </div>
 
       {/* SEARCH PANEL */}
-      {/* {openSearch && (
+      {openSearch && (
         <div className="mt-[70px] bg-white dark:bg-[#01131d] border-t border-gray-200 dark:border-gray-800">
           <div className="max-w-[1400px] mx-auto px-7 py-4">
             <input
@@ -118,7 +118,7 @@ export default function HeaderClient() {
             )}
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 }
