@@ -156,7 +156,7 @@ export default function MorePopular({ articles }) {
           </p>
 
           <img
-            src="/banner-1.jpg"
+            src="/ads/banner-1.png"
             alt="Advertisement"
             className="w-full h-auto max-w-[300px]"
           />
