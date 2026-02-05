@@ -11,6 +11,7 @@ import {
   // FaInstagram,
   // FaYoutube,
 } from "react-icons/fa";
+import Link from "next/link";
 
 export default function HeaderClient() {
   const [openSearch, setOpenSearch] = useState(false);
