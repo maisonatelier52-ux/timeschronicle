@@ -305,7 +305,7 @@ export default async function NewsPage({ params }) {
       {/* SHARE ARTICLE */}
       </section>
       <div className="px-7">
-        <ShareArticle />
+        <ShareArticle title={article.title} description={article.excerpt} image={article.image} />
       </div>
 
       {/* MORE POPULAR */}

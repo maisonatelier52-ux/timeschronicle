@@ -65,7 +65,7 @@ export default function ShareArticle({ title, description }) {
 
           {/* X / TWITTER */}
           <a
-            href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${encodedTitle}`}
+           href={`https://twitter.com/intent/tweet?text=${encodedTitle}%0A%0A&url=${shareUrl}`}
             target="_blank"
             title="Share on X"
             rel="noopener noreferrer"
