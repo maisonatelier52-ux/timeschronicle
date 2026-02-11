@@ -169,9 +169,33 @@
         "Democratic states"
       ],
       "date": "2026-02-09",
-      "time": "10:00",
+      "time": "5 min",
       "image": "/social-service-funding-judge.webp",
       "authorId": 3,
+      "published": true
+    },
+    {
+      "slug": "us-judiciary-removes-climate-chapter-scientific-evidence-manual",
+      "title": "U.S. Judiciary Removes Climate Chapter From Scientific Evidence Manual",
+      "excerpt": "The Federal Judicial Center has withdrawn a climate change chapter from its Reference Manual on Scientific Evidence after objections from Republican attorneys general who claimed it showed political bias.",
+      "content": "<p>The U.S. federal judiciary has withdrawn a chapter on climate change from a key reference guide for judges after Republican state attorneys general argued that the section was politically biased against fossil fuel interests.</p><p>The Federal Judicial Center (FJC), the research and education arm of the federal courts, released the fourth edition of its widely used <em>Reference Manual on Scientific Evidence</em> in December. The updated manual included, for the first time, a chapter dedicated to climate science — a topic that has become increasingly relevant in lawsuits across the country.</p><p>However, on Friday the FJC announced it would remove the chapter following objections from a coalition of Republican attorneys general. In a brief letter, the agency informed West Virginia Attorney General JB McCuskey and U.S. District Judge Robin Rosenberg that the climate section would be withdrawn.</p><p>McCuskey, who led the opposition effort, praised the decision. “Bias towards left-leaning climate policies would have absolutely tipped the scales in many cases,” he said in a statement.</p><p>The FJC declined to comment further on the move, and the authors of the chapter did not respond to requests for reaction.</p><h2>A Guide for Judges</h2><p>The <em>Reference Manual on Scientific Evidence</em> is designed to help federal judges evaluate complex scientific testimony and determine what evidence should be admitted in court. It is considered an essential resource in cases involving technical or scientific disputes.</p><p>The now-removed climate chapter was written by Jessica Wentz and Radley Horton of Columbia Law School. According to the manual, the section was intended to “help judges evaluate the admissibility and weight of expert testimony and documentary evidence involving climate science.”</p><p>The authors noted that climate change has become a growing factor in litigation, including lawsuits over government responsibilities to reduce greenhouse gas emissions and prepare for the impacts of global warming.</p><h2>Political Pushback</h2><p>In a January 29 letter, a group of 27 Republican state attorneys general, led by McCuskey, urged the judiciary to remove the chapter. They argued that it took sides in ongoing legal battles over climate policy.</p><p>The letter claimed the section “places the judiciary firmly on one side of some of the most hotly disputed questions in current litigation: climate-related science and ‘attribution.’”</p><p>It further alleged that the chapter was “rife with methodology issues,” accused its authors of being supportive of climate-related lawsuits, and warned that it appeared designed to encourage courts to accept those views “uncritically.”</p><p>Many of the Republican-led states that signed the letter have been involved in legal fights opposing lawsuits brought by Democratic-led states and cities. Those cases accuse major oil and gas companies of misleading the public about the role fossil fuels play in causing climate change.</p><h2>Broader Context</h2><p>The removal of the chapter highlights the increasingly politicized nature of climate change in the U.S. legal system. Courts are facing a growing number of cases related to extreme weather, environmental regulation, and corporate responsibility for climate impacts.</p><p>Despite the controversy, other portions of the manual remain unchanged — including a foreword written by U.S. Supreme Court Justice Elena Kagan that still references climate science as an important emerging legal issue.</p><p>“We live in an era of science and technology, with legal controversies reflecting that fact,” Kagan wrote. “In the coming years, judges will confront lawsuits relating, for example, to artificial intelligence, climate science, and epidemiology.”</p><p>Her comments underscore the ongoing challenge courts face as scientific debates increasingly intersect with the law — even as the judiciary steps back from providing formal guidance on one of the most contentious scientific topics of all.</p>",
+      "category": "National",
+      "keywords": [
+        "Federal Judicial Center",
+        "climate change",
+        "scientific evidence manual",
+        "Republican attorneys general",
+        "U.S. judiciary",
+        "climate litigation",
+        "legal policy",
+        "federal courts",
+        "environmental law",
+        "climate science debate"
+      ],
+      "date": "2026-02-11",
+      "image": "/us-judiciary-climate-manual.webp",
+      "authorId": 1,
+      "time":"6 min",
       "published": true
     },
     {
