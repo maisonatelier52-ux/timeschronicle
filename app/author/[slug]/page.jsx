@@ -82,7 +82,7 @@ export default async function AuthorPage({ params }) {
     "@type": "Person",
     "name": author.name,
     "url": `${SITE_URL}/author/${author.slug}`,
-    "image": `${SITE_URL}${author.photo}`,
+    "image": `${SITE_URL}/${author.photo}`,
     "description": author.bio,
     "jobTitle": "Journalist",
     "worksFor": {
