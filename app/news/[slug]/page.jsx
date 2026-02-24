@@ -179,7 +179,7 @@ export default async function NewsPage({ params }) {
         "@type": "ListItem",
         "position": 2,
         "name": article.category,
-        "item": `${SITE_URL}/category/${article.category}`,
+        "item": `${SITE_URL}/category/${article.category.toLowerCase()}`,
       },
       {
         "@type": "ListItem",

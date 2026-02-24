@@ -59,7 +59,7 @@ export default function BreakingNews({ articles }) {
               `}
             >
               {/* Category */}
-              <Link href={`/category/${article.category}`} className="mb-2" title={article.category}>
+              <Link href={`/category/${article.category.toLowerCase()}`} className="mb-2" title={article.category}>
                 <CategoryTag1 text={article.category.toUpperCase()} />
               </Link>
 

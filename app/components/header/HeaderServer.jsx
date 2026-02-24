@@ -52,7 +52,7 @@ export default function HeaderServer() {
             {categories.map((cat) => (
               <Link
                 key={cat}
-                href={`/category/${cat}`}
+                href={`/category/${cat.toLowerCase()}`}
                 title={cat}
                 className="relative font-semibold text-black dark:text-gray-200
                   after:absolute after:bottom-0 after:left-0
@@ -86,7 +86,7 @@ export default function HeaderServer() {
         {categories.map((cat) => (
           <Link
             key={cat}
-            href={`/category/${cat}`}
+            href={`/category/${cat.toLowerCase()}`}
             title={cat}
             className="text-[12px] font-semibold whitespace-nowrap"
           >

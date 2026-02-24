@@ -29,12 +29,12 @@ export async function generateMetadata({ params }) {
     title: `${formattedCategory} News — Times Chronicle`,
     description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis, and investigative stories from across the United States. Updated daily by Times Chronicle reporters.`,
     alternates: {
-      canonical: `${SITE_URL}/category/${slug}`,
+      canonical: `${SITE_URL}/category/${slug.toLowerCase()}`,
     },
     openGraph: {
       title: `${formattedCategory} News | Times Chronicle`,
       description: `Latest U.S. ${formattedCategory.toLowerCase()} news, reports and analysis.`,
-      url: `${SITE_URL}/category/${slug}`,
+      url: `${SITE_URL}/category/${slug.toLowerCase()}`,
       type: "website",
       siteName: "Times Chronicle",
       images: [
@@ -62,7 +62,6 @@ export default async function CategoryPage({ params }) {
    const articles = data.articles.filter(
     (article) =>
       article.published &&
-      article.category &&
       article.category.toLowerCase() === categorySlug &&
       article.name !== "Julio Herrera Velutini"
   ).sort((a, b) => new Date(b.date) - new Date(a.date));

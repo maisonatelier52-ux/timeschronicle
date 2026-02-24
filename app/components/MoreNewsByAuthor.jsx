@@ -68,7 +68,7 @@ export default function MoreNewsByAuthor({ authorId }) {
             </Link>
 
             {/* CATEGORY */}
-            <Link href={`/category/${article.category}`} title={article.category} className="mb-2">
+            <Link href={`/category/${article.category.toLowerCase()}`} title={article.category} className="mb-2">
               <CategoryTag1 text={article.category.toUpperCase()} />
             </Link>
 

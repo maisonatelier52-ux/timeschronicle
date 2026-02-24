@@ -176,7 +176,7 @@ export default function MorePopular({ articles }) {
               border-b lg:border-b-0
             `}
           >
-            <Link href={`/category/${article.category}`} title={article.category}>
+            <Link href={`/category/${article.category.toLowerCase()}`} title={article.category}>
               <CategoryTag1 text={article.category.toUpperCase()} />
             </Link>
             <Link href={`/news/${article.slug}`} title={article.title}>
