@@ -171,7 +171,7 @@
       "date": "2026-02-09",
       "time": "5 min",
       "image": "/social-service-funding-judge.webp",
-      "authorId": 3,
+      "authorId": 1,
       "published": true
     },
     {
@@ -199,6 +199,30 @@
       "published": true
     },
     {
+      "slug": "northeast-brutal-noreaster-snow-flight-chaos-second-storm-threat",
+      "title": "Northeast Reels from \"Brutal\" Nor'easter: Snow Drifts, Flight Chaos, and a Glimmer of Hope Amidst Second Storm Threat",
+      "excerpt": "A historic nor’easter battered the northeastern United States with record snowfall, hurricane-force winds and widespread power outages, disrupting flights, schools and businesses as forecasters warn of a potential second storm.",
+      "content": "<p>The northeastern part of the United States is currently embroiled in a massive cleanup operation after a vicious winter storm brought a blizzard of “historic proportions,” which crippled transportation, led to widespread school closures, and left hundreds of thousands of people without power. While residents of the affected areas are struggling to dig out from under the unrelenting snowfall, forecasters are already warning of the possibility of another system moving into the area later this week.</p><h2>A Storm of Epic Proportions Hits the Northeast</h2><p>The recent storm is being described by meteorologists as one of the most intense nor’easters to hit the area in the past decade, with some areas receiving snowfall totals of over two feet. The storm, which was marked by its ferocity and rapid pressure drop, was officially declared a “bomb cyclone” by the National Weather Service. This occurs when the atmospheric pressure of a storm drops precipitously in a 24-hour period, a phenomenon that is not uncommon during the fall and winter months when the cold air of the Arctic meets the warmer temperatures of the south.</p><p>The effect was immediate and extensive. By Tuesday, the snow had started to let up in many places, allowing for the gradual reopening of roads and mass transportation systems in some of the hardest-hit cities. However, the amount of snow was a challenge of monumental proportions. In New York City, a city that knows snow, the storm dumped a staggering 19 inches of snow in Central Park alone. Further north, the city of Warwick, Rhode Island, was hit hardest, receiving an astonishing 38 inches of snow, a new record for the area and the highest reported in the country so far. The storm was also accompanied by hurricane-force winds, with Nantucket seeing gusts of 83 miles per hour, and hurricane-force gusts pounding Cape Cod.</p><h2>Disruptions Ripple Across Sectors: Flights Grounded, Businesses Shuttered</h2><p>The adverse weather conditions caused the transportation systems in the region to come to a grinding halt. Thousands of flights entering and leaving the United States were canceled on Monday and Tuesday, with airports in New York, New Jersey, and Boston being the worst-affected areas. According to FlightAware, a flight tracking website, more than 5,600 flights were canceled on Monday, and another 2,000 flights were grounded on Tuesday.</p><p>Rhode Island's T.F. Green International Airport had to suspend all flight operations on Monday due to the heavy snowfall in the region. The airport received a record 38 inches of snow, breaking the previous record that was set in 1978.</p><p>The public transportation networks were also badly affected. In New York City, the Metropolitan Transportation Authority (MTA) indicated that there were functional subway lines as of Monday evening, except for the Staten Island lines, which were still badly affected. The commuter trains that lead to the suburbs were expected to start operating on a limited scale before the Tuesday morning commute, although there would be delays for buses.</p><p>The economic impacts were not confined to the transportation sector. DoorDash stopped its delivery operations in New York City on Monday, which showed the challenges of carrying out operations in the adverse weather conditions. Even the historic Boston Globe had to postpone its first-ever physical printing of its daily newspaper because of the unavailability of its staff to reach the printing plant because of the heavy snowfall and high winds.</p><h2>Power Outages Affect Hundreds of Thousands</h2><p>The heavy wet snow and high winds proved to be a deadly combination for power outages. Hundreds of thousands of power customers in Massachusetts, New Jersey, Delaware, and Rhode Island were left in the dark. By Monday evening, PowerOutage.us showed that more than 450,000 customers in the country were still without power, which showed the infrastructure challenges posed by the storm.</p><h2>School Doors Remain Closed for Many as Debate Over Reopening Intensifies</h2><p>The impact on education was also profound. Major cities like New York, Philadelphia, and Boston canceled public school classes on Monday. Philadelphia opted for virtual learning for both Monday and Tuesday, while many school districts on Long Island and in other New York suburbs announced that classes would remain canceled for a second day.</p><p>However, a contentious debate emerged in New York City regarding the reopening of schools for in-person learning on Tuesday. Mayor Zohran Mamdani announced that schools would resume normal operations, a decision that drew criticism from some officials and the teachers' union. Staten Island Borough President Vito Fossella argued that schools should remain closed, citing impassable roads and blocked sidewalks. Michael Mulgrew, president of the United Federation of Teachers, expressed concerns about low student and staff attendance due to travel difficulties, describing the situation as \"a big mess.\"</p><p>Despite these worries, Chancellor Kamar Samuels, the city’s top education official, was in support of the reopening, saying on social media that the district was “confident in our decision.” He also mentioned that the difficulties of providing equal access to online learning tools for all students were some of the reasons why they decided to reopen.</p><h2>A Glimmer of Hope Amidst the Snow, but Another Storm Looms</h2><p>As the area started the long process of digging out, the National Weather Service issued a harsh reminder that another storm may be brewing in the area. Although it is not expected to be as bad as the recent nor’easter, it was noted that even a few more inches of snow could make cleanup efforts even more difficult. “Any additional snow at this point is probably not going to be welcome,” said Frank Pereira, a meteorologist for the National Weather Service.</p><p>However, in the midst of the clean-up efforts, there have been reports of acts of kindness between neighbors. In Brooklyn, residents Christa Prince and two others were noticed shoveling snow, not for their own homes, but to make a path for a car belonging to a neighbor. These acts of kindness are a small but important reminder of the community spirit that exists in the face of adversity.</p><p>The Northeast is a region that knows the power of winter, but this latest storm has put their mettle to the test. The massive effort of cleaning up the snow, restoring power, and getting life back to normal has begun, with the added challenge of a possible second winter storm looming on the horizon.</p>",
+      "category": "National",
+      "keywords": [
+        "nor'easter 2026",
+        "bomb cyclone Northeast",
+        "New York snowstorm",
+        "flight cancellations winter storm",
+        "power outages Massachusetts",
+        "T.F. Green Airport snow record",
+        "National Weather Service warning",
+        "school closures New York City",
+        "hurricane-force winds Cape Cod",
+        "second winter storm threat"
+      ],
+      "date": "2026-02-14",
+      "image": "/northeast-noreaster-snowstorm-2026.webp",
+      "authorId": 1,
+      "time":"8 min",
+      "published": true
+    },
+    {
       "slug": "bovino-depart-minneapolis-immigration-enforcement-reshuffle",
       "title": "Bovino to Depart Minneapolis Amid Immigration Enforcement Reshuffle",
       "excerpt": "Border Patrol commander Gregory Bovino is set to leave Minneapolis as the Trump administration reshuffles immigration enforcement leadership following controversy and public backlash.",
@@ -216,10 +240,10 @@
       ],
       "date": "2026-01-27",
       "image": "/bovino-minneapolis-immigration-reshuffle.webp",
-      "authorId": 1,
+      "authorId": 2,
       "time": "4 min",
       "published": true
-},
+    },
     {
       "slug": "white-house-nepa-rollback",
       "title": "White House Finalizes NEPA Rollback, Sparks Environmental Criticism",
@@ -473,7 +497,7 @@
       "date": "2026-02-04",
       "time": "5 min",
       "image": "/consumer-anxiety-food-sales.webp",
-      "authorId": 1,
+      "authorId": 3,
       "published": true
     },
     {
@@ -497,7 +521,7 @@
       "date": "2026-02-13",
       "image": "/us-manufacturing-hard-hat-economy.webp",
       "time":"5 min",
-      "authorId": 1,
+      "authorId": 3,
       "published": true
     },
     {
@@ -896,7 +920,8 @@
       ],
       "date": "2026-02-14",
       "image": "/euro-global-role-ecb-2026.webp",
-      "authorId": 1,
+      "authorId": 6,
+      "time":"5 min",
       "published": true
     },
     {
