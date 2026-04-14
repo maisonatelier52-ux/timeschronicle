@@ -343,6 +343,10 @@ export default async function NewsPage({ params }) {
               [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-4
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:my-4
               [&_li]:my-2 [&_li]:leading-relaxed
+
+              [&_a]:text-blue-600
+              [&_a]:underline
+              [&_a:hover]:text-blue-800
             "
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
