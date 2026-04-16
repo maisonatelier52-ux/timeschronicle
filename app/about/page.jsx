@@ -1,29 +1,34 @@
 import Image from "next/image";
 
 const SITE_URL = "https://www.timeschronicle.org";
+const SITE_NAME = "Times Chronicle";
 
 export const metadata = {
   title: "About Times Chronicle — Independent US Digital News Platform",
   description:
     "Learn about Times Chronicle, an independent US digital news platform delivering factual reporting across national, politics, business, technology, health and world news.",
+  keywords: [
+    "about Times Chronicle",
+    "independent journalism",
+    "factual reporting",
+    "US digital news platform",
+    "truthful reporting",
+    "news publication",
+    "editorial standards",
+    "verified journalism",
+    "original reporting",
+  ],
+  authors: [{ name: `${SITE_NAME} Editorial Team` }],
   alternates: {
     canonical: `${SITE_URL}/about`,
   },
-  keywords: [
-    "truthful reporting",
-    "foundation of an informed society",
-    "independent journalism",
-    "factual reporting",
-    "Times Chronicle",
-    "US digital news platform"
-  ],
   openGraph: {
     title: "About Times Chronicle — Independent US Digital News Platform",
     description:
-      "Discover the mission and vision behind Times Chronicle — an independent US digital news platform.",
+      "Discover the mission, editorial standards, and team behind Times Chronicle — an independent US digital news platform.",
     url: `${SITE_URL}/about`,
     type: "website",
-    siteName: "Times Chronicle",
+    siteName: SITE_NAME,
     images: [
       {
         url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
@@ -37,62 +42,154 @@ export const metadata = {
     card: "summary_large_image",
     title: "About Times Chronicle",
     description:
-      "Learn who we are and what drives our mission to deliver factual US news.",
+      "Learn about the values and mission that drive Times Chronicle.",
     images: [`${SITE_URL}/logo/Times-Chronicle-White-Text.png`],
+    creator: "@timeschronicle",
+    site: "@timeschronicle",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
 export default function AboutPage() {
 
+  // ✅ AboutPage JSON-LD
+  const aboutPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${SITE_URL}/about#aboutpage`,
+    name: "About Times Chronicle",
+    url: `${SITE_URL}/about`,
+    description: metadata.description,
+    mainEntity: {
+      "@type": "NewsMediaOrganization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      description:
+        "Independent US digital news platform delivering high-quality journalism across politics, business, technology, health, and world news.",
+      foundingDate: "2025",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
+      },
+      sameAs: [
+        "https://www.facebook.com/",
+        "https://www.twitter.com/",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Editorial",
+        email: "editorial@timeschronicle.org",
+      },
+      ethicsPolicy: `${SITE_URL}/about`,
+      publishingPrinciples: `${SITE_URL}/about`,
+    },
+  };
+
+  // ✅ WebPage JSON-LD
   const webPageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": `${SITE_URL}/about#webpage`,
-    "url": `${SITE_URL}/about`,
-    "name": "About Times Chronicle",
-    "description": metadata.description,
-    "isPartOf": {
+    url: `${SITE_URL}/about`,
+    name: "About Times Chronicle",
+    description: metadata.description,
+    isPartOf: {
       "@type": "WebSite",
-      "name": "Times Chronicle",
-      "url": SITE_URL
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
     },
-    "about": {
+    about: {
       "@type": "NewsMediaOrganization",
-      "name": "Times Chronicle"
-    }
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+    },
+    breadcrumb: {
+      "@id": `${SITE_URL}/about#breadcrumb`,
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
+    },
   };
 
+  // ✅ Breadcrumb JSON-LD
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@id": `${SITE_URL}/about#breadcrumb`,
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": SITE_URL
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": "About",
-        "item": `${SITE_URL}/about`
-      }
-    ]
+        position: 2,
+        name: "About",
+        item: `${SITE_URL}/about`,
+      },
+    ],
+  };
+
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "@id": `${SITE_URL}/#organization`,
+    name: SITE_NAME,
+    alternateName: "Times Chronicle",
+    url: SITE_URL,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
+      width: 600,
+      height: 60,
+    },
+    description:
+      "Independent US digital news platform delivering comprehensive coverage of politics, business, technology, health, and world events.",
+    foundingDate: "2025",
+    sameAs: [
+      "https://www.instagram.com/timeschronicle01/",
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "US",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Editorial",
+      email: "editorial@timeschronicle.org",
+    },
+    ethicsPolicy: `${SITE_URL}/about`,
+    publishingPrinciples: `${SITE_URL}/about`,
+    masthead: `${SITE_URL}/about`,
   };
 
   return (
     <>
-      {/* JSON-LD STRUCTURED DATA */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      {/* ALL JSON-LD */}
+      {[aboutPageJsonLd, webPageJsonLd, breadcrumbJsonLd, organizationJsonLd].map(
+        (schema, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        )
+      )}
       <div className="min-h-screen bg-white text-gray-900 dark:bg-[#020f15] dark:text-gray-100 transition-colors duration-300">
 
         {/* HERO */}

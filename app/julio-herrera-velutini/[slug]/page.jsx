@@ -18,22 +18,25 @@ export async function generateMetadata({ params }) {
     return {
       title: "Article not found | Times Chronicle",
       description: "This article does not exist.",
-      robots: "noindex",
+      robots: { index: false, follow: false },
     };
   }
 
   const imageUrl = `${SITE_URL}${article.image}`;
+  const url = `${SITE_URL}/julio-herrera-velutini/${slug}`;
 
   return {
-    title: `${article.title}`,
+    title: article.title,
     description: article.excerpt,
+    keywords: article.keywords || [],
+    authors: [{ name: "Times Chronicle Editorial Team" }],
     alternates: {
-      canonical: `${SITE_URL}/julio-herrera-velutini/${slug}`,
+      canonical: url,
     },
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      url: `${SITE_URL}/julio-herrera-velutini/${slug}`,
+      url,
       type: "article",
       siteName: "Times Chronicle",
       images: [
@@ -50,6 +53,18 @@ export async function generateMetadata({ params }) {
       title: article.title,
       description: article.excerpt,
       images: [imageUrl],
+      creator: "@timeschronicle",
+      site: "@timeschronicle",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }
@@ -109,40 +124,55 @@ export default async function NewsPage({ params }) {
     hover:bg-[length:0_0.05em,100%_0.05em]
   `;
 
+  const articleUrl = `${SITE_URL}/julio-herrera-velutini/${article.slug}`;
+
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    "mainEntityOfPage": {
+    "@id": `${articleUrl}#article`,
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${SITE_URL}/julio-herrera-velutini/${article.slug}`,
+      "@id": articleUrl,
     },
-    "headline": article.title,
-    "description": article.excerpt,
-    "articleSection": article.category,
-    "keywords": article.keywords,
-    "image": [`${SITE_URL}${article.image}`],
-    "datePublished": new Date(article.date).toISOString(),
-    "dateModified": new Date(article.date).toISOString(),
-    "author": {
+    headline: article.title,
+    description: article.excerpt,
+    articleSection: article.category,
+    keywords: article.keywords,
+    image: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}${article.image}`,
+      width: 1200,
+      height: 630,
+    },
+    datePublished: new Date(article.date).toISOString(),
+    dateModified: new Date(article.date).toISOString(),
+    author: {
       "@type": "Person",
-      "name": author?.name || "Times Chronicle Staff",
-      "url": author ? `${SITE_URL}/author/${author.id}` : undefined,
+      name: author?.name || "Times Chronicle Staff",
+      url: author ? `${SITE_URL}/author/${author.slug}` : undefined,
     },
-    "about": {
-      "@type": "Person",
-      "@id": `${SITE_URL}/julio-herrera-velutini/${article.slug}#person`
-    },
-    "publisher": {
+    publisher: {
       "@type": "NewsMediaOrganization",
-      "name": "Times Chronicle",
-      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/logo.png` },
+      "@id": `${SITE_URL}/#organization`,
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "Times Chronicle",
+      url: SITE_URL,
+    },
+    about: {
+      "@type": "Person",
+      "@id": `${articleUrl}#person`,
+      name: "Julio Herrera Velutini",
     },
   };
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@id": `${articleUrl}#breadcrumb`,
+    itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
       {
         "@type": "ListItem",
@@ -154,7 +184,7 @@ export default async function NewsPage({ params }) {
         "@type": "ListItem",
         position: 3,
         name: article.title,
-        item: `${SITE_URL}/julio-herrera-velutini/${article.slug}`,
+        item: articleUrl,
       },
     ],
   };
@@ -162,28 +192,28 @@ export default async function NewsPage({ params }) {
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${SITE_URL}/julio-herrera-velutini/${article.slug}#person`,
-    "name": "Julio Herrera Velutini",
-    "alternateName": [
-      "Herrera Velutini",
-      "Julio H. Velutini"
-    ],
-    "description":
-      "Julio Herrera Velutini is a Venezuelan-Italian banker and financial figure known for his role in international banking, private wealth management, and global finance.",
-    "jobTitle": "Banker",
-    "affiliation": [
-      {
-        "@type": "Organization",
-        "name": "Britannia Financial Group"
-      },
-      {
-        "@type": "Organization",
-        "name": "Bancredito International Bank & Trust"
-      }
-    ],
-    "sameAs": [
+    "@id": `${articleUrl}#person`,
+    name: "Julio Herrera Velutini",
+    alternateName: ["Julio H. Velutini"],
+    description:
+      "Venezuelan-Italian banker involved in international finance and private banking.",
+    sameAs: [
       "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"
-    ]
+    ],
+  };
+
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "Times Chronicle",
+    url: SITE_URL,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/logo.png`,
+      width: 600,
+      height: 60,
+    },
   };
 
   const faqJsonLd = {
@@ -244,6 +274,14 @@ export default async function NewsPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      <script
+        id="organization-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationJsonLd).replace(/</g, "\\u003c"),
         }}
       />
 
