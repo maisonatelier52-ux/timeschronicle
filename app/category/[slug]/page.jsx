@@ -62,8 +62,8 @@ export default async function CategoryPage({ params }) {
    const articles = data.articles.filter(
     (article) =>
       article.published &&
-      article.category.toLowerCase() === categorySlug &&
-      article.name !== "Julio Herrera Velutini"
+      article.category.toLowerCase() === categorySlug 
+      // && article.name !== "Julio Herrera Velutini"
   ).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const CATEGORY_META = {

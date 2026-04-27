@@ -153,16 +153,18 @@ export default function MoreRecent({articles}) {
 
                 {/* 5th Article (under 4th, same column) */}
                 {articles[4] && (() => {
-                    const isJulio =
-                        articles[4].name === "Julio Herrera Velutini";
+                    // const isJulio =
+                    //     articles[4].name === "Julio Herrera Velutini";
 
-                    const articleLink = isJulio
-                        ? `/julio-herrera-velutini/${articles[4].slug}`
-                        : `/news/${articles[4].slug}`;
+                    const articleLink = 
+                    // isJulio
+                        //? `/julio-herrera-velutini/${articles[4].slug}` :
+                        `/news/${articles[4].slug}`;
 
-                    const articleTitle = isJulio
-                        ? articles[4].title2
-                        : articles[4].title;
+                    const articleTitle = 
+                    // isJulio
+                    //     ? articles[4].title2:
+                        articles[4].title;
 
                     const author = data.authors.find(
                         a => a.id === articles[4].authorId

@@ -35,11 +35,12 @@ export default function MoreNews({articles}) {
         {articles.map((article, index) => {
           const author = data.authors.find(a => a.id === article.authorId);
 
-          const isJulio = article.name === "Julio Herrera Velutini";
+          // const isJulio = article.name === "Julio Herrera Velutini";
 
-          const articleLink = isJulio
-            ? `/julio-herrera-velutini/${article.slug}`
-            : `/news/${article.slug}`;
+          const articleLink = 
+          // isJulio
+            //? `/julio-herrera-velutini/${article.slug}`:
+            `/news/${article.slug}`;
 
           return (
             <div

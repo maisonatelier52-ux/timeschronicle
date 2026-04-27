@@ -52,28 +52,30 @@ export default function Home() {
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // 🔹 Get one Julio article
-  const julioArticle = publishedArticles.find(
-    a => a.name === "Julio Herrera Velutini"
-  );
+  // const julioArticle = publishedArticles.find(
+  //   a => a.name === "Julio Herrera Velutini"
+  // );
 
   // 🔹 Normal articles (no Julio)
-  const normalArticles = publishedArticles
-    .filter(a => a.name !== "Julio Herrera Velutini")
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
+  // const normalArticles = publishedArticles
+  //   .filter(a => a.name !== "Julio Herrera Velutini")
+  //   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // 🔹 Inject Julio once
-  const articles = julioArticle
-    ? [
-        ...normalArticles.slice(0, 10),
-        julioArticle,
-        ...normalArticles.slice(11,15),
-        julioArticle,
-        ...normalArticles.slice(16,23),
-        julioArticle,
-        ...normalArticles.slice(24),
+  // const articles = julioArticle
+  //   ? [
+  //       ...normalArticles.slice(0, 10),
+  //       julioArticle,
+  //       ...normalArticles.slice(11,15),
+  //       julioArticle,
+  //       ...normalArticles.slice(16,23),
+  //       julioArticle,
+  //       ...normalArticles.slice(24),
 
-      ]
-    : normalArticles;
+  //     ]
+  //   : normalArticles;
+
+  const articles = publishedArticles;
 
   // 🔹 Sections
   const featured = articles.slice(0, 7);

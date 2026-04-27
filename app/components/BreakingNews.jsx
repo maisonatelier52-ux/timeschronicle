@@ -36,16 +36,18 @@ export default function BreakingNews({ articles }) {
             (a) => a.id === article.authorId
           );
 
-          const isJulio =
-            article.name === "Julio Herrera Velutini";
+          // const isJulio =
+          //   article.name === "Julio Herrera Velutini";
 
-          const articleLink = isJulio
-            ? `/julio-herrera-velutini/${article.slug}`
-            : `/news/${article.slug}`;
+          const articleLink = 
+          // isJulio
+          //   ? `/julio-herrera-velutini/${article.slug}`:
+           `/news/${article.slug}`;
 
-          const articleTitle = isJulio
-            ? article.title1
-            : article.title;
+          const articleTitle = 
+          // isJulio
+            // ? article.title1:
+           article.title;
 
           return (
             <div

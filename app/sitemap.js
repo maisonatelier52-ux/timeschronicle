@@ -55,15 +55,16 @@ export default function sitemap() {
   const articlePages = details.articles
     .filter(article => article.published)
     .map(article => {
-      const isJulio = article.name === "Julio Herrera Velutini";
+      // const isJulio = article.name === "Julio Herrera Velutini";
 
       return {
-        url: isJulio
-          ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`
-          : `${SITE_URL}/news/${article.slug}`,
+        url: 
+        // isJulio
+        //   ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`:
+         `${SITE_URL}/news/${article.slug}`,
         lastModified: article.date ? new Date(article.date) : now,
         changeFrequency: "weekly",
-        priority: isJulio ? 1 : 0.8,
+        priority: 0.8,
       };
     });
 
