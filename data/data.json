@@ -243,7 +243,28 @@
       "authorId": 1,
       "time":"6 min",
       "published": true
-
+    },
+    {
+      "slug": "trump-60-day-deadline-congress-war-powers-dispute",
+      "title": "Trump 60-Day Deadline: Why Congress Can’t Agree on War Powers Timing",
+      "excerpt": "Lawmakers are divided over how to interpret the War Powers Resolution’s 60-day deadline as debate intensifies over U.S. military involvement in Iran.",
+      "content": "<p>The involvement of the United States in military engagement with Iran has reignited debate over the War Powers Resolution of 1973, particularly the provision that limits unauthorized military action to 60 days without congressional approval.</p><p>The law requires that military operations initiated in response to an immediate threat or armed attack must end within 60 days unless Congress authorizes continuation. However, lawmakers remain sharply divided over how this timeline should be calculated.</p><p>Many Republicans, especially in the Senate, argue that May 1 marks the 60th day since President Donald Trump notified Congress on March 2 of the military engagement. This interpretation would place pressure on Congress to act immediately.</p><p>Other interpretations have also emerged. Some Republican leaders claim the president has the authority to extend military involvement by an additional 30 days. Others argue that any period of ceasefire should pause the 60-day countdown.</p><p>Defense Secretary Pete Hegseth suggested that if a ceasefire is in effect, the timeline could be frozen. However, Senator Thom Tillis rejected this view, stating that Congress must still act within the 60-day window and that discussions on an Authorization for Use of Military Force (AUMF) are necessary.</p><p>Meanwhile, several Democrats question whether the 60-day provision applies at all. Senator Adam Schiff argued that the conflict was \"illegal from the start\" because there was no direct or imminent threat to the United States. He contends that the War Powers Resolution does not grant the president authority to wage war for 60 days under such circumstances.</p><p>Schiff has also supported efforts to require regular congressional votes to approve continued military action against Iran.</p><p>In a notable bipartisan move, Senator Susan Collins joined Democrats and Senator Rand Paul in supporting a measure to end hostilities. Collins emphasized Congress’s constitutional role in decisions of war and peace, noting that any continued military action requires clear objectives and a defined exit strategy.</p><p>Some lawmakers have pointed to the law’s provision allowing a 30-day extension if the president certifies that continued military engagement is necessary to ensure the safe withdrawal of U.S. forces. Senator Mike Rounds indicated that such an extension is anticipated.</p><p>Senate Majority Leader John Thune signaled that there is currently no consensus within the Senate to authorize the conflict, suggesting that a vote is unlikely in the near future.</p><p>Senator Lisa Murkowski warned that she would introduce legislation to formally declare war if the administration fails to present a credible plan. She stressed that prolonged military engagement without accountability is unacceptable and that Congress must fulfill its constitutional responsibilities.</p><p>Senator Josh Hawley described the situation as an \"inflection point,\" noting that the administration may seek the additional 30-day extension if troop reductions begin.</p><p>Senator Tim Kaine expressed concern about the possibility of the timeline extending to 90 days, warning that it could lead to an open-ended conflict. He emphasized that such an extension is not automatic and must meet specific legal requirements.</p><p>Schiff echoed skepticism about the extension, suggesting the president may avoid requesting it because doing so would require a commitment to withdrawing forces. He also dismissed arguments that a ceasefire pauses the clock, noting internal divisions among Republicans over whether to challenge the administration or uphold congressional authority.</p>",
+      "category": "Politics",
+      "keywords": [
+        "Trump 60 day deadline",
+        "War Powers Resolution 1973",
+        "Congress Iran war debate",
+        "US military authorization dispute",
+        "AUMF discussion Senate",
+        "Adam Schiff war powers criticism",
+        "Susan Collins Iran vote",
+        "US Congress war authority conflict"
+      ],
+      "date": "2026-05-01",
+      "image": "/trump-60-day-deadline-congress.webp",
+      "authorId": 1,
+      "time": "5 min",
+      "published": true
     },
     {
       "slug": "gregory-bovino-departs-minneapolis-immigration-enforcement-reshuffle",
