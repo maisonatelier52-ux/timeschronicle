@@ -1019,7 +1019,7 @@
       ],
       "date": "2026-03-09",
       "image": "/multivitamins-aging-study.webp",
-      "authorId": 1,
+      "authorId": 5,
       "time": "6 min",
       "published": true
     },
@@ -1043,8 +1043,34 @@
       ],
       "date": "2026-04-16",
       "image": "/glp-1-drugs-benefits-without-weight-loss-non-responders.webp",
-      "authorId": 1,
+      "authorId": 5,
       "time": "7 min",
+      "published": true
+    },
+    {
+      "slug": "us-teens-sleep-decline-study-2026",
+      "title": "US Teens Are Sleeping Less Than Ever, New Study Finds",
+      "excerpt": "US teens sleep less than ever. Experts cite screen time, academic pressure, burnout, and mental health stress as major contributors to worsening sleep habits.",
+      "content": "<p>A new nationwide study associated with today’s youth: lack of sufficient sleep. In fact, a new national-level study revealed that teenagers in America are sleeping less than any previous generation, thus causing major concern in the scientific community regarding increased stress and academic pressures affecting adolescent health.</p><p>In the study, conducted by the University of Minnesota School of Public Health and published in <em>Pediatrics</em> magazine, researchers examined data collected from over 400,000 US students for the years ranging from 1991 to 2023. The results indicated that sleep in American adolescents had declined dramatically across all age groups.</p><p>Only 22% of older teens surveyed said they regularly got at least seven hours of sleep per night.</p><p>Researchers said the decline reflects a combination of long-standing pressures and newer challenges facing adolescents today.</p><blockquote><p>“Some barriers to sleep faced by teens have existed across generations, such as the increased homework and extracurricular demands that come with high school, social pressures to stay up late with peers, and jobs,” said Rachel Widome, lead author of the study and professor at the University of Minnesota School of Public Health.</p></blockquote><blockquote><p>“Other issues, though, are new in recent years, such as increasingly ever-present screens and social media as well as recent society-wide stressors such as the pandemic, social unrest or militarized policing,” she added.</p></blockquote><p>The study found that sleep duration consistently decreases as teenagers grow older, while feelings of getting enough rest also decline sharply from early adolescence through the end of high school.</p><p>Researchers used data from the long-running Monitoring the Future survey, which includes responses from students in grades 8, 10 and 12 across the United States. Participants were asked how often they slept at least seven hours each night and whether they believed they were getting enough sleep overall.</p><p>The study further noted rising gaps between different demographics. Adolescents who belonged to Black and Latino populations as well as those whose parents had received minimal education were shown to become less likely to secure enough sleep than their counterparts.</p><p>Medical practitioners caution that failure to obtain sufficient sleep in adolescence can lead to severe repercussions both instantly and in the long run. Insufficient sleep has been associated with drowsiness, lack of focus, poor academic achievements, psychological problems, and an increased likelihood of developing diseases in the future.</p><p>Researchers say that while screen time is often blamed for worsening sleep habits, deeper issues such as emotional exhaustion, anxiety, and social burnout may also be contributing factors.</p><h2>Burnout, Anxiety and Emotional Stress Among Teens</h2><p>Additional research conducted by Aim Ideas Lab, a California-based youth research organization, found that nearly two-thirds of high school students reported experiencing burnout and anxiety.</p><p>About one-quarter of respondents said they only had enough time to meet basic needs — including sleep, eating, and hygiene — two days a week or less.</p><blockquote><p>“They asked for time to slow down, and the chance to learn and practice coping skills like breathing and mindfulness during calm moments, not just crisis ones,” said Jolie Delja, executive director of Aim Youth Mental Health.</p></blockquote><p>Experts say many teenagers feel overwhelmed by balancing schoolwork, extracurricular activities, social expectations, and online life, leaving little room for healthy sleep routines.</p><h2>Biological Factors and School Start Times</h2><p>Sleep researchers have also pointed to biological factors affecting teenagers. Adolescents naturally experience later sleep cycles, making early school schedules particularly difficult.</p><p>One recommendation supported by the study is delaying high school start times to 8:30 a.m. or later.</p><blockquote><p>“Earlier starts are in direct conflict with preset rhythms of adolescent circadian biology,” Widome said.</p></blockquote><p>Public health experts say later start times have been associated in previous studies with improved attendance, better academic performance, and longer sleep duration among students.</p><h2>Researchers Say Sleep Deprivation Is Not Inevitable</h2><p>Despite the worsening trend, researchers stressed that widespread sleep deprivation among teenagers is not unavoidable.</p><blockquote><p>“A nation of sleep-deprived adolescents is not inevitable,” Widome said. “We should embrace a culture of sleep, where sleep is actually valued and where we commit to enacting policies and other interventions that promote healthy sleep for everyone.”</p></blockquote><p>Researchers and mental health advocates say improving teen sleep may require broader cultural changes, including healthier school schedules, reduced academic pressure, better mental health support, and more balanced technology use.</p><h2>Source</h2><ul><li><a href=\"https://www.theguardian.com/us-news/2026/may/15/teens-get-less-sleep-study\" target=\"_blank\" rel=\"noopener noreferrer\">The Guardian</a></li></ul>",
+      "category": "Health",
+      "keywords": [
+        "teen sleep",
+        "US teenagers",
+        "sleep deprivation",
+        "mental health",
+        "screen time",
+        "academic pressure",
+        "burnout",
+        "adolescent health",
+        "University of Minnesota",
+        "Pediatrics study",
+        "school start times",
+        "teen anxiety"
+      ],
+      "date": "2026-05-16",
+      "image": "/us-teens-sleep-decline-study-2026.webp",
+      "authorId": 5,
+      "time":"5 min",
       "published": true
     },
     {
