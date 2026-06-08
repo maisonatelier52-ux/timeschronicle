@@ -3,203 +3,179 @@ const SITE_URL = "https://www.timeschronicle.org";
 export const metadata = {
   title: "Privacy Policy — Times Chronicle",
   description:
-    "Read Times Chronicle's Privacy Policy to understand how we collect, use, protect, and handle your information while you browse our U.S.-focused news platform.",
+    "Read the Times Chronicle Privacy Policy to understand what information we collect, how we use it, cookies, your rights, and our commitment to protecting your privacy.",
   alternates: {
     canonical: `${SITE_URL}/privacy-policy`,
   },
   openGraph: {
-    title: "Times Chronicle Privacy Policy",
+    title: "Privacy Policy — Times Chronicle",
     description:
-      "Learn how Times Chronicle protects your privacy and manages information including cookies, analytics, and data usage.",
+      "Learn how Times Chronicle collects, uses, and protects your personal information.",
     url: `${SITE_URL}/privacy-policy`,
     type: "website",
     siteName: "Times Chronicle",
-    images: [
-      {
-        url: `${SITE_URL}/timeschronicle.webp`,
-        width: 1200,
-        height: 630,
-        alt: "Privacy Policy - Times Chronicle",
-      },
-    ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Times Chronicle Privacy Policy",
+    card: "summary",
+    title: "Privacy Policy — Times Chronicle",
     description:
-      "Understand how Times Chronicle collects, uses, and safeguards user information across our platform.",
-    images: [`${SITE_URL}/timeschronicle.webp`],
+      "Understand how your information is collected, used, and protected by Times Chronicle.",
   },
 };
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Privacy Policy",
+  description:
+    "Privacy Policy explaining how Times Chronicle collects, uses, stores, and protects user information.",
+  url: `${SITE_URL}/privacy-policy`,
+  publisher: {
+    "@type": "Organization",
+    name: "Times Chronicle",
+    url: SITE_URL,
+  },
+};
+
+const sections = [
+  {
+    title: "Data We Collect",
+    icon: "🗂️",
+    paragraphs: [
+      "When you visit the Times Chronicle, certain information may be automatically collected about your device and browsing activity, including your IP address, browser type, pages visited, and the time and date of your visit.",
+      "If you sign up for newsletters, submit a contact form, or interact with our website in other ways, we may collect personal information such as your name and email address.",
+      "We only collect information that is necessary to operate our website and serve our readers effectively.",
+    ],
+  },
+  {
+    title: "How We Use It",
+    icon: "⚙️",
+    paragraphs: [
+      "We use the information we collect to deliver and improve our content, communicate with readers, understand how our website is used, and fulfil any requests or enquiries you submit.",
+      "We may also use your information to send newsletters or editorial updates if you have opted in to receive them. You can unsubscribe at any time.",
+      "We do not sell personal data to third parties.",
+    ],
+  },
+  {
+    title: "Your Rights",
+    icon: "🔏",
+    paragraphs: [
+      "Depending on your location, you may have rights regarding your personal data — including the right to access, correct, or request deletion of information we hold about you.",
+      "To exercise any of these rights, please contact us through our Contact page. We will respond to requests within a reasonable timeframe.",
+      "We are committed to handling your data with care and in accordance with applicable privacy laws.",
+    ],
+  },
+  {
+    title: "Cookies & Tracking",
+    icon: "🍪",
+    paragraphs: [
+      "The Times Chronicle may use cookies and similar tracking technologies to enhance your experience, understand usage patterns, and deliver relevant advertising.",
+      "You can manage your cookie preferences through your browser settings. Disabling certain cookies may affect the functionality of some parts of our website.",
+      "We may use analytics tools such as Google Analytics to help us understand how readers interact with our content.",
+    ],
+  },
+  {
+    title: "Third Parties",
+    icon: "🔗",
+    paragraphs: [
+      "Our website may contain links to third-party websites and services. We are not responsible for the privacy practices of those websites and encourage you to review their privacy policies separately.",
+      "We may share aggregated, non-personally identifiable information with advertisers and analytics partners to improve our services. This data cannot be used to identify you individually.",
+      "Advertisers and sponsors may use their own tracking technologies in accordance with their own privacy policies.",
+    ],
+  },
+  {
+    title: "Contact",
+    icon: "✉️",
+    paragraphs: [
+      "If you have questions about this Privacy Policy or how your personal information is handled, please contact our editorial and operations team through our Contact page.",
+      "We may update this Privacy Policy from time to time. Any changes will be published on this page, and your continued use of the website constitutes acceptance of the updated policy.",
+      "This policy was last reviewed in 2025.",
+    ],
+  },
+];
 
 export default function PrivacyPolicy() {
   return (
     <>
       <script
-        id="privacy-policy-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "PrivacyPolicy",
-            "name": "Times Chronicle Privacy Policy",
-            "url": "https://www.timeschronicle.org/privacy-policy",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Times Chronicle",
-              "url": "https://www.timeschronicle.org"
-            }
-          }),
+          __html: JSON.stringify(jsonLd),
         }}
       />
 
-      <script
-        id="privacy-breadcrumb-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.timeschronicle.org"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Privacy Policy",
-                "item": "https://www.timeschronicle.org/privacy-policy"
-              }
-            ]
-          }),
-        }}
-      />
-      <div className="bg-white text-gray-900 dark:bg-[#020f15] dark:text-gray-100">
-        <article className="prose max-w-4xl mx-auto py-16 px-6 md:px-10 leading-relaxed">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
-            Privacy Policy
-          </h1>
+      <div className="min-h-screen bg-[#faf8f4] font-serif">
 
-          <p className="text-sm text-gray-500 mb-10 border-b pb-4">
-            Last updated: November 2025
-          </p>
+        {/* Hero */}
+        <div className="border-b-4 border-stone-900">
+          <div className="max-w-3xl mx-auto px-6 py-16 text-center">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-amber-700 font-sans mb-4">
+              Your Data
+            </p>
 
-          <h2 className="text-2xl font-bold mt-10">Introduction</h2>
-          <p>
-            Times Chronicle collects, uses, distributes, and protects personal information on our U.S.–based digital news platform, including our website, mobile-accessible pages, and any service that links to this Privacy Policy. By using our Services, you agree to this Privacy Policy.
-          </p>
+            <h1 className="text-5xl md:text-6xl font-bold text-stone-900 leading-tight mb-2">
+              Privacy
+              <br />
+              <span className="italic font-normal">Policy</span>
+            </h1>
 
-          <h2 className="text-2xl font-bold mt-10">1. Privacy Policy Scope</h2>
-          <p>This Privacy Policy covers any information gathered when you:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Read articles or browse our website</li>
-            <li>Submit forms or contact us</li>
-            <li>Comment or engage with interactive features</li>
-            <li>Interact with advertisements</li>
-          </ul>
-          <p>Not covered by this policy:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Information collected offline or by phone (unless stated)</li>
-            <li>Websites, apps, and services that link to or integrate with our platform</li>
-            <li>Content governed by separate agreements</li>
-          </ul>
+            <div className="w-16 h-px bg-amber-700 mx-auto mt-6 mb-6" />
 
-          <h2 className="text-2xl font-bold mt-10">2. Information We Collect</h2>
+            <p className="text-stone-500 max-w-lg mx-auto text-[15px] leading-relaxed">
+              Your privacy matters to us. This policy explains what information
+              we collect, how we use it, and the choices you have.
+            </p>
+          </div>
+        </div>
 
-          <h3 className="text-xl font-semibold mt-6">A. Information You Provide</h3>
-          <p>If you choose to interact with us, we may collect:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Name and email address</li>
-            <li>Phone number (if provided)</li>
-            <li>Messages, comments, and submitted forms</li>
-            <li>Newsletter subscription preferences</li>
-          </ul>
+        {/* Sections */}
+        <div className="max-w-4xl mx-auto px-6 py-14 space-y-8">
+          {sections.map((section) => (
+            <div
+              key={section.title}
+              className="bg-white border border-stone-200 p-8 hover:shadow-sm transition-all"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-3xl">{section.icon}</span>
+                <h2 className="text-2xl font-bold text-stone-900">
+                  {section.title}
+                </h2>
+              </div>
 
-          <h3 className="text-xl font-semibold mt-6">B. Automatically Collected Data</h3>
-          <p>When you visit our Services, we automatically collect:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>IP address and approximate location</li>
-            <li>Browser, device type, and operating system</li>
-            <li>Page views, scrolling, clicks, and session duration</li>
-            <li>Referral links</li>
-            <li>Cookie and analytics data</li>
-          </ul>
+              <div className="space-y-4">
+                {section.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="text-stone-700 leading-relaxed text-[15px]"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
 
-          <h3 className="text-xl font-semibold mt-6">C. Data from Other Sources</h3>
-          <p>We may receive information from:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Analytics providers (e.g., Google Analytics)</li>
-            <li>Advertising partners</li>
-            <li>Social media platforms</li>
-          </ul>
+        {/* Footer */}
+        <div className="border-t border-stone-300 bg-stone-50">
+          <div className="max-w-3xl mx-auto px-6 py-12 text-center">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-amber-700 font-sans mb-3">
+              Questions About Your Privacy?
+            </p>
 
-          <h2 className="text-2xl font-bold mt-10">3. How We Use Your Information</h2>
-          <p>We use your information to:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Operate and maintain our website</li>
-            <li>Publish and distribute news</li>
-            <li>Enhance performance and usability</li>
-            <li>Analyze traffic and engagement</li>
-            <li>Respond to user messages</li>
-            <li>Prevent fraudulent or harmful activity</li>
-            <li>Personalize content and advertising</li>
-            <li>Enforce the Terms of Use</li>
-          </ul>
+            <p className="text-stone-600 italic mb-6">
+              Contact our editorial team if you have any questions about this
+              policy or your personal information.
+            </p>
 
-          <h2 className="text-2xl font-bold mt-10">4. Sharing of Information</h2>
-          <p>We do not sell personal information. We may share data with:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Service providers such as hosting, security, and analytics vendors</li>
-            <li>Advertising partners for measurement and performance</li>
-            <li>Legal authorities when required</li>
-            <li>Business partners in the event of mergers or acquisitions</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold mt-10">5. Cookies & Tracking Technologies</h2>
-          <p>We use cookies to improve performance, measure analytics, personalize content, and deliver relevant ads. Disabling cookies may affect certain features of the site.</p>
-
-          <h2 className="text-2xl font-bold mt-10">6. Your Privacy Rights</h2>
-          <p>Depending on your location, you may request:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Access to the personal data we hold about you</li>
-            <li>Correction of incorrect or outdated information</li>
-            <li>Deletion of your personal data</li>
-            <li>Opt-out from personalized advertising</li>
-            <li>Restriction of certain data uses</li>
-          </ul>
-          <p>To exercise these rights, email us at <strong>privacy@timeschronicle.com</strong>.</p>
-
-          <h2 className="text-2xl font-bold mt-10">7. Data Security</h2>
-          <p>We use security measures such as encryption, firewalls, and access controls to protect your information. However, no system is completely secure, and data transmission carries inherent risks.</p>
-
-          <h2 className="text-2xl font-bold mt-10">8. External Links</h2>
-          <p>Our platform may contain links to third-party websites or tools. We are not responsible for the privacy practices of these external sites.</p>
-
-          <h2 className="text-2xl font-bold mt-10">9. Children's Privacy</h2>
-          <p>We do not knowingly collect personal information from children under 13. If such data is discovered, we will delete it promptly.</p>
-
-          <h2 className="text-2xl font-bold mt-10">10. International Users</h2>
-          <p>Times Chronicle operates from the United States. If you access our Services from outside the U.S., your data may be processed under U.S. laws.</p>
-
-          <h2 className="text-2xl font-bold mt-10">11. Data Retention</h2>
-          <p>We retain personal data only as long as necessary to:</p>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Provide our services</li>
-            <li>Comply with legal obligations</li>
-            <li>Resolve disputes</li>
-            <li>Ensure platform security</li>
-          </ul>
-
-          <h2 className="text-2xl font-bold mt-10">12. Changes to This Privacy Policy</h2>
-          <p>We may update this Privacy Policy periodically. The “Last Updated” date indicates the most recent changes. Continued use of our Services constitutes acceptance of the updated policy.</p>
-
-          <h2 className="text-2xl font-bold mt-10">13. Contact Us</h2>
-          <p>Email: <strong>privacy@timeschronicle.com</strong></p>
-          <p>Address: U.S. Editorial Division of Times Chronicle News</p>
-        </article>
+            <a
+              href="/contact"
+              className="inline-block px-6 py-2 border border-amber-700 text-amber-700 text-[11px] uppercase tracking-widest font-sans hover:bg-amber-700 hover:text-white transition-colors"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );

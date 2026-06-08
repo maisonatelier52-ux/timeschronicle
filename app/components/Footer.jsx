@@ -2,24 +2,26 @@
 
 import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
-import data from "@/data/data.json";
-import Image from "next/image";
 
-const quickLinks = [
+const newsRoom = [
   { label: "About Us", href: "/about" },
-  { label: "Terms of Use", href: "/terms-of-use" },
+  { label: "Our Team", href: "/our-team" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Editorial Policy", href: "/editorial-policy" },
+  { label: "Corrections Policy", href: "/corrections-policy" },
+  { label: "Source Methodology", href: "/source-methodology" },
+];
+
+const standards = [
+  { label: "Ownership & Funding", href: "/ownership-and-funding" },
+  { label: "Advertising Policy", href: "/advertising-policy" },
+  { label: "Right of Reply", href: "/right-of-reply" },
+  { label: "Legal", href: "/legal" },
   { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
 ];
 
 export default function Footer() {
-
-  const categories = [
-    ...new Set(
-      data.articles
-        .filter(article => article.published && article.category)
-        .map(article => article.category.toLowerCase())
-    ),
-  ].sort();
 
   return (
     <footer className="bg-black dark:bg-[#020f15] text-white border-t border-gray-800">
@@ -68,27 +70,27 @@ export default function Footer() {
 
             {/* Categories */}
             <div>
-              <HeadingWithTriangle text="Categories" />
+              <HeadingWithTriangle text="Newsroom" />
               <ul className="uppercase space-y-0.5 leading-tight">
-                {categories.map((cat) => (
-                  <li key={cat}>
+                {newsRoom.map(({ label, href }) => (
+                  <li key={href}>
                     <Link
-                      href={`/category/${cat.toLowerCase()}`}
-                      title={cat}
+                      href={href}
+                      title={label}
                       className="text-[10px] text-gray-300 hover:text-gray-200"
                     >
-                      {cat}
+                      {label}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Quick Links */}
+            {/* Standards */}
             <div>
-              <HeadingWithTriangle text="Quick Links" />
+              <HeadingWithTriangle text="Standards" />
               <ul className="uppercase space-y-0.5 leading-tight">
-                {quickLinks.map(({ label, href }) => (
+                {standards.map(({ label, href }) => (
                   <li key={href}>
                     <Link
                       href={href}

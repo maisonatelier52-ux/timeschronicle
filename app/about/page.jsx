@@ -1,307 +1,225 @@
-import Image from "next/image";
-
 const SITE_URL = "https://www.timeschronicle.org";
-const SITE_NAME = "Times Chronicle";
 
 export const metadata = {
-  title: "About Times Chronicle — Independent US Digital News Platform",
+  title: "About Us — Times Chronicle",
   description:
-    "Learn about Times Chronicle, an independent US digital news platform delivering factual reporting across national, politics, business, technology, health and world news.",
-  keywords: [
-    "about Times Chronicle",
-    "independent journalism",
-    "factual reporting",
-    "US digital news platform",
-    "truthful reporting",
-    "news publication",
-    "editorial standards",
-    "verified journalism",
-    "original reporting",
-  ],
-  authors: [{ name: `${SITE_NAME} Editorial Team` }],
+    "Learn about Times Chronicle, our mission, editorial values, and the topics we cover, including politics, business, technology, health, and world news.",
   alternates: {
     canonical: `${SITE_URL}/about`,
   },
   openGraph: {
-    title: "About Times Chronicle — Independent US Digital News Platform",
+    title: "About Us — Times Chronicle",
     description:
-      "Discover the mission, editorial standards, and team behind Times Chronicle — an independent US digital news platform.",
+      "Discover the mission and editorial philosophy behind Times Chronicle.",
     url: `${SITE_URL}/about`,
     type: "website",
-    siteName: SITE_NAME,
-    images: [
-      {
-        url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
-        width: 1200,
-        height: 630,
-        alt: "About Times Chronicle",
-      },
-    ],
+    siteName: "Times Chronicle",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "About Times Chronicle",
+    card: "summary",
+    title: "About Us — Times Chronicle",
     description:
-      "Learn about the values and mission that drive Times Chronicle.",
-    images: [`${SITE_URL}/logo/Times-Chronicle-White-Text.png`],
-    creator: "@timeschronicle",
-    site: "@timeschronicle",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+      "Learn about Times Chronicle's mission, newsroom values, and editorial coverage.",
   },
 };
 
-export default function AboutPage() {
+const beats = [
+  {
+    label: "U.S. Politics",
+    icon: "🏛️",
+    desc: "White House, Congress, elections, and public policy.",
+  },
+  {
+    label: "National Affairs",
+    icon: "⚖️",
+    desc: "Federal agencies, Supreme Court, and major rulings.",
+  },
+  {
+    label: "Economy & Business",
+    icon: "📈",
+    desc: "Markets, corporations, employment, and economic trends.",
+  },
+  {
+    label: "Technology",
+    icon: "💡",
+    desc: "AI, Big Tech, cybersecurity, and digital innovation.",
+  },
+  {
+    label: "Health & Science",
+    icon: "🔬",
+    desc: "Public health, medical research, and healthcare systems.",
+  },
+  {
+    label: "World News",
+    icon: "🌍",
+    desc: "International politics, conflict, and global diplomacy.",
+  },
+];
 
-  // ✅ AboutPage JSON-LD
-  const aboutPageJsonLd = {
+export default function AboutUs() {
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "@id": `${SITE_URL}/about#aboutpage`,
-    name: "About Times Chronicle",
-    url: `${SITE_URL}/about`,
-    description: metadata.description,
-    mainEntity: {
-      "@type": "NewsMediaOrganization",
-      "@id": `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-      url: SITE_URL,
-      description:
-        "Independent US digital news platform delivering high-quality journalism across politics, business, technology, health, and world news.",
-      foundingDate: "2025",
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
-      },
-      sameAs: [
-        "https://www.facebook.com/",
-        "https://www.twitter.com/",
-      ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "Editorial",
-        email: "editorial@timeschronicle.org",
-      },
-      ethicsPolicy: `${SITE_URL}/about`,
-      publishingPrinciples: `${SITE_URL}/about`,
-    },
-  };
-
-  // ✅ WebPage JSON-LD
-  const webPageJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": `${SITE_URL}/about#webpage`,
-    url: `${SITE_URL}/about`,
-    name: "About Times Chronicle",
-    description: metadata.description,
-    isPartOf: {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
-    about: {
-      "@type": "NewsMediaOrganization",
-      "@id": `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-    },
-    breadcrumb: {
-      "@id": `${SITE_URL}/about#breadcrumb`,
-    },
-    primaryImageOfPage: {
-      "@type": "ImageObject",
-      url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
-    },
-  };
-
-  // ✅ Breadcrumb JSON-LD
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "@id": `${SITE_URL}/about#breadcrumb`,
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: SITE_URL,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "About",
-        item: `${SITE_URL}/about`,
-      },
-    ],
-  };
-
-  const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "NewsMediaOrganization",
-    "@id": `${SITE_URL}/#organization`,
-    name: SITE_NAME,
-    alternateName: "Times Chronicle",
-    url: SITE_URL,
-    logo: {
-      "@type": "ImageObject",
-      url: `${SITE_URL}/logo/Times-Chronicle-White-Text.png`,
-      width: 600,
-      height: 60,
-    },
+    name: "About Us",
+    headline: "About Times Chronicle",
     description:
-      "Independent US digital news platform delivering comprehensive coverage of politics, business, technology, health, and world events.",
-    foundingDate: "2025",
-    sameAs: [
-      "https://www.instagram.com/timeschronicle01/",
-    ],
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "US",
+      "Times Chronicle is an independent digital news publication committed to covering politics, business, technology, health, and world affairs with accuracy and integrity.",
+    url: `${SITE_URL}/about`,
+    publisher: {
+      "@type": "Organization",
+      name: "Times Chronicle",
+      url: SITE_URL,
     },
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "Editorial",
-      email: "editorial@timeschronicle.org",
-    },
-    ethicsPolicy: `${SITE_URL}/about`,
-    publishingPrinciples: `${SITE_URL}/about`,
-    masthead: `${SITE_URL}/about`,
   };
 
   return (
-    <>
-      {/* ALL JSON-LD */}
-      {[aboutPageJsonLd, webPageJsonLd, breadcrumbJsonLd, organizationJsonLd].map(
-        (schema, i) => (
-          <script
-            key={i}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-          />
-        )
-      )}
-      <div className="min-h-screen bg-white text-gray-900 dark:bg-[#020f15] dark:text-gray-100 transition-colors duration-300">
+    <div className="min-h-screen bg-[#faf8f4] font-serif">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
 
-        {/* HERO */}
-        <section className="relative w-full h-[100svh] overflow-hidden shadow-md dark:bg-[#020f15] dark:text-white">
-          <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-            <h1 className="text-3xl md:text-6xl font-bold leading-tight max-w-4xl">
-              Truthful reporting is the foundation<br />
-              of an informed society.
-            </h1>
-          </div>
-        </section>
-
-        {/* INTRO */}
-        <section className="max-w-4xl mx-auto px-7 py-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            About Times Chronicle
-          </h2>
-          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            <strong>Times Chronicle</strong> is an independent digital news publication
-            dedicated to accurate, fair, and responsible journalism. We focus on
-            the stories shaping the United States—providing clarity, context, and
-            accountability in a fast-moving news environment.
+      {/* Hero */}
+      <div className="border-b-4 border-stone-900 bg-[#faf8f4]">
+        <div className="max-w-4xl mx-auto px-6 pt-16 pb-14">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-amber-700 font-sans mb-5">
+            About Us
           </p>
-        </section>
 
-        {/* MISSION */}
-        <section className="max-w-6xl mx-auto px-7 py-20 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4">
-              Our Mission
-            </h3>
-            <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-              Our mission is to inform the public with journalism rooted in facts,
-              independence, and public interest. We aim to help readers understand
-              complex national issues without bias, sensationalism, or political
-              pressure.
-            </p>
-          </div>
-          {/* Image wrapper controls height */}
-          <div className="relative w-full h-80">
-            <Image
-              src="/write.webp"
-              alt="Times Chronicle editorial mission"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-2xl shadow-lg object-cover"
-            />
-          </div>
-        </section>
+          <h1 className="text-5xl md:text-7xl font-bold text-stone-900 leading-none mb-6">
+            News that
+            <br />
+            <span className="italic font-normal text-stone-600">
+              holds its ground.
+            </span>
+          </h1>
 
-        {/* VALUES */}
-        <section className="bg-white dark:bg-[#041a22] py-20 px-7">
-          <div className="max-w-6xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-semibold text-center mb-14">
-              Our Editorial Values
-            </h3>
+          <div className="w-20 h-1 bg-amber-700 mb-8" />
 
-            <div className="grid md:grid-cols-3 gap-10">
-              {[
-                {
-                  title: "Accuracy",
-                  text: "Every story is carefully researched, verified, and reviewed to ensure factual correctness.",
-                },
-                {
-                  title: "Independence",
-                  text: "We operate free from political parties, corporate influence, and ideological agendas.",
-                },
-                {
-                  title: "Accountability",
-                  text: "We believe journalism should hold institutions and power to account in the public interest.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="p-6 rounded-2xl bg-gray-50 dark:bg-[#03151c] shadow-sm"
-                >
-                  <h4 className="text-xl font-semibold mb-3">
-                    {item.title}
-                  </h4>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* COVERAGE */}
-        <section className="max-w-6xl mx-auto px-7 py-20 text-center">
-          <h3 className="text-2xl md:text-3xl font-semibold mb-8">
-            What We Cover
-          </h3>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
-            Times Chronicle delivers in-depth reporting across national affairs,
-            politics, business, technology, health, and world news—focusing on
-            stories that matter most to readers in the United States.
+          <p className="text-stone-600 text-lg leading-relaxed max-w-2xl">
+            The Times Chronicle is an independent digital news publication
+            committed to covering the stories that matter — with accuracy,
+            depth, and integrity.
           </p>
-        </section>
-
-        {/* CTA */}
-        <section className="bg-gray-900 dark:bg-black text-white py-28 px-7 text-center rounded-t-3xl">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6">
-            Stay Ahead of the News
-          </h2>
-          <p className="text-lg max-w-2xl mx-auto text-gray-300">
-            Follow Times Chronicle for timely, accurate, and insightful reporting
-            that helps you understand what’s happening—and why it matters.
-          </p>
-        </section>
-
+        </div>
       </div>
-    </>
+
+      {/* Mission */}
+      <div className="bg-stone-900 text-stone-100">
+        <div className="max-w-3xl mx-auto px-6 py-14 text-center">
+          <p className="text-2xl md:text-3xl font-serif italic leading-relaxed text-stone-200">
+            "News never stands still. Neither do we."
+          </p>
+
+          <div className="w-10 h-px bg-amber-700 mx-auto mt-8" />
+        </div>
+      </div>
+
+      {/* Narrative */}
+      <div className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-14">
+        <div>
+          <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-700 font-sans mb-4">
+            Looking Beyond the Headline
+          </h2>
+
+          <p className="text-stone-700 leading-relaxed text-[15px] mb-4">
+            A breaking story can generate thousands of reactions in minutes.
+            The real story usually takes longer to find.
+          </p>
+
+          <p className="text-stone-700 leading-relaxed text-[15px] mb-4">
+            Behind every political development sits a process. Behind every
+            market shift is a human consequence. We focus on the people,
+            decisions, and forces shaping the direction of the news — not just
+            the noise around it.
+          </p>
+
+          <p className="text-stone-700 leading-relaxed text-[15px]">
+            The facts matter. The context matters more.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-amber-700 font-sans mb-4">
+            Why We Exist
+          </h2>
+
+          <p className="text-stone-700 leading-relaxed text-[15px] mb-4">
+            News reaches far beyond the headlines. It influences policy. It
+            shapes public opinion. It holds power accountable.
+          </p>
+
+          <p className="text-stone-700 leading-relaxed text-[15px] mb-4">
+            The Times Chronicle was built to make important stories accessible,
+            engaging, and worth reading — for readers who want more than a
+            summary and less than a textbook.
+          </p>
+
+          <p className="text-stone-700 leading-relaxed text-[15px]">
+            Whether you follow every political development or simply want to
+            understand a major story, we're built for you.
+          </p>
+        </div>
+      </div>
+
+      {/* Beats */}
+      <div className="bg-stone-50 border-t border-stone-200">
+        <div className="max-w-5xl mx-auto px-6 py-16">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-amber-700 font-sans mb-3 text-center">
+            What We Cover
+          </p>
+
+          <h2 className="text-3xl font-bold text-stone-900 text-center mb-12">
+            Our <span className="italic font-normal">Beats</span>
+          </h2>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {beats.map((beat) => (
+              <div
+                key={beat.label}
+                className="bg-white border border-stone-200 p-6 hover:border-amber-300 hover:shadow-sm transition-all"
+              >
+                <div className="text-2xl mb-3">{beat.icon}</div>
+
+                <h3 className="text-[11px] font-bold uppercase tracking-[0.15em] text-stone-900 font-sans mb-2">
+                  {beat.label}
+                </h3>
+
+                <p className="text-stone-500 text-sm leading-relaxed">
+                  {beat.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="border-t-4 border-stone-900 bg-[#faf8f4]">
+        <div className="max-w-3xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-stone-700 font-serif text-lg italic">
+            "Readers deserve information they can trust."
+          </p>
+
+          <div className="flex gap-4 font-sans text-[11px] uppercase tracking-widest shrink-0">
+            <a
+              href="/our-team"
+              className="px-5 py-2 bg-stone-900 text-stone-100 hover:bg-stone-700 transition-colors"
+            >
+              Meet the Team
+            </a>
+
+            <a
+              href="/contact"
+              className="px-5 py-2 border border-stone-900 text-stone-900 hover:bg-stone-100 transition-colors"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
