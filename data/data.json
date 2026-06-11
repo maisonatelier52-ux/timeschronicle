@@ -169,9 +169,9 @@
         "Democratic states"
       ],
       "date": "2026-02-09",
-      "time": "5 min",
       "image": "/social-service-funding-judge.webp",
       "authorId": 1,
+      "time": "5 min",
       "published": true
     },
     {
@@ -436,9 +436,9 @@
         "US justice system"
       ],
       "date": "2026-02-02",
-      "time": "5 min",
       "image": "/epstein-doj-redaction.webp",
       "authorId": 2,
+      "time": "5 min",
       "published": true
     },
     {
@@ -459,8 +459,8 @@
       ],
       "date": "2026-02-28",
       "image": "/senate-war-powers-vote.webp",
-      "time": "5 min",
       "authorId": 2,
+      "time": "5 min",
       "published": true
     },
     {
@@ -637,9 +637,9 @@
         "restaurant industry slowdown"
       ],
       "date": "2026-02-04",
-      "time": "5 min",
       "image": "/consumer-anxiety-food-sales.webp",
       "authorId": 3,
+      "time": "5 min",
       "published": true
     },
     {
@@ -662,8 +662,8 @@
       ],
       "date": "2026-02-13",
       "image": "/us-manufacturing-hard-hat-economy.webp",
-      "time":"5 min",
       "authorId": 3,
+      "time":"5 min",
       "published": true
     },
     {
@@ -683,9 +683,9 @@
         "Ticketmaster competition lawsuit"
       ],
       "date": "2026-03-11",
-      "time": "5 min",
       "image": "/live-nation-antitrust-case.webp",
       "authorId": 3,
+      "time": "5 min",
       "published": true
     },
     {
@@ -709,6 +709,7 @@
       "date": "2026-04-21",
       "image": "/apple-ceo-john-ternus-replaces-tim-cook.webp",
       "authorId": 3,
+      "time": "7 min",
       "published": true
     },
     {
@@ -890,6 +891,7 @@
       "date": "2026-02-26",
       "image": "/dji-sues-over-import-ban-new-drones.webp",
       "authorId": 4,
+      "time": "5 min",
       "published": true
     },
     {
@@ -910,10 +912,11 @@
         "DDR5 7200MHz support",
         "gaming CPU benchmarks 2026"
       ],
-      "authorId": 4,
       "date": "2026-03-24",
-      "published": true,
-      "image": "/Intel-Core-Ultra-9-290K-Plus-benchmark.jpg"
+      "image": "/Intel-Core-Ultra-9-290K-Plus-benchmark.jpg",
+      "authorId": 4,
+      "time": "7 min",
+      "published": true
     },
     {
       "title": "Meet Noscroll: The AI Assistant Replacing Social Media Feeds",
@@ -931,10 +934,11 @@
         "artificial intelligence",
         "social media"
       ],
-      "authorId": 4,
       "date": "2026-04-24",
-      "published": true,
-      "image": "/noscroll-ai-news-assistant-app.webp"
+      "image": "/noscroll-ai-news-assistant-app.webp",
+      "authorId": 4,
+      "time": "5 min",
+      "published": true
     },
     {
       "title": "Microsoft Unveils New AI Models to Reduce Dependence on OpenAI",
@@ -954,10 +958,11 @@
         "AI infrastructure",
         "enterprise AI"
       ],
-      "authorId": 4,
       "date": "2026-06-03",
-      "published": true,
-      "image": "/microsoft-build-2026-ai-models-openai.webp"
+      "image": "/microsoft-build-2026-ai-models-openai.webp",
+      "authorId": 4,
+      "time": "6 min",
+      "published": true
     },
     {
       "slug": "us-ends-broad-childhood-vaccination-recommendations",
@@ -1154,6 +1159,30 @@
       "published": true
     },
     {
+      "title": "Study Suggests Stress and Late-Night Eating Together May Harm Gut Health",
+      "slug": "stress-late-night-eating-gut-health-study",
+      "excerpt": "An early observational study suggests that eating more than 25% of daily calories after 9 p.m. while under stress may significantly increase the risk of constipation, diarrhea, and reduced gut microbiome diversity.",
+      "content": "<p>An early observational study involving thousands of participants suggests that individuals who consume more than 25% of their total daily calories after 9 p.m. while experiencing chronic stress may face up to 2.5 times the risk of abnormal bowel function, including constipation and diarrhea.</p><p>The research has not yet been published in a peer-reviewed scientific journal and currently exists as an abstract presented at Digestive Disease Week, a leading annual conference for gastroenterology and hepatology professionals. Because the study is observational and based on measurements taken at a single point in time, it cannot establish a direct cause-and-effect relationship.</p><p>Despite these limitations, researchers believe the findings raise important questions about how stress and meal timing may work together to influence digestive health.</p><h2>Researchers Explore an Understudied Combination</h2><p>Lead researcher Dr. Harika Dadigiri, a resident physician, conducted the study out of personal interest after recognizing that very little research had examined how stress combined with late-night eating affects bowel function.</p><p>The research analyzed information from two major databases: the National Health and Nutrition Examination Survey (2005-2010) and the American Gut Project (2013-2017). Researchers intentionally selected these datasets to examine dietary habits, stress markers and gut health across large populations.</p><p>Dr. Geoffrey Preidis, associate professor of pediatrics at Baylor College of Medicine, noted that few previous studies have explored meal timing or the interaction between stress and late-night eating, emphasizing that stress and excessive nighttime eating often occur together.</p><p>Researchers measured chronic physiological stress using a composite allostatic load score that incorporated cardiovascular, metabolic and inflammatory biomarkers including blood pressure, cholesterol levels and body mass index.</p><p>Interestingly, late-night eating alone did not appear to negatively affect bowel health. Instead, the combination of elevated stress levels and nighttime eating appeared to drive the increased risk.</p><h2>Gut Microbiome Diversity May Also Be Affected</h2><p>Additional analysis using participants from the American Gut Project found that individuals experiencing both high stress and late-night eating habits also demonstrated lower gut microbiome diversity.</p><p>The gut microbiome consists of bacteria, viruses and fungi that play essential roles in digestion, immune function and communication between the gut and brain. Greater microbial diversity is generally associated with improved resilience against disease, better digestion, stronger immune regulation and healthier mood and sleep patterns.</p><p>However, researchers caution that the observational nature of the study prevents determining whether changes in the microbiome are caused by stress and late-night eating or whether pre-existing gastrointestinal conditions contribute to both findings.</p><p>Dr. William Chey, president of the American College of Gastroenterology, pointed out several important limitations, including the lack of information about participants' medical conditions, medication use and the specific types of foods consumed during nighttime meals, all of which could influence digestive health.</p><h2>Future Research Could Shape Dietary Recommendations</h2><p>Researchers describe the findings as hypothesis-generating, meaning they provide a basis for future investigations into whether meal timing could become a modifiable risk factor for constipation and diarrhea.</p><p>If future studies establish a causal relationship, several physiological mechanisms may explain the connection. The body and gut microbiota operate according to circadian rhythms, and disruptions caused by late eating may alter hormone regulation, immune responses, gut-brain communication and gastrointestinal motility.</p><p>Another study cited by Dr. Dadigiri in 2024 suggested that limiting food intake to between 9 a.m. and 5 p.m. may reduce gut inflammation associated with dysbiosis linked to elevated cortisol levels.</p><p>Although the current study does not make formal lifestyle recommendations, experts generally advise avoiding food for three to four hours before bedtime. Allowing the stomach to empty before sleep may improve digestive recovery, reduce unnecessary digestive activity during sleep and lower the risk of acid reflux.</p><p>For individuals who need to eat at night, experts suggest choosing easily digestible foods such as fruits, vegetables, complex carbohydrates and protein-rich options to minimize digestive strain.</p>",
+      "category": "Health",
+      "keywords": [
+        "late night eating",
+        "stress and gut health",
+        "gut microbiome",
+        "constipation",
+        "diarrhea",
+        "Digestive Disease Week",
+        "gut bacteria",
+        "meal timing",
+        "circadian rhythm",
+        "digestive health"
+      ],
+      "date": "2026-06-11",
+      "image": "/stress-late-night-eating-gut-health-study.webp",
+      "authorId": 5,
+      "time": "6 min",
+      "published": true
+    },
+    {
       "slug": "danish-pm-warns-us-control-greenland-end-nato",
       "title": "Danish PM Warns U.S. Control of Greenland Would End NATO",
       "excerpt": "Denmark’s prime minister warns that any U.S. move to take control of Greenland could destroy NATO, raising tensions over Arctic security.",
@@ -1318,11 +1347,11 @@
         "defensive military action",
         "nuclear negotiations Iran"
       ],
-      "authorId": 6,
       "date": "2026-02-27",
-      "published": true,
+      "image": "/europe-iran-conflict.webp",
+      "authorId": 6,
       "time":"6 min",
-      "image": "/europe-iran-conflict.webp"
+      "published": true
     },
     {
       "slug": "israel-blocks-cardinal-holy-sepulchre-backlash",
@@ -1344,8 +1373,8 @@
       ],
       "date": "2026-03-30",
       "image": "/israel-blocks-cardinal-holy-sepulchre-backlash.webp",
-      "time":"4 min",
       "authorId": 6,
+      "time":"4 min",
       "published": true
     },
     {
@@ -1368,8 +1397,8 @@
       ],
       "date": "2026-05-13",
       "image": "/saudi-arabia-secret-airstrikes-iran.webp",
-      "time":"5 min",
       "authorId": 6,
+      "time":"5 min",
       "published": true
     },
     {
@@ -1390,8 +1419,8 @@
       ],
       "date": "2026-05-19",
       "image": "/china-us-agriculture-trade-deal-trump-xi.webp",
-      "time":"7 min",
       "authorId": 6,
+      "time":"7 min",
       "published": true
     }
   ]
