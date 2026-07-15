@@ -45,10 +45,8 @@ export default function Footer() {
           {/* Social Media Icons */}
           <div className="flex gap-5">
             {[
-              { Icon: FaFacebookF, color: "hover:text-blue-600", link: "https://facebook.com", title: "Facebook" },
-              { Icon: FaTwitter, color: "hover:text-blue-400", link: "https://twitter.com", title: "Twitter" },
-              { Icon: FaInstagram, color: "hover:text-pink-500", link: "https://instagram.com", title: "Instagram" },
-              { Icon: FaYoutube, color: "hover:text-red-600", link: "https://youtube.com", title: "YouTube" },
+              { Icon: FaTwitter, color: "hover:text-blue-400", link: "https://x.com/times_chroncle", title: "Twitter" },
+              { Icon: FaInstagram, color: "hover:text-pink-500", link: "https://www.instagram.com/timeschronicle_/", title: "Instagram" },
             ].map(({ Icon, color, link, title }) => (
               <a
                 key={link}
