@@ -115,10 +115,21 @@ export default function sitemap() {
       priority: 0.8,
     }));
 
+  // Manually added article page
+  const additionalArticlePages = [
+    {
+      url: `${SITE_URL}/news/julio-herrera-velutini-man-name-legacy`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  ];
+
   return [
     ...staticPages,
     ...categoryPages,
     ...authorPages,
     ...articlePages,
+    ...additionalArticlePages,
   ];
 }
