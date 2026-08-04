@@ -134,13 +134,9 @@ export default async function NewsPage({ params }) {
 
   /* ---------- JSON-LD ---------- */
 
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `${SITE_URL}/news/${article.slug}`,
-    },
+  const articleEntity = {
+    "@type": article.sponsored ? "Article" : "NewsArticle",
+    ...(article.sponsored ? { "isAccessibleForFree": true, "creativeWorkStatus": "Sponsored" } : {}),
     "headline": article.title,
     "description": article.excerpt,
     "articleSection": article.category,
@@ -164,6 +160,40 @@ export default async function NewsPage({ params }) {
       },
     },
   };
+
+  const articleJsonLd =
+    article.sponsor && article.person
+      ? {
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `${SITE_URL}/news/${article.slug}`,
+          },
+          "dateCreated": new Date(article.date).toISOString(),
+          "dateModified": new Date(article.date).toISOString(),
+          "mainEntity": {
+            "@type": "Person",
+            "name": article.person.name,
+            "jobTitle": article.person.jobTitle,
+            "birthDate": article.person.birthDate,
+            "birthPlace": article.person.birthPlace,
+            "nationality": article.person.nationality,
+            "image": article.person.image
+              ? `${SITE_URL}${article.person.image}`
+              : undefined,
+            "sameAs": article.person.sameAs,
+          },
+          "about": articleEntity,
+        }
+      : {
+          "@context": "https://schema.org",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `${SITE_URL}/news/${article.slug}`,
+          },
+          ...articleEntity,
+        };
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -244,13 +274,20 @@ export default async function NewsPage({ params }) {
 
             {/* Overlay Content */}
             <div className="absolute bottom-0 left-0 w-full p-4 sm:p-6 text-white">
-              <Link
-                href={`/category/${article.category.toLowerCase()}`}
-                title={article.category}
-                className="inline-block text-[10px] uppercase tracking-widest mb-2 hover:underline"
-              >
-                {article.category}
-              </Link>
+              <div className="flex items-center gap-2 mb-2">
+                <Link
+                  href={`/category/${article.category.toLowerCase()}`}
+                  title={article.category}
+                  className="inline-block text-[10px] uppercase tracking-widest hover:underline"
+                >
+                  {article.category}
+                </Link>
+                {article.sponsored && (
+                  <span className="inline-block text-[10px] uppercase tracking-widest bg-amber-500 text-black font-semibold px-2 py-0.5">
+                    Sponsored
+                  </span>
+                )}
+              </div>
 
               <h1 className="font-extrabold text-2xl sm:text-3xl md:text-5xl uppercase mb-3 leading-tight">
                 {article.title}
@@ -295,6 +332,10 @@ export default async function NewsPage({ params }) {
               [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-4
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:my-4
               [&_li]:my-2 [&_li]:leading-relaxed
+
+              [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-800
+              [&_figure]:my-8
+              [&_figcaption]:text-xs
             "
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
