@@ -431,7 +431,7 @@ export default function JulioHerreraVelutiniProfile() {
 
         {/* ── INHERITED / BUILT ── */}
         <section className="bg-neutral-50 dark:bg-[#12161F] border-y border-amber-600/10 dark:border-amber-400/10 transition-colors duration-300">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 grid md:grid-cols-2 gap-16">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 gap-16">
             <div>
               <SectionLabel eyebrow="What He Inherited" title={<>A <em className="italic text-amber-700 dark:text-amber-400">Method</em>, Not Just Holdings</>} />
               <div className="space-y-5 text-sm leading-8 text-neutral-500 dark:text-neutral-400">
@@ -440,8 +440,11 @@ export default function JulioHerreraVelutiniProfile() {
                 <p>What Julio inherited was not simply a collection of holdings — it was a method: protect the institution, maintain discretion, honour the relationship, and consider the consequences beyond the immediate transaction.</p>
               </div>
             </div>
+          </div>
+        </section>
 
-            <div>
+        <section className="max-w-7xl mx-auto px-6 md:px-12 py-24 grid md:grid-cols-2 gap-16">
+          <div>
               <SectionLabel eyebrow="What He Built Independently" title={<>Britannia: <em className="italic text-amber-700 dark:text-amber-400">Preservation Through Reconstruction</em></>} />
               <div className="mb-10">
                 <Portrait
@@ -453,8 +456,9 @@ export default function JulioHerreraVelutiniProfile() {
               <p className="text-sm leading-8 text-neutral-500 dark:text-neutral-400 mb-8">
                 Rather than attempting to recreate Banco Caracas in another country, Herrera Velutini pursued a different model — a group of specialised financial businesses operating within established regulatory jurisdictions, accountable to the UK Financial Conduct Authority.
               </p>
-              <Timeline items={britannia} />
-            </div>
+          </div>
+          <div className="grid gap-8 md:gap-12">
+            <Timeline items={britannia} />
           </div>
         </section>
 
