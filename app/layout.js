@@ -57,6 +57,9 @@ const merriweather = localFont({
 export const metadata = {
   title: "Times Chronicle",
   description: "Independent global news from Times Chronicle.",
+  verification: {
+    google: "V5NWQRkOc7PRE7hYGHoovy5zn0a3EgdYIIixG39Z9VA",
+  },
 };
 
 export default function RootLayout({ children }) {
