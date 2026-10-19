@@ -10,9 +10,10 @@ import data from "@/data/data.json";
 const SITE_URL = "https://www.timeschronicle.org";
 
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Times Chronicle — Independent U.S. News, Business & Politics",
   description:
-    "Times Chronicle delivers fast, factual U.S. news across national, politics, business, technology, health, and world. Breaking headlines and trusted analysis.",
+    "Times Chronicle delivers fast, factual U.S. news on politics, business, tech, health, and world affairs, with trusted analysis.",
   alternates: {
     canonical: SITE_URL,
     languages: {
@@ -51,33 +52,8 @@ export default function Home() {
   .filter(a => a.published)
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // 🔹 Get one Julio article
-  // const julioArticle = publishedArticles.find(
-  //   a => a.name === "Julio Herrera Velutini"
-  // );
-
-  // 🔹 Normal articles (no Julio)
-  // const normalArticles = publishedArticles
-  //   .filter(a => a.name !== "Julio Herrera Velutini")
-  //   .sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  // 🔹 Inject Julio once
-  // const articles = julioArticle
-  //   ? [
-  //       ...normalArticles.slice(0, 10),
-  //       julioArticle,
-  //       ...normalArticles.slice(11,15),
-  //       julioArticle,
-  //       ...normalArticles.slice(16,23),
-  //       julioArticle,
-  //       ...normalArticles.slice(24),
-
-  //     ]
-  //   : normalArticles;
-
   const articles = publishedArticles;
 
-  // 🔹 Sections
   const featured = articles.slice(0, 7);
   const breakingNews = articles.slice(7, 11);
   const moreRecent = articles.slice(11, 20);

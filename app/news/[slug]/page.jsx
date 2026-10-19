@@ -11,14 +11,6 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const article = data.articles.find(a => a.slug === slug);
 
-  // BLOCK JULIO ARTICLES FROM /articles/[slug]
-  // if (article?.name === "Julio Herrera Velutini") {
-  //   return {
-  //     title: "Page not found | Times Chronicle",
-  //     robots: "noindex, nofollow",
-  //   };
-  // }
-
   if (!article) {
     return {
       title: "Article not found | Times Chronicle",
@@ -27,7 +19,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const imageUrl = `${SITE_URL}/${article.image}`;
+  const imageUrl = `${SITE_URL}${article.image}`;
 
   return {
     title: `${article.title}`,
@@ -95,17 +87,14 @@ export default async function NewsPage({ params }) {
     { month: "short", day: "2-digit", year: "numeric" }
   );
 
-  // All published articles except current one
   const allPublished = data.articles
     .filter((a) => a.published && a.slug !== slug)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // 1 & 2 → Latest from same category
   const sameCategoryLatest = allPublished
     .filter((a) => a.category === article.category)
     .slice(0, 2);
 
-  // Remaining → Latest overall (excluding already picked)
   const remainingLatest = allPublished
     .filter(
       (a) =>
@@ -115,7 +104,6 @@ export default async function NewsPage({ params }) {
     )
     .slice(0, 5);
 
-  // Final 7 articles
   const popularArticles = [
     ...sameCategoryLatest,
     ...remainingLatest,
@@ -132,7 +120,6 @@ export default async function NewsPage({ params }) {
     hover:bg-[length:0_0.05em,100%_0.05em]
   `;
 
-  /* ---------- JSON-LD ---------- */
 
   const articleEntity = {
     "@type": article.sponsored ? "Article" : "NewsArticle",
@@ -141,14 +128,14 @@ export default async function NewsPage({ params }) {
     "description": article.excerpt,
     "articleSection": article.category,
     "keywords": article.keywords,
-    "image": [`${SITE_URL}/${article.image}`],
+    "image": [`${SITE_URL}${article.image}`],
     "datePublished": new Date(article.date).toISOString(),
     "dateModified": new Date(article.date).toISOString(),
     "author": {
       "@type": "Person",
       "name": author?.name || "Times Chronicle Staff",
       "url": author
-        ? `${SITE_URL}/author/${author.id}`
+        ? `${SITE_URL}/author/${author.slug}`
         : undefined,
     },
     "publisher": {

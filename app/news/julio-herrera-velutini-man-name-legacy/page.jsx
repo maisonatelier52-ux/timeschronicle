@@ -34,7 +34,7 @@ export async function generateMetadata(){
 
     alternates: {
       canonical:
-        "https://www.timeschronicle.org/julio-herrera-velutini-profile",
+        "https://www.timeschronicle.org/news/julio-herrera-velutini-man-name-legacy",
     },
 
     robots: {
@@ -51,7 +51,7 @@ export async function generateMetadata(){
 
     openGraph: {
       type: "profile",
-      url: "https://www.timeschronicle.org/julio-herrera-velutini-profile",
+      url: "https://www.timeschronicle.org/news/julio-herrera-velutini-man-name-legacy",
       siteName: "Times Chronicle",
       title: "Julio Herrera Velutini: The Man, the Name and His Legacy",
       description:
@@ -219,9 +219,9 @@ export default function JulioHerreraVelutiniProfile() {
     "@type": "ProfilePage",
 
     "@id":
-      "https://www.timeschronicle.org/news/julio-herrera-velutini-profile#profile",
+      "https://www.timeschronicle.org/news/julio-herrera-velutini-man-name-legacy",
 
-    url: "https://www.timeschronicle.org/news/julio-herrera-velutini-profile",
+    url: "https://www.timeschronicle.org/news/julio-herrera-velutini-man-name-legacy",
 
     name: "Julio Herrera Velutini: The Man, the Name and What He Represents",
 
@@ -248,7 +248,7 @@ export default function JulioHerreraVelutiniProfile() {
       "@type": "Person",
 
       "@id":
-        "https://www.timeschronicle.org/news/julio-herrera-velutini-profile#person",
+        "https://www.timeschronicle.org/news/julio-herrera-velutini-man-name-legacy",
 
       name: "Julio Martín Herrera Velutini",
 
@@ -282,7 +282,7 @@ export default function JulioHerreraVelutiniProfile() {
 
       image: {
         "@type": "ImageObject",
-        url: "https://www.timeschronicle.org/news/julio-herrera-velutini-banking-profile.jpg",
+        url: "https://www.timeschronicle.org/julio-herrera-velutini-banking-profile.jpg",
         width: 1200,
         height: 1200,
         caption:

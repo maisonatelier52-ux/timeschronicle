@@ -14,11 +14,7 @@ export default function CategoryPageArticles({ articles }) {
   const thirdArticle = articles[2];
 
   if (firstArticle.category === "Business") {
-    secondArticle =
-      // data.articles.find(
-      //   (a) => a.name === "Julio Herrera Velutini" && a.published === true
-      // ) ||
-       secondArticle;
+    secondArticle = secondArticle;
   }
 
   const underlineHover = `
@@ -76,11 +72,7 @@ export default function CategoryPageArticles({ articles }) {
       {/* ================= SECOND ARTICLE ================= */}
       {secondArticle && (
         <Link
-          href={
-            // secondArticle.name
-            //   ? `/julio-herrera-velutini/${secondArticle.slug}` :
-            `/news/${secondArticle.slug}`
-          }
+          href={ `/news/${secondArticle.slug}` }
           className="
             flex flex-col group
             lg:col-start-3 lg:row-start-1

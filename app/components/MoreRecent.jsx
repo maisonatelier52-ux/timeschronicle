@@ -153,18 +153,10 @@ export default function MoreRecent({articles}) {
 
                 {/* 5th Article (under 4th, same column) */}
                 {articles[4] && (() => {
-                    // const isJulio =
-                    //     articles[4].name === "Julio Herrera Velutini";
 
-                    const articleLink = 
-                    // isJulio
-                        //? `/julio-herrera-velutini/${articles[4].slug}` :
-                        `/news/${articles[4].slug}`;
+                    const articleLink = `/news/${articles[4].slug}`;
 
-                    const articleTitle = 
-                    // isJulio
-                    //     ? articles[4].title2:
-                        articles[4].title;
+                    const articleTitle = articles[4].title;
 
                     const author = data.authors.find(
                         a => a.id === articles[4].authorId
@@ -310,148 +302,6 @@ export default function MoreRecent({articles}) {
                         </p>
                     </div>
                 ))}
-                {/* {articles[9] && (
-                    <div className="md:col-span-2 flex flex-col px-7 pb-4">
-                        <Link href={`/news/${articles[9].slug}`} title={articles[9].title}>
-                            <div className="relative aspect-[16/9] overflow-hidden group">
-                                <img
-                                    src={articles[9].image}
-                                    alt={articles[9].title}
-                                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                                />
-
-                                <span className="absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
-
-                                <CategoryTag text={articles[9].category.toUpperCase()} />
-                            </div>
-                            <h2 className="font-bold pt-4 text-5xl leading-[1.15]">
-                                <span className={underlineHover}>
-                                    {articles[9].title}
-                                </span>
-                            </h2>
-
-                            <p className="text-gray-600 dark:text-gray-300 text-sm py-2 line-clamp-3">
-                                {articles[9].excerpt}
-                            </p>
-                        </Link>
-
-                        <Link 
-                            href={`/author/${data.authors.find(a => a.id === articles[9].authorId)?.slug}`} 
-                            title={data.authors.find(a => a.id === articles[9].authorId)?.name}
-                        >
-                            <p className="pt-2 text-[9px] text-gray-400 uppercase">
-                                By{" "}
-                                <span className="font-semibold text-black dark:text-white">
-                                    {data.authors.find(a => a.id === articles[9].authorId)?.name}
-                                </span>{" "}
-                                | {articles[9].time} Read
-                            </p>
-                        </Link>
-                    </div>
-                )} */}
-
-                {/* RIGHT — stacked (like articles 4 & 5) */}
-                {/* <div className="flex flex-col">
-
-                    {articles[10] && (
-                        <div
-                            className="
-                                relative group
-                                h-[220px]
-                                sm:h-[260px]
-                                md:h-[300px]
-                                lg:h-[360px]
-                                xl:h-[400px]
-                                overflow-hidden
-                                px-7
-                            "
-                            >
-                            <img
-                                src={articles[10].image}
-                                alt={articles[10].title}
-                                className="
-                                w-full h-full object-cover
-                                transition-transform duration-300
-                                "
-                            />
-
-                            <span
-                                className="
-                                absolute inset-0
-                                bg-white/20
-                                opacity-0
-                                transition-opacity duration-300
-                                group-hover:opacity-100
-                                pointer-events-none
-                                "
-                            />
-
-                            <span
-                                className="
-                                absolute inset-x-0 bottom-0 left-7 right-7 h-2/3
-                                bg-gradient-to-t from-black/85 via-black/50 to-transparent
-                                pointer-events-none
-                                "
-                            />
-
-                            <div className="absolute inset-0 flex flex-col justify-end p-4 z-10">
-                                <div className="px-6">
-                                <CategoryTag1 text={articles[10].category.toUpperCase()} />
-
-                                <h2 className="font-bold text-white text-[24px] mt-2 leading-[1.15]">
-                                    <span className={underlineHoverRev}>
-                                    {articles[10].title}
-                                    </span>
-                                </h2>
-
-                                <p className="text-[9px] text-gray-200 uppercase">
-                                    By{" "}
-                                    <span className="font-semibold text-white">
-                                    {data.authors.find(a => a.id === articles[10].authorId)?.name}
-                                    </span>{" "}
-                                    | {articles[10].time} Read
-                                </p>
-                                </div>
-                            </div>
-                            </div>
-                    )}
-
-                    {articles[11] && (
-                        <div className="flex flex-col px-7 pt-10">
-                            <div className="relative">
-                                <Link href={`/category/${articles[11].category.toLowerCase()}`} title={articles[11].category}>
-                                    <CategoryTag text={articles[11].category.toUpperCase()} />
-                                </Link>
-                            </div>
-                            <Link href={`/news/${articles[11].slug}`} title={articles[11].title}>
-                                <h2 className="font-bold pt-4 text-[26px] leading-[1.15]">
-                                    <span className={underlineHover}>
-                                        {articles[11].title}
-                                    </span>
-                                </h2>
-
-                                <div className="overflow-hidden">
-                                    <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 pt-3">
-                                        {articles[11].excerpt}
-                                    </p>
-                                </div>
-                            </Link>
-
-                            <p className="text-[9px] text-gray-400 uppercase py-2">
-                                By{" "}
-                                <Link 
-                                    href={`author/${data.authors.find(a => a.id === articles[11].authorId)?.slug}`}
-                                    title={data.authors.find(a => a.id === articles[11].authorId)?.name}
-                                >
-                                    <span className="font-semibold text-black dark:text-white">
-                                    {data.authors.find(a => a.id === articles[11].authorId)?.name}
-                                    </span>{" "}
-                                </Link>
-                                | {articles[11].time} Read
-                            </p>
-                        </div>
-                    )}
-                </div> */}
             </div>
         </section>
     );

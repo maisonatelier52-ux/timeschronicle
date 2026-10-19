@@ -63,7 +63,6 @@ export default async function CategoryPage({ params }) {
     (article) =>
       article.published &&
       article.category.toLowerCase() === categorySlug 
-      // && article.name !== "Julio Herrera Velutini"
   ).sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const CATEGORY_META = {
