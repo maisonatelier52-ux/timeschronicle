@@ -156,43 +156,43 @@ export default function MorePopular({ articles }) {
         )}
 
         {/* RIGHT COLUMN — QUOTE CARD */}
-<div className="lg:col-span-1 py-6 lg:pl-6 flex flex-col items-center justify-center">
-  <div className="relative w-full max-w-[300px] min-h-[320px] overflow-hidden bg-gradient-to-b from-[#0f5c4d] via-[#0b4439] to-[#06251f] text-white">
-    {/* Decorative circles */}
-    <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-white/5" />
-    <div className="absolute -bottom-14 -left-14 w-44 h-44 rounded-full bg-white/5" />
+        <div className="lg:col-span-1 py-6 lg:pl-6 flex flex-col items-center justify-center">
+          <div className="relative w-full max-w-[300px] min-h-[320px] overflow-hidden bg-gradient-to-b from-[#0f5c4d] via-[#0b4439] to-[#06251f] text-white">
+            {/* Decorative circles */}
+            <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-white/5" />
+            <div className="absolute -bottom-14 -left-14 w-44 h-44 rounded-full bg-white/5" />
 
-    <div className="relative h-full min-h-[320px] flex flex-col justify-between p-5">
-      {/* Top: label */}
-      <p className="text-[10px] tracking-[0.25em] uppercase text-white/60">
-        Quote
-      </p>
+            <div className="relative h-full min-h-[320px] flex flex-col justify-between p-5">
+              {/* Top: label */}
+              <p className="text-[10px] tracking-[0.25em] uppercase text-white/60">
+                Quote
+              </p>
 
-      {/* Middle: quote */}
-      <div>
-        <span
-          aria-hidden="true"
-          className="block text-6xl leading-none font-serif text-white/30"
-        >
-          “
-        </span>
-        <blockquote className="-mt-2 text-lg font-serif italic leading-snug">
-          {quoteCard.text}
-        </blockquote>
-        <div className="mt-4 w-8 h-0.5 bg-white/60" />
-        <p className="mt-3 text-xs font-semibold tracking-wide uppercase">
-          {quoteCard.author}
-        </p>
-        <p className="text-[11px] text-white/60 mt-1">{quoteCard.role}</p>
-      </div>
+              {/* Middle: quote */}
+              <div>
+                <span
+                  aria-hidden="true"
+                  className="block text-6xl leading-none font-serif text-white/30"
+                >
+                  “
+                </span>
+                <blockquote className="-mt-2 text-lg font-serif italic leading-snug">
+                  {quoteCard.text}
+                </blockquote>
+                <div className="mt-4 w-8 h-0.5 bg-white/60" />
+                <p className="mt-3 text-xs font-semibold tracking-wide uppercase">
+                  {quoteCard.author}
+                </p>
+                <p className="text-[11px] text-white/60 mt-1">{quoteCard.role}</p>
+              </div>
 
-      {/* Bottom: branding */}
-      <p className="text-[10px] font-bold tracking-widest uppercase text-white/70">
-        WhyHowWhatWhen
-      </p>
-    </div>
-  </div>
-</div>
+              {/* Bottom: branding */}
+              <p className="text-[10px] font-bold tracking-widest uppercase text-white/70">
+                WhyHowWhatWhen
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* BOTTOM ROW — 4 COLS */}
