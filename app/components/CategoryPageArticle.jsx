@@ -3,6 +3,12 @@ import Image from "next/image";
 import CategoryTag from "./CategoryTag";
 import data from "@/data/data.json";
 
+const quoteCard = {
+  text: "Our Republic and its press will rise or fall together.",
+  author: "Joseph Pulitzer",
+  role: "Publisher & Journalist",
+};
+
 export default function CategoryPageArticles({ articles }) {
   if (!articles || !articles.length) return null;
 
@@ -133,7 +139,7 @@ export default function CategoryPageArticles({ articles }) {
         </Link>
       )}
 
-      {/* Advertisement */}
+      {/* Quote Card */}
       <div
         className="
           sm:col-span-2
@@ -143,17 +149,41 @@ export default function CategoryPageArticles({ articles }) {
           pt-4 lg:pt-0 lg:pl-6
         "
       >
-        <p className="text-xs text-center uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">
-          — Advertisement —
-        </p>
+        <div className="relative h-full min-h-[360px] overflow-hidden bg-gradient-to-b from-[#7a1f2b] via-[#5c1520] to-[#2e0a10] text-white">
+          {/* Decorative circles */}
+          <div className="absolute -top-14 -left-14 w-48 h-48 rounded-full bg-white/5" />
+          <div className="absolute -bottom-16 -right-16 w-56 h-56 rounded-full bg-white/5" />
 
-        <Link href="http://wiresavvy.com/" title="WireSavvy" target="_blank">
-          <img
-            src="/ads/banner-1.png"
-            alt="Advertisement"
-            className="block mx-auto w-auto h-auto max-w-full"
-          />
-        </Link>
+          <div className="relative h-full flex flex-col justify-between p-7">
+            {/* Top: label */}
+            <p className="text-[10px] tracking-[0.3em] uppercase text-white/60">
+              Words That Matter
+            </p>
+
+            {/* Middle: quote */}
+            <div>
+              <span
+                aria-hidden="true"
+                className="block text-7xl leading-none font-serif text-white/30"
+              >
+                “
+              </span>
+              <blockquote className="-mt-3 text-xl md:text-2xl font-serif italic leading-snug">
+                {quoteCard.text}
+              </blockquote>
+              <div className="mt-5 w-10 h-0.5 bg-white/60" />
+              <p className="mt-3 text-sm font-semibold tracking-wide uppercase">
+                {quoteCard.author}
+              </p>
+              <p className="text-xs text-white/60 mt-1">{quoteCard.role}</p>
+            </div>
+
+            {/* Bottom: branding */}
+            <p className="text-xs font-bold tracking-widest uppercase text-white/70">
+              Times Chronicle
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import data from "@/data/data.json";
 import Link from "next/link";
 import CategoryPageArticles from "@/app/components/CategoryPageArticle";
 import CategoryMoreNews from "@/app/components/CategoryMoreNews";
-import AdBanner from "@/app/components/AdBanner";
 import Image from "next/image";
 
 const SITE_URL = "https://www.timeschronicle.org";
@@ -233,8 +232,6 @@ export default async function CategoryPage({ params }) {
 
       {/* ARTICLES */}
       <CategoryPageArticles articles={articles.slice(0, 3)} />
-
-      <AdBanner />
 
       <CategoryMoreNews articles={articles.slice(3)} />
 

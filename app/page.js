@@ -1,4 +1,3 @@
-import AdBanner from "./components/AdBanner";
 import BreakingNews from "./components/BreakingNews";
 import CategorySection from "./components/CategorySection";
 import FeaturedNews from "./components/FeaturedNews";
@@ -145,7 +144,6 @@ export default function Home() {
       <MoreRecent articles={moreRecent} />
       <NewsletterBox />
       <CategorySection articles={articles} />
-      <AdBanner />
       <MoreNews articles={moreNews} />
     </div>
   );
