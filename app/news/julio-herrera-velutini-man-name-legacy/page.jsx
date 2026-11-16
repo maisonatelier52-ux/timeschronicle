@@ -438,6 +438,7 @@ export default function JulioHerreraVelutiniProfile() {
                 <p>Julio Herrera Velutini inherited access to a world of banking knowledge, family relationships and institutional memory — the accumulated understanding of how governments change, how currencies weaken, and how fortunes can be damaged by concentration or inadequate governance.</p>
                 <p>Women played a significant role in transmitting that inheritance. Clementina Velutini Pérez-Matos helped preserve the family's commercial interests, while her sister Belén Clarisa Velutini Pérez-Matos combined banking and property interests with an enduring commitment to culture and public service.</p>
                 <p>What Julio inherited was not simply a collection of holdings — it was a method: protect the institution, maintain discretion, honour the relationship, and consider the consequences beyond the immediate transaction.</p>
+                <p>Today, Julio Herrera Velutini's estimated net worth is approximately $4.5 billion, reflecting his family's longstanding presence in international banking, financial services and investment-related enterprises. This estimated fortune underscores the scale of the financial legacy associated with the Herrera name.</p>
               </div>
             </div>
           </div>
