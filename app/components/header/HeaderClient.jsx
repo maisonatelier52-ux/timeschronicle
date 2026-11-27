@@ -1,25 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import Link from "next/link";
-import data from "@/data/data.json";
 import {
   FaSearch,
   FaTimes,
-  // FaFacebookF,
-  // FaTwitter,
-  // FaInstagram,
-  // FaYoutube,
 } from "react-icons/fa";
 import Link from "next/link";
 
 export default function HeaderClient() {
   const [openSearch, setOpenSearch] = useState(false);
   const [query, setQuery] = useState("");
+  const [searchIndex, setSearchIndex] = useState(null);
+  const [searchFailed, setSearchFailed] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  /* Scroll hide / show */
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
@@ -33,14 +28,35 @@ export default function HeaderClient() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const results =
-    query.length > 0
-      ? data.articles.filter(
-          (a) =>
-            a.published &&
-            a.title.toLowerCase().includes(query.toLowerCase())
-        )
-      : [];
+  useEffect(() => {
+    if (!openSearch || searchIndex) return;
+
+    const controller = new AbortController();
+
+    async function loadSearchIndex() {
+      try {
+        const response = await fetch("/search-index.json", {
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error("Could not load the search index");
+
+        const index = await response.json();
+        if (!controller.signal.aborted) setSearchIndex(index);
+      } catch {
+        if (!controller.signal.aborted) setSearchFailed(true);
+      }
+    }
+
+    loadSearchIndex();
+    return () => controller.abort();
+  }, [openSearch, searchIndex]);
+
+  const normalizedQuery = query.toLowerCase();
+  const results = searchIndex && normalizedQuery
+    ? searchIndex.filter((article) =>
+        article.title.toLowerCase().includes(normalizedQuery)
+      ).slice(0, 6)
+    : [];
 
   return (
     <div
@@ -55,27 +71,15 @@ export default function HeaderClient() {
         {/* SEARCH */}
         <button
           aria-label="Search"
-          onClick={() => setOpenSearch((v) => !v)}
+          onClick={() => {
+            setSearchFailed(false);
+            setOpenSearch((v) => !v);
+          }}
           className="text-gray-700 dark:text-gray-300 hover:text-blue-600 transition"
         >
           {openSearch ? <FaTimes /> : <FaSearch />}
         </button>
 
-        {/* SOCIAL ICONS (DESKTOP ONLY) */}
-        {/* <div className="hidden sm:flex items-center gap-4 text-gray-500 dark:text-gray-400">
-          <a href="#" aria-label="Facebook" className="hover:text-blue-600">
-            <FaFacebookF />
-          </a>
-          <a href="#" aria-label="Twitter" className="hover:text-blue-500">
-            <FaTwitter />
-          </a>
-          <a href="#" aria-label="Instagram" className="hover:text-pink-500">
-            <FaInstagram />
-          </a>
-          <a href="#" aria-label="YouTube" className="hover:text-red-600">
-            <FaYoutube />
-          </a>
-        </div> */}
       </div>
 
       {/* SEARCH PANEL */}
@@ -95,12 +99,23 @@ export default function HeaderClient() {
               "
             />
 
+            {searchFailed && (
+              <p role="status" className="mt-4 text-sm">
+                Search couldn’t load. Close and reopen search to try again.
+              </p>
+            )}
+
+            {query && !searchIndex && !searchFailed && (
+              <p role="status" className="mt-4 text-sm">Loading headlines…</p>
+            )}
+
             {results.length > 0 && (
               <div className="mt-4 divide-y divide-gray-200 dark:divide-gray-800">
-                {results.slice(0, 6).map((article) => (
+                {results.map((article) => (
                   <Link
                     key={article.slug}
                     href={`/news/${article.slug}`}
+                    prefetch={false}
                     onClick={() => {
                       setOpenSearch(false);
                       setQuery("");
@@ -111,7 +126,7 @@ export default function HeaderClient() {
                       {article.title}
                     </h4>
                     <p className="text-[9px] uppercase text-gray-400">
-                      {article.time} Read
+                      {article.category}
                     </p>
                   </Link>
                 ))}

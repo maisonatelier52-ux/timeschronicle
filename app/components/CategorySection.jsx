@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import data from "@/data/data.json";
 import CategoryTag1 from "./CategoryTag1";

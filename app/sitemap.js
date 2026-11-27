@@ -119,9 +119,9 @@ export default function sitemap() {
   const additionalArticlePages = [
     {
       url: `${SITE_URL}/news/julio-herrera-velutini-man-name-legacy`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.8,
+      lastModified: new Date("2026-08-14"),
+      changeFrequency: "monthly",
+      priority: 1,
     },
   ];
 
